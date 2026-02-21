@@ -7,7 +7,9 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Hi, I'm Katharina",
-    "subtitle": "Career switcher into software development (Java/Spring + Nuxt/Vue). I build practical apps and love turning messy problems into clean solutions."
-  }
+    "kicker": "Portfolio",
+    "title": "Hi, I'm Katharina!",
+    "subtitle": "Welcome to my portfolio.",
+    "ctaContact": "Contact"
+}
 }
