@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
+  css: ["~/assets/css/main.css"],
   i18n: {
     strategy: 'prefix',
     defaultLocale: 'en',

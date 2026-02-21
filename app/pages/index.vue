@@ -179,7 +179,6 @@ const showButton = ref(false);
 onMounted(() => {
   setTimeout(() => (showTitle.value = true), 180);
   setTimeout(() => (showSubtitle.value = true), 340);
-  setTimeout(() => (showButton.value = true), 520);
 });
 </script>
 
