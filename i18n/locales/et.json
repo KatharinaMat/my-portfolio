@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "projects": "Projektid",
+    "skills": "Oskused",
+    "education": "Haridus",
+    "experience": "Töökogemus",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Hei, ma olen Katharina",
+    "subtitle": "Olen karjääripööraja tarkvaraarendusse (Java/Spring + Nuxt/Vue). Mulle meeldib ehitada praktilisi äppe ja muuta keerulised probleemid selgeteks lahendusteks."
+  }
+}

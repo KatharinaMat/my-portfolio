@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "skills": "Skills",
+    "education": "Education",
+    "experience": "Work Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hi, I'm Katharina",
+    "subtitle": "Career switcher into software development (Java/Spring + Nuxt/Vue). I build practical apps and love turning messy problems into clean solutions."
+  }
+}
