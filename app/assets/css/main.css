@@ -1,4 +1,4 @@
-:html {
+html {
   scroll-behavior: smooth;
 }
 
@@ -68,95 +68,9 @@
   fill: #134f5c;
 }
 
-/* desktop side bookmarks */
-.side-nav {
-  position: fixed;
-  left: 14px;
-  top: 92px;
-  z-index: 25;
-  display: none;
-  gap: 10px;
-  flex-direction: column;
-}
-
-.bookmark {
-  position: relative;
-  display: inline-block;
-  padding: 10px 14px;
-  background: #134f5c;
-  color: #f6efe4;
-  text-decoration: none;
-  border-radius: 10px 0 0 10px;
-  font-weight: 600;
-  transition:
-    transform 180ms ease,
-    filter 180ms ease;
-}
-.bookmark::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -14px;
-  width: 14px;
-  height: 100%;
-  background: #134f5c;
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
-}
-.bookmark:hover {
-  transform: translateX(6px);
-  filter: brightness(1.06);
-}
-
-/* mobile sticky bookmarks (chips) */
-.mobile-nav {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 10px;
-  z-index: 28;
-  display: flex;
-  gap: 10px;
-  padding: 10px 12px;
-  justify-content: flex-start;
-  overflow-x: auto;
-
-  background: rgba(248, 246, 242, 0.72);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-  margin: 0 12px;
-}
-.mobile-nav::-webkit-scrollbar {
-  height: 0;
-}
-
-.chip {
-  white-space: nowrap;
-  text-decoration: none;
-  background: #134f5c;
-  color: #f6efe4;
-  padding: 10px 12px;
-  border-radius: 999px;
-  font-weight: 600;
-  transition:
-    transform 160ms ease,
-    filter 160ms ease;
-}
-.chip:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.06);
-}
-
-/* show desktop bookmarks, hide mobile chips */
-@media (min-width: 860px) {
-  .side-nav {
-    display: flex;
-  }
-  .mobile-nav {
-    display: none;
-  }
-}
-
-/* HERO */
+/* =========================
+   HERO
+   ========================= */
 .hero {
   width: 100%;
   background: linear-gradient(90deg, #dcb77d 0%, #947b54 100%);
@@ -170,40 +84,43 @@
   padding: 22px 18px 0;
 }
 
-.hero-grid {
+/* layout: nav + content */
+.hero-layout {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
-  align-items: start;
 }
 
+/* content (text + image) */
+.hero-grid {
+    display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+/* text */
 .hero-title {
-  margin: 0 0 10px;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  margin: 0 0 6px;
   font-size: 34px;
   line-height: 1.05;
   color: #1a1a1a;
 }
 .hero-subtitle {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
   margin: 0 0 16px;
   font-size: 18px;
   color: #1a1a1a;
   opacity: 0.85;
 }
-.cta {
-  border: 0;
-  background: #134f5c;
-  color: #f6efe4;
-  padding: 14px 22px;
-  border-radius: 12px;
-  font-size: 16px;
-  cursor: pointer;
-}
 
+/* image */
 .hero-image {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  overflow: visible;
 }
 
 .portrait {
@@ -212,40 +129,57 @@
   object-fit: contain;
   width: clamp(280px, 88vw, 520px);
   max-height: 46vh;
-  transform: translateY(18px);
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.22));
 }
 
-@media (min-width: 860px) {
-  .hero-inner {
-    padding: 40px 28px 0;
-  }
-  .hero-grid {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 22px;
-    align-items: center;
-  }
-  .hero-image {
-    justify-content: flex-end;
-  }
-  .portrait {
-    width: clamp(360px, 38vw, 580px);
-    max-height: none;
-    transform: translateY(26px);
-  }
-  .hero-title {
-    font-size: 54px;
-  }
-  .hero-subtitle {
-    font-size: 20px;
-  }
+/* =========================
+   ONE NAV (mobile + desktop)
+   ========================= */
+
+/* mobile default: horizontal “chips” bar (NOT fixed, no duplication) */
+.side-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 8px 2px 4px;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+}
+.side-nav::-webkit-scrollbar {
+  height: 0;
 }
 
-/* text animation only */
+/* make bookmarks look like chips on mobile */
+.bookmark {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  text-decoration: none;
+
+  background: #134f5c;
+  color: #f6efe4;
+  font-weight: 700;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  transition: transform 160ms ease, filter 160ms ease;
+}
+.bookmark:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+/* no arrow tip on mobile */
+.bookmark::after {
+  content: none;
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
 .line-enter-active {
-  transition:
-    opacity 520ms ease,
-    filter 520ms ease;
+  transition: opacity 520ms ease, filter 520ms ease;
 }
 .line-enter-from {
   opacity: 0;
@@ -256,13 +190,112 @@
   filter: blur(0);
 }
 
-/* sections */
+/* =========================
+   SECTIONS
+   ========================= */
 .section {
   padding: 56px 18px;
-  padding-bottom: 92px; /* space for mobile sticky bar */
 }
 .section-inner {
   max-width: 1100px;
   margin: 0 auto;
   color: #1a1a1a;
+}
+
+/* =========================
+   DESKTOP/TABLET
+   ========================= */
+@media (min-width: 860px) {
+  .hero-inner {
+    padding: 40px 28px 0;
+  }
+
+  /* 2 columns: left nav + right hero */
+  .hero-layout {
+    grid-template-columns: 260px 1fr;
+    gap: 22px;
+
+    /* THIS is what fixes alignment:
+       nav + content share the same bottom baseline */
+    align-items: end;
+  }
+
+  /* right side: give a consistent height so things can align */
+  .hero-grid {
+    min-height: 470px; 
+    gap: 14px;
+
+    /* 2-row layout: text stays top, image stays bottom */
+    grid-template-rows: auto 1fr;
+  }
+
+  /* keep your centered-ish text feeling */
+  .hero-text {
+    padding-top: 6px;
+    align-self: start;
+  }
+
+  /* image bottom aligned */
+  .hero-image {
+    align-self: end;
+    justify-content: flex-end;
+  }
+
+  .portrait {
+    width: clamp(360px, 38vw, 580px);
+    max-height: 56vh;
+  }
+
+  /* desktop nav becomes vertical arrows + sticky */
+  .side-nav {
+    flex-direction: column;
+    overflow: visible;
+    padding: 0;
+    position: sticky;
+    top: 92px;
+
+    /* helps the “same bottom height” look */
+    align-self: end;
+    padding-bottom: 22px;
+  }
+
+  .bookmark {
+    width: 220px; /* tweak 200–260 */
+    border-radius: 10px 0 0 10px;
+    justify-content: flex-start;
+    padding: 10px 14px;
+  }
+
+  /* arrow tip is back on desktop */
+  .bookmark::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -14px;
+    width: 14px;
+    height: 100%;
+    background: #134f5c;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+  }
+
+  .bookmark {
+    position: relative;
+  }
+
+  .bookmark:hover {
+    transform: translateX(6px);
+    filter: brightness(1.06);
+  }
+
+  .hero-title {
+    font-size: 46px;
+  }
+  .hero-subtitle {
+    font-size: 20px;
+  }
+}
+
+/* hard-disable old mobile nav (in case it still exists somewhere) */
+.mobile-nav {
+  display: none !important;
 }

@@ -20,26 +20,6 @@
       </button>
     </div>
 
-    <!-- Side bookmarks (desktop/tablet) -->
-    <nav class="side-nav" aria-label="Page sections">
-      <a class="bookmark" href="#about">{{ t("About me") }}</a>
-      <a class="bookmark" href="#education">{{ t("Education") }}</a>
-      <a class="bookmark" href="#work">{{ t("Work Experience") }}</a>
-      <a class="bookmark" href="#skills">{{ t("Skills") }}</a>
-      <a class="bookmark" href="#projects">{{ t("Projects") }}</a>
-      <a class="bookmark" href="#hobbies">{{ t("Hobbies") }}</a>
-    </nav>
-
-    <!-- Mobile sticky bookmarks -->
-    <nav class="mobile-nav" aria-label="Page sections (mobile)">
-      <a class="chip" href="#about">{{ t("nav.about") }}</a>
-      <a class="chip" href="#education">{{ t("nav.education") }}</a>
-      <a class="chip" href="#work">{{ t("nav.work") }}</a>
-      <a class="chip" href="#skills">{{ t("nav.skills") }}</a>
-      <a class="chip" href="#projects">{{ t("nav.projects") }}</a>
-      <a class="chip" href="#hobbies">{{ t("nav.hobbies") }}</a>
-    </nav>
-
     <!-- Fixed right: socials -->
     <div class="social" aria-label="Contact links">
       <a
@@ -91,32 +71,47 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
-        <div class="hero-grid">
-          <!-- TEXT (animated only) -->
-          <div class="hero-text">
-            <Transition name="line" appear>
-              <h1 v-if="showTitle" class="hero-title">{{ t("hero.title") }}</h1>
-            </Transition>
+        <div class="hero-layout">
+          <!-- Desktop bookmarks INSIDE hero layout -->
+          <nav class="side-nav" aria-label="Page sections">
+            <a
+              v-for="item in heroNav"
+              :key="item.href"
+              class="bookmark"
+              :href="item.href"
+            >
+              {{ t(item.i18nKey) }}
+            </a>
+          </nav>
 
-            <Transition name="line" appear>
-              <p v-if="showSubtitle" class="hero-subtitle">
-                {{ t("hero.subtitle") }}
-              </p>
-            </Transition>
-          </div>
+          <!-- Hero content -->
+          <div class="hero-grid">
+            <div class="hero-text">
+              <Transition name="line" appear>
+                <h1 v-if="showTitle" class="hero-title">
+                  {{ t("hero.title") }}
+                </h1>
+              </Transition>
 
-          <!-- IMAGE (static) -->
-          <div class="hero-image">
-            <img
-              src="/images/katharina-cutout.webp"
-              alt="Katharina portrait"
-              class="portrait"
-              width="760"
-              height="1040"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
+              <Transition name="line" appear>
+                <p v-if="showSubtitle" class="hero-subtitle">
+                  {{ t("hero.subtitle") }}
+                </p>
+              </Transition>
+            </div>
+
+            <div class="hero-image">
+              <img
+                src="/images/katharinaM-cropped.webp"
+                alt="Katharina portrait"
+                class="portrait"
+                width="760"
+                height="1040"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -164,291 +159,37 @@
         <p>...</p>
       </div>
     </section>
+
+    <section id="contact" class="section">
+      <div class="section-inner">
+        <h2>{{ t("nav.contact") }}</h2>
+        <p>...</p>
+      </div>
+    </section>
   </main>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import CopyEmailButton from "@/components/CopyEmailButton.vue";
+
 const { t, setLocale, locale } = useI18n();
 
 const showTitle = ref(false);
 const showSubtitle = ref(false);
-const showButton = ref(false);
+
+const heroNav = [
+  { href: "#about", i18nKey: "nav.about" },
+  { href: "#education", i18nKey: "nav.education" },
+  { href: "#work", i18nKey: "nav.work" },
+  { href: "#skills", i18nKey: "nav.skills" },
+  { href: "#projects", i18nKey: "nav.projects" },
+  { href: "#hobbies", i18nKey: "nav.hobbies" },
+  { href: "#contact", i18nKey: "nav.contact" },
+];
 
 onMounted(() => {
   setTimeout(() => (showTitle.value = true), 180);
   setTimeout(() => (showSubtitle.value = true), 340);
 });
 </script>
-
-<style scoped>
-:global(html) {
-  scroll-behavior: smooth;
-}
-
-.page {
-  min-height: 100vh;
-  background: #f6efe4;
-  position: relative;
-}
-
-/* fixed language switch */
-.lang {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  z-index: 30;
-  display: flex;
-  gap: 8px;
-  background: rgba(248, 246, 242, 0.65);
-  backdrop-filter: blur(8px);
-  border-radius: 999px;
-  padding: 6px;
-}
-
-.lang-btn {
-  border: 0;
-  background: transparent;
-  color: #1a1a1a;
-  padding: 8px 10px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-weight: 600;
-  opacity: 0.75;
-}
-.lang-btn.active {
-  background: #134f5c;
-  color: #f6efe4;
-  opacity: 1;
-}
-
-/* fixed socials */
-.social {
-  position: fixed;
-  right: 14px;
-  top: 72px;
-  z-index: 25;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.icon-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  background: rgba(248, 246, 242, 0.7);
-  backdrop-filter: blur(8px);
-  display: grid;
-  place-items: center;
-  transition: transform 160ms ease;
-}
-.icon-btn:hover {
-  transform: translateY(-2px);
-}
-.icon-btn svg {
-  width: 20px;
-  height: 20px;
-  fill: #134f5c;
-}
-
-/* desktop side bookmarks */
-.side-nav {
-  position: fixed;
-  left: 14px;
-  top: 92px;
-  z-index: 25;
-  display: none;
-  gap: 10px;
-  flex-direction: column;
-}
-
-.bookmark {
-  position: relative;
-  display: inline-block;
-  padding: 10px 14px;
-  background: #134f5c;
-  color: #f6efe4;
-  text-decoration: none;
-  border-radius: 10px 0 0 10px;
-  font-weight: 600;
-  transition:
-    transform 180ms ease,
-    filter 180ms ease;
-}
-.bookmark::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -14px;
-  width: 14px;
-  height: 100%;
-  background: #134f5c;
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
-}
-.bookmark:hover {
-  transform: translateX(6px);
-  filter: brightness(1.06);
-}
-
-/* mobile sticky bookmarks (chips) */
-.mobile-nav {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 10px;
-  z-index: 28;
-  display: flex;
-  gap: 10px;
-  padding: 10px 12px;
-  justify-content: flex-start;
-  overflow-x: auto;
-
-  background: rgba(248, 246, 242, 0.72);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-  margin: 0 12px;
-}
-.mobile-nav::-webkit-scrollbar {
-  height: 0;
-}
-
-.chip {
-  white-space: nowrap;
-  text-decoration: none;
-  background: #134f5c;
-  color: #f6efe4;
-  padding: 10px 12px;
-  border-radius: 999px;
-  font-weight: 600;
-  transition:
-    transform 160ms ease,
-    filter 160ms ease;
-}
-.chip:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.06);
-}
-
-/* show desktop bookmarks, hide mobile chips */
-@media (min-width: 860px) {
-  .side-nav {
-    display: flex;
-  }
-  .mobile-nav {
-    display: none;
-  }
-}
-
-/* HERO */
-.hero {
-  width: 100%;
-  background: linear-gradient(90deg, #dcb77d 0%, #947b54 100%);
-  border-radius: 0 0 26px 26px;
-  overflow: hidden;
-}
-
-.hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 22px 18px 0;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  align-items: start;
-}
-
-.hero-title {
-  margin: 0 0 10px;
-  font-size: 34px;
-  line-height: 1.05;
-  color: #1a1a1a;
-}
-.hero-subtitle {
-  margin: 0 0 16px;
-  font-size: 18px;
-  color: #1a1a1a;
-  opacity: 0.85;
-}
-.cta {
-  border: 0;
-  background: #134f5c;
-  color: #f6efe4;
-  padding: 14px 22px;
-  border-radius: 12px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  overflow: visible;
-}
-
-.portrait {
-  display: block;
-  height: auto;
-  object-fit: contain;
-  width: clamp(280px, 88vw, 520px);
-  max-height: 46vh;
-  transform: translateY(18px);
-  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.22));
-}
-
-@media (min-width: 860px) {
-  .hero-inner {
-    padding: 40px 28px 0;
-  }
-  .hero-grid {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 22px;
-    align-items: center;
-  }
-  .hero-image {
-    justify-content: flex-end;
-  }
-  .portrait {
-    width: clamp(360px, 38vw, 580px);
-    max-height: none;
-    transform: translateY(26px);
-  }
-  .hero-title {
-    font-size: 54px;
-  }
-  .hero-subtitle {
-    font-size: 20px;
-  }
-}
-
-/* text animation only */
-.line-enter-active {
-  transition:
-    opacity 520ms ease,
-    filter 520ms ease;
-}
-.line-enter-from {
-  opacity: 0;
-  filter: blur(6px);
-}
-.line-enter-to {
-  opacity: 1;
-  filter: blur(0);
-}
-
-/* sections */
-.section {
-  padding: 56px 18px;
-  padding-bottom: 92px; /* space for mobile sticky bar */
-}
-.section-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  color: #1a1a1a;
-}
-</style>

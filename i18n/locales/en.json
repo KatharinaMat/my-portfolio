@@ -1,15 +1,15 @@
 {
   "nav": {
-    "projects": "Projects",
-    "skills": "Skills",
+    "about": "About me",
     "education": "Education",
-    "experience": "Work Experience",
-    "contact": "Contact"
+    "work": "Work Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "hobbies": "Hobbies",
+    "contact": "Contact me"
   },
   "hero": {
-    "kicker": "Portfolio",
     "title": "Hi, I'm Katharina!",
-    "subtitle": "Welcome to my portfolio.",
-    "ctaContact": "Contact"
-}
+    "subtitle": "Welcome to my portfolio."
+  }
 }
