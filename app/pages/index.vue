@@ -6,7 +6,7 @@
         class="lang-btn"
         :class="{ active: locale.value === 'en' }"
         type="button"
-        @click="setLocale('en')"
+        @click="changeLocaleKeepScroll('en')"
       >
         EN
       </button>
@@ -14,7 +14,7 @@
         class="lang-btn"
         :class="{ active: locale.value === 'et' }"
         type="button"
-        @click="setLocale('et')"
+        @click="changeLocaleKeepScroll('et')"
       >
         ET
       </button>
@@ -170,10 +170,11 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, ref, nextTick } from "vue";
 import CopyEmailButton from "@/components/CopyEmailButton.vue";
 
 const { t, setLocale, locale } = useI18n();
+const route = useRoute();
 
 const showTitle = ref(false);
 const showSubtitle = ref(false);
@@ -187,6 +188,19 @@ const heroNav = [
   { href: "#hobbies", i18nKey: "nav.hobbies" },
   { href: "#contact", i18nKey: "nav.contact" },
 ];
+
+const changeLocaleKeepScroll = async (code: "en" | "et") => {
+  const y = window.scrollY;
+
+  if (route.hash) {
+    history.replaceState(null, "", route.fullPath.replace(route.hash, ""));
+  }
+
+  await setLocale(code);
+
+  await nextTick();
+  window.scrollTo({ top: y, left: 0, behavior: "auto" });
+};
 
 onMounted(() => {
   setTimeout(() => (showTitle.value = true), 180);

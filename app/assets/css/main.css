@@ -8,7 +8,7 @@ html {
   position: relative;
 }
 
-/* fixed language switch */
+/* language switch */
 .lang {
   position: fixed;
   top: 14px;
@@ -31,7 +31,15 @@ html {
   cursor: pointer;
   font-weight: 600;
   opacity: 0.75;
+  transition: background-color 180ms ease, color 180ms ease, opacity 180ms ease,
+    transform 180ms ease;
 }
+
+.lang-btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
 .lang-btn.active {
   background: #134f5c;
   color: #f6efe4;
