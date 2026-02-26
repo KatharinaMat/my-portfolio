@@ -17,6 +17,7 @@ html {
    ================================= */
 
 .hero {
+  position: relative;
   width: 100%;
   background: linear-gradient(90deg, #dcb77d 0%, #947b54 100%);
   border-radius: 0 0 26px 26px;
@@ -54,11 +55,9 @@ html {
 /* RIGHT COLUMN */
 
 .right-col {
-  flex: 0 0 clamp(320px, 32vw, 460px);
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  align-self: stretch;
+  flex: 0 0 auto;
+  display: block;
+  align-self: auto;
 }
 
 /* =================================
@@ -90,11 +89,14 @@ html {
 /* IMAGE */
 
 .hero-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin: 0;
-  padding: 0;
 }
 
 .portrait {
@@ -102,13 +104,11 @@ html {
   height: auto;
   object-fit: contain;
 
-  /* mobile sizing */
-  width: clamp(280px, 88vw, 520px);
-  max-height: 42vh;
+  width: clamp(280px, 35vw, 640px);
+  max-height: clamp(260px, 55vh, 620px);
 
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.22));
 }
-
 /* =================================
    HERO NAV  (Option A refined)
    ================================= */
@@ -333,11 +333,6 @@ html {
     flex: 0 0 clamp(360px, 36vw, 520px);
   }
 
-  .portrait {
-    width: clamp(420px, 42vw, 640px);
-    max-height: 52vh;
-  }
-
   .hero-title {
     font-size: clamp(36px, 3vw, 42px);
     white-space: nowrap;
@@ -352,4 +347,35 @@ html {
 /* safety */
 .mobile-nav {
   display: none !important;
+}
+
+/* =================================
+   MOBILE BOOKMARK GRID (2 columns)
+   ================================= */
+
+/* default mobile: 2 columns (looks like desktop, just narrower) */
+@media (max-width: 859px) {
+  .side-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .bookmark {
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.15;
+    padding: 12px 12px 12px 14px;
+    border-radius: 12px;
+  }
+
+  /* optional: slightly reduce reserved space on small screens */
+  .hero .row {
+    padding-right: min(52vw, 380px);
+  }
+
+  .portrait {
+    width: min(380px, 52vw);
+    max-height: 42vh;
+  }
 }
