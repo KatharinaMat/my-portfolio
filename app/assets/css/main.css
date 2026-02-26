@@ -2,6 +2,12 @@
    BASE / GLOBAL
    ================================= */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* FIX #1: hero height math stays true even with padding */
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -16,22 +22,45 @@ html {
    HERO LAYOUT (2 columns)
    ================================= */
 
+:root {
+  /* hero sizing */
+  --hero-h: clamp(420px, 58svh, 580px); /* slightly less tall by default */
+  --hero-pad-top: clamp(1.4rem, 2.6vw, 2.6rem);
+
+  /* portrait sizing */
+  --portrait-w: clamp(360px, 35vw, 640px);
+  --portrait-ratio: 0.88; /* FIX #2: portrait fills hero more like blueprint */
+
+  /* spacing: bookmarks -> portrait */
+  --portrait-gap: clamp(2px, 0.6vw, 10px);
+
+  /* spacing: portrait -> social rail (THIS controls “between bookmarks and socials”) */
+  --ui-right: 14px;          /* your fixed UI uses right:14px */
+  --social-size: 44px;       /* icon button size */
+  --portrait-social-gap: clamp(10px, 1.4vw, 18px);
+
+  /* computed: where the portrait's RIGHT edge should sit */
+  --portrait-right: calc(var(--ui-right) + var(--social-size) + var(--portrait-social-gap));
+}
+
 .hero {
-  position: relative;
+  position: relative; /* bottom:0 is hero bottom */
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   background: linear-gradient(90deg, #dcb77d 0%, #947b54 100%);
   border-radius: 0 0 26px 26px;
   overflow: hidden;
 
-  /* hero section size*/
-  min-height: clamp(320px, 55vh, 520px);
-
-  padding-top: clamp(1.5rem, 3vw, 3rem);
-  padding-bottom: 0;
+  /* hero section size */
+  min-height: var(--hero-h);
+  padding-top: var(--hero-pad-top);
 }
 
 .hero .row {
   display: flex;
+  flex: 1;
   gap: clamp(1.5rem, 4vw, 3rem);
   align-items: stretch;
 }
@@ -55,9 +84,15 @@ html {
 /* RIGHT COLUMN */
 
 .right-col {
-  flex: 0 0 auto;
-  display: block;
-  align-self: auto;
+  flex: 0 0 calc(var(--portrait-w) + var(--portrait-right));
+  width: calc(var(--portrait-w) + var(--portrait-right));
+  padding-right: var(--portrait-right);
+  margin: 0;
+  overflow: visible;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end; /* bottom align */
 }
 
 /* =================================
@@ -90,8 +125,11 @@ html {
 
 .hero-image {
   position: absolute;
-  right: 0;
+
+  /* Keep portrait away from social rail by a controlled amount */
+  right: var(--portrait-right);
   bottom: 0;
+
   margin: 0;
   padding: 0;
   display: flex;
@@ -104,11 +142,14 @@ html {
   height: auto;
   object-fit: contain;
 
-  width: clamp(280px, 35vw, 640px);
-  max-height: clamp(260px, 55vh, 620px);
+  /* portrait height relative to hero height */
+  max-height: calc(var(--hero-h) * var(--portrait-ratio));
+  width: auto;
+  max-width: var(--portrait-w);
 
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.22));
 }
+
 /* =================================
    HERO NAV  (Option A refined)
    ================================= */
@@ -124,24 +165,20 @@ html {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  white-space: normal; 
+  white-space: normal;
   text-decoration: none;
 
-  /* light surface */
   background: rgba(248, 246, 242, 0.72);
   border: 1px solid rgba(15, 63, 73, 0.14);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 
-  /* shape + spacing */
   padding: 12px 14px 12px 16px;
   border-radius: 14px;
 
-  /* typography */
   color: #0f3f49;
   font-weight: 600;
   letter-spacing: 0.2px;
 
-  /* accent line */
   position: relative;
   overflow: hidden;
 
@@ -149,7 +186,6 @@ html {
     background-color 160ms ease;
 }
 
-/* left accent strip */
 .bookmark::before {
   content: "";
   position: absolute;
@@ -162,7 +198,6 @@ html {
   opacity: 0.9;
 }
 
-/* no arrows */
 .bookmark::after {
   content: none;
 }
@@ -180,10 +215,29 @@ html {
 }
 
 @media (min-width: 860px) {
+  :root {
+    --hero-pad-top: clamp(1.2rem, 2.2vw, 2.2rem);
+    --portrait-ratio: 0.9; /* desktop: portrait can be a touch taller */
+  }
+
+  .left-col > .hero-text,
+  .left-col > .side-nav {
+    width: min(22rem, 100%);
+  }
+
+  .hero-title {
+    font-size: clamp(36px, 3vw, 42px);
+    white-space: nowrap;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
   .side-nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.75rem 0.75rem; /* row gap / column gap */
+    gap: 0.75rem 0.75rem;
   }
 }
 
@@ -194,7 +248,7 @@ html {
 .lang {
   position: fixed;
   top: 14px;
-  right: 14px;
+  right: var(--ui-right);
   z-index: 30;
   display: flex;
   gap: 8px;
@@ -232,7 +286,7 @@ html {
 
 .social {
   position: fixed;
-  right: 14px;
+  right: var(--ui-right);
   top: 72px;
   z-index: 25;
   display: flex;
@@ -241,8 +295,8 @@ html {
 }
 
 .icon-btn {
-  width: 44px;
-  height: 44px;
+  width: var(--social-size);
+  height: var(--social-size);
   border-radius: 14px;
   background: rgba(248, 246, 242, 0.7);
   backdrop-filter: blur(8px);
@@ -294,88 +348,36 @@ html {
 }
 
 /* =================================
-   DESKTOP / TABLET REFINEMENTS
+   MOBILE BOOKMARK GRID (2 columns) - FIXED
    ================================= */
-
-@media (min-width: 860px) {
-  /* reduce top padding + overall hero height a touch (less space above head) */
-  .hero {
-    padding-top: clamp(1.25rem, 2.4vw, 2.4rem);
-    min-height: clamp(320px, 55vh, 520px);
-  }
-
-  .hero-text {
-    padding-top: 0.3rem;
-  }
-
-  /* make nav shorter on desktop */
-  .left-col > .hero-text,
-  .left-col > .side-nav {
-    width: min(22rem, 100%);
-  }
-
-  /* make the cards less "input-like" */
-  .bookmark {
-    padding: 10px 10px 10px 12px; /* 11px 14px 11px 16px */
-    border-radius: 12px;
-    background: rgba(248, 246, 242, 0.62);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
-  }
-
-  .bookmark:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.11);
-    background: rgba(248, 246, 242, 0.78);
-  }
-
-  /* slightly bigger portrait + bigger column */
-  .right-col {
-    flex: 0 0 clamp(360px, 36vw, 520px);
-  }
-
-  .hero-title {
-    font-size: clamp(36px, 3vw, 42px);
-    white-space: nowrap;
-
-  }
-
-  .hero-subtitle {
-    font-size: 20px;
-  }
-}
-
-/* safety */
-.mobile-nav {
-  display: none !important;
-}
-
-/* =================================
-   MOBILE BOOKMARK GRID (2 columns)
-   ================================= */
-
-/* default mobile: 2 columns (looks like desktop, just narrower) */
 @media (max-width: 859px) {
+  /* keep your portrait vars if you want */
+  :root {
+    --portrait-w: min(52vw, 380px);
+    --portrait-ratio: 0.88;
+  }
+
+  /* IMPORTANT: ensure side-nav is actually a grid */
   .side-nav {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
     gap: 12px;
+    align-items: stretch;
   }
 
+  /* IMPORTANT: ensure grid items fill the cell */
   .bookmark {
     width: 100%;
-    font-size: 15px;
-    line-height: 1.15;
+    justify-content: flex-start;
+    white-space: nowrap;      /* keep label on one line */
+    font-size: 14px;          /* helps prevent wrapping */
     padding: 12px 12px 12px 14px;
-    border-radius: 12px;
   }
 
-  /* optional: slightly reduce reserved space on small screens */
-  .hero .row {
-    padding-right: min(52vw, 380px);
-  }
-
-  .portrait {
-    width: min(380px, 52vw);
-    max-height: 42vh;
+  /* If the screen is SUPER narrow, allow wrap rather than breaking the grid */
+  @media (max-width: 420px) {
+    .bookmark {
+      white-space: normal;
+    }
   }
 }
