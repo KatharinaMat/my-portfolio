@@ -153,13 +153,6 @@
         <p>...</p>
       </div>
     </section>
-
-    <section id="contact" class="section">
-      <div class="section-inner">
-        <h2>{{ t("nav.contact") }}</h2>
-        <p>...</p>
-      </div>
-    </section>
   </main>
 </template>
 
@@ -180,7 +173,6 @@ const heroNav = [
   { href: "#skills", i18nKey: "nav.skills" },
   { href: "#projects", i18nKey: "nav.projects" },
   { href: "#hobbies", i18nKey: "nav.hobbies" },
-  { href: "#contact", i18nKey: "nav.contact" },
 ];
 
 const changeLocaleKeepScroll = async (code: "en" | "et") => {

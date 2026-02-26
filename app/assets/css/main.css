@@ -22,8 +22,8 @@ html {
   border-radius: 0 0 26px 26px;
   overflow: hidden;
 
-  /* slightly less tall on desktop via media query below */
-  min-height: clamp(420px, 70vh, 620px);
+  /* hero section size*/
+  min-height: clamp(320px, 55vh, 520px);
 
   padding-top: clamp(1.5rem, 3vw, 3rem);
   padding-bottom: 0;
@@ -33,7 +33,6 @@ html {
   display: flex;
   gap: clamp(1.5rem, 4vw, 3rem);
   align-items: stretch;
-  height: 100%;
 }
 
 /* LEFT COLUMN */
@@ -105,7 +104,7 @@ html {
 
   /* mobile sizing */
   width: clamp(280px, 88vw, 520px);
-  max-height: 46vh;
+  max-height: 42vh;
 
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.22));
 }
@@ -302,7 +301,7 @@ html {
   /* reduce top padding + overall hero height a touch (less space above head) */
   .hero {
     padding-top: clamp(1.25rem, 2.4vw, 2.4rem);
-    min-height: clamp(420px, 62vh, 600px);
+    min-height: clamp(320px, 55vh, 520px);
   }
 
   .hero-text {
@@ -336,7 +335,7 @@ html {
 
   .portrait {
     width: clamp(420px, 42vw, 640px);
-    max-height: 62vh;
+    max-height: 52vh;
   }
 
   .hero-title {
