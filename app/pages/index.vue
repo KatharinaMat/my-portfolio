@@ -82,43 +82,16 @@
               </Transition>
             </div>
 
-            <nav
-              class="side-nav"
-              aria-label="Page sections"
-              @mouseleave="activePreview = null"
-            >
+            <nav class="side-nav" aria-label="Page sections">
               <a
                 v-for="item in heroNav"
                 :key="item.href"
                 class="bookmark"
                 :href="item.href"
-                @mouseenter="onEnter(item.href)"
-                @focus="onEnter(item.href)"
-                @blur="activePreview = null"
                 @click="onClickScroll($event, item.href)"
               >
                 {{ t(item.i18nKey) }}
               </a>
-
-              <!-- Desktop-only hover preview panel -->
-              <div
-                v-if="activePreview && canHover"
-                class="nav-preview"
-                role="dialog"
-                aria-live="polite"
-              >
-                <h3 class="nav-preview-title">
-                  {{ previewFor(activePreview).title }}
-                </h3>
-
-                <p class="nav-preview-text">
-                  {{ previewFor(activePreview).text }}
-                </p>
-
-                <ul v-if="previewFor(activePreview).bullets?.length" class="nav-preview-list">
-                  <li v-for="b in previewFor(activePreview).bullets" :key="b">{{ b }}</li>
-                </ul>
-              </div>
             </nav>
           </div>
 
@@ -210,57 +183,6 @@ const heroNav = [
   { href: "#contact", i18nKey: "nav.contact" },
 ];
 
-/**
- * Desktop hover preview (disabled on touch / coarse pointers)
- */
-const canHover = ref(false);
-const activePreview = ref<string | null>(null);
-
-type Preview = { title: string; text: string; bullets?: string[] };
-
-const previews: Record<string, Preview> = {
-  "#about": {
-    title: "About me",
-    text: "Short story + what I’m aiming for in tech.",
-    bullets: ["Career switch", "Values & strengths", "What I’m looking for"],
-  },
-  "#education": {
-    title: "Education",
-    text: "Relevant degrees + IT courses and certificates.",
-    bullets: ["TalTech MSc", "IT upskilling", "Continuous learning"],
-  },
-  "#work": {
-    title: "Work experience",
-    text: "The experience I bring into tech: analysis, clients, delivery.",
-    bullets: ["Patent Office", "B2B sales", "Cross-team work"],
-  },
-  "#skills": {
-    title: "Skills",
-    text: "Tech stack + tools I’m comfortable with.",
-    bullets: ["Java / Spring", "Vue / Nuxt", "Testing mindset"],
-  },
-  "#projects": {
-    title: "Projects",
-    text: "Flagship projects + what problems they solve.",
-    bullets: ["MyStuffLabelled", "Primastella", "Team projects"],
-  },
-  "#hobbies": {
-    title: "Hobbies",
-    text: "A bit of personality (yes, swing dance).",
-    bullets: ["Teaching & events", "Design work", "Community"],
-  },
-  "#contact": {
-    title: "Contact",
-    text: "Fast ways to reach me.",
-    bullets: ["Email", "LinkedIn", "GitHub"],
-  },
-};
-
-// Helper so template stays clean
-function previewFor(href: string): Preview {
-  return previews[href] ?? { title: "", text: "" };
-}
-
 const changeLocaleKeepScroll = async (code: "en" | "et") => {
   const y = window.scrollY;
 
@@ -274,21 +196,8 @@ const changeLocaleKeepScroll = async (code: "en" | "et") => {
   window.scrollTo({ top: y, left: 0, behavior: "auto" });
 };
 
-function setupHoverDetection() {
-  const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
-  const update = () => (canHover.value = mq.matches);
-  update();
-  mq.addEventListener?.("change", update);
-}
-
-function onEnter(href: string) {
-  if (!canHover.value) return;
-  activePreview.value = href;
-}
-
 /**
  * Click = smooth-scroll to section (and update URL hash)
- * Mobile keeps normal behavior but this works fine there too.
  */
 function onClickScroll(e: MouseEvent, href: string) {
   if (!href.startsWith("#")) return;
@@ -299,20 +208,13 @@ function onClickScroll(e: MouseEvent, href: string) {
 
   e.preventDefault();
 
-  // smooth scroll
   el.scrollIntoView({ behavior: "smooth", block: "start" });
 
-  // update hash without jumping
   const url = `${window.location.pathname}${window.location.search}#${id}`;
   history.replaceState(null, "", url);
-
-  // close preview after click
-  activePreview.value = null;
 }
 
 onMounted(() => {
-  setupHoverDetection();
-
   setTimeout(() => (showTitle.value = true), 180);
   setTimeout(() => (showSubtitle.value = true), 340);
 });

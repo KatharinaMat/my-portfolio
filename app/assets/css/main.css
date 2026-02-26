@@ -125,7 +125,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  white-space: nowrap;
+  white-space: normal; 
   text-decoration: none;
 
   /* light surface */
@@ -180,60 +180,11 @@ html {
   outline-offset: 3px;
 }
 
-/* =================================
-   DESKTOP-ONLY NAV PREVIEW (for hover panels later)
-   ================================= */
-
-/* You can add the preview markup in index.vue later.
-   This CSS is here so it “just works” when you do. */
 @media (min-width: 860px) {
   .side-nav {
-    position: relative;
-  }
-
-  .nav-preview {
-    position: absolute;
-    left: calc(100% + 16px);
-    top: 0;
-    width: 320px;
-
-    padding: 14px 16px;
-    border-radius: 16px;
-
-    background: rgba(248, 246, 242, 0.78);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border: 1px solid rgba(15, 63, 73, 0.14);
-    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.12);
-  }
-
-  .nav-preview-title {
-    margin: 0 0 6px;
-    font-size: 16px;
-    color: #0f3f49;
-  }
-
-  .nav-preview-text {
-    margin: 0 0 10px;
-    font-size: 14px;
-    color: #1a1a1a;
-    opacity: 0.9;
-  }
-
-  .nav-preview-list {
-    margin: 0;
-    padding-left: 18px;
-    font-size: 13px;
-    color: #1a1a1a;
-    opacity: 0.85;
-  }
-}
-
-/* hard-disable preview on touch devices */
-@media (hover: none), (pointer: coarse) {
-  .nav-preview {
-    display: none !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 0.75rem; /* row gap / column gap */
   }
 }
 
@@ -361,12 +312,12 @@ html {
   /* make nav shorter on desktop */
   .left-col > .hero-text,
   .left-col > .side-nav {
-    width: min(28rem, 100%);
+    width: min(22rem, 100%);
   }
 
   /* make the cards less "input-like" */
   .bookmark {
-    padding: 11px 14px 11px 16px;
+    padding: 10px 10px 10px 12px; /* 11px 14px 11px 16px */
     border-radius: 12px;
     background: rgba(248, 246, 242, 0.62);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
@@ -389,7 +340,9 @@ html {
   }
 
   .hero-title {
-    font-size: 46px;
+    font-size: clamp(36px, 3vw, 42px);
+    white-space: nowrap;
+
   }
 
   .hero-subtitle {
