@@ -68,6 +68,7 @@
       <div class="container">
         <div class="row">
           <div class="col left-col">
+            <div class="left stack">
             <div class="hero-text">
               <Transition name="line" appear>
                 <h1 v-if="showTitle" class="hero-title">
@@ -81,7 +82,6 @@
                 </p>
               </Transition>
             </div>
-
             <nav class="side-nav" aria-label="Page sections">
               <a
                 v-for="item in heroNav"
@@ -93,6 +93,7 @@
                 {{ t(item.i18nKey) }}
               </a>
             </nav>
+            </div>
           </div>
 
           <div class="col right-col">
