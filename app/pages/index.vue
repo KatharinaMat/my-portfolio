@@ -63,26 +63,32 @@
       </a>
     </div>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div class="row">
-          <div class="col left-col">
-            <div class="left stack">
-            <div class="hero-text">
-              <Transition name="line" appear>
-                <h1 v-if="showTitle" class="hero-title">
-                  {{ t("hero.title") }}
-                </h1>
-              </Transition>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col left-col">
+        <div class="left-stack">
+          <div class="hero-text">
+            <Transition name="line" appear>
+              <h1 v-if="showTitle" class="hero-title">
+                {{ t("hero.title") }}
+              </h1>
+            </Transition>
 
-              <Transition name="line" appear>
-                <p v-if="showSubtitle" class="hero-subtitle">
-                  {{ t("hero.subtitle") }}
-                </p>
-              </Transition>
-            </div>
-            <nav class="side-nav" aria-label="Page sections">
+            <Transition name="line" appear>
+              <p v-if="showSubtitle" class="hero-subtitle">
+                {{ t("hero.subtitle") }}
+              </p>
+            </Transition>
+          </div>
+
+          <Transition name="line" appear>
+            <nav
+              v-if="showNav"
+              class="side-nav"
+              aria-label="Page sections"
+            >
               <a
                 v-for="item in heroNav"
                 :key="item.href"
@@ -93,8 +99,9 @@
                 {{ t(item.i18nKey) }}
               </a>
             </nav>
-            </div>
-          </div>
+          </Transition>
+        </div>
+      </div>
 
           <div class="col right-col">
             <div class="hero-image">
@@ -166,6 +173,7 @@ const route = useRoute();
 
 const showTitle = ref(false);
 const showSubtitle = ref(false);
+const showNav = ref(false);
 
 const heroNav = [
   { href: "#about", i18nKey: "nav.about" },
@@ -208,7 +216,14 @@ function onClickScroll(e: MouseEvent, href: string) {
 }
 
 onMounted(() => {
-  setTimeout(() => (showTitle.value = true), 180);
-  setTimeout(() => (showSubtitle.value = true), 340);
+  showTitle.value = true;
+
+  window.setTimeout(() => {
+    showSubtitle.value = true;
+  }, 160);
+
+  window.setTimeout(() => {
+    showNav.value = true;
+  }, 320);
 });
 </script>
