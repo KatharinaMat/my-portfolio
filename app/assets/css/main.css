@@ -345,7 +345,9 @@ body {
   margin: 0 auto;
   color: #1a1a1a;
 }
-
+.accent { 
+  color: #134f5c; /*used to accentuate certain words in text*/
+}
 /* =================================
    ANIMATIONS 
    ================================= */
@@ -597,4 +599,72 @@ position: absolute;
 .section-panel-leave-to {
   opacity: 0;
   transform: translateX(8px) scale(0.98);
+}
+
+/* =================================
+   WORK EXPERIENCE
+   ================================= */
+
+.work-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.work-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.3rem;
+  align-items: start;
+}
+
+.work-period {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #1a1a1a;
+}
+
+.work-title {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #1a1a1a;
+}
+
+.company-note {
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.work-text ul {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.work-text li {
+  margin-bottom: 0.35rem;
+  line-height: 1.55;
+}
+
+/* Desktop override */
+@media (min-width: 860px) {
+  .work-item {
+    grid-template-columns: 150px 1fr;
+    gap: 0.35rem 1.25rem;
+  }
+
+  .work-period {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .work-title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .work-text {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
 }

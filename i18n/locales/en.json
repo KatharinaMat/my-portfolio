@@ -31,7 +31,7 @@
     },
     {
       "period": "08.2011 – 06.2013",
-      "text": "<strong>TalTech</strong> – Applied Chemistry and Biotechnology, <strong>MSc</strong>, <em>cum laude</em>"
+      "text": "<strong>TalTech</strong> – Applied Chemistry and Biotechnology, <strong><span class='accent'>MSc</span></strong>, <em>cum laude</em>"
     },
     {
       "period": "08.2008 – 06.2011",
@@ -46,5 +46,40 @@
     "<strong>Paju, A.; Kostomarova, D.; Matkevitš, K.; Lopp, M.; et al.</strong><br>3-Alkyl-1,2-cyclopentanediones by Negishi cross-coupling of a 3-bromo-1,2-cyclopentanedione silyl enol ether with alkylzinc reagents: An approach to 2-substituted carboxylic acid γ-lactones, homocitric and lycoperdic acids.<br><em>Tetrahedron</em>, 2015.",
     "<strong>Patent</strong><br><strong>Lopp, M.; Paju, A.; Matkevitš, K.</strong><br>Method for preparation of (2-hydroxy-3-oxo-cyclopent-1-enyl)-acetic acid esters.<br>US Patent US20140378698A1, 2014."
   ]
+  },
+
+    "work": {
+    "items": [
+      {
+        "period": "08.2023 – 04.2025",
+        "title": "<strong>Sales Manager, <span class='accent'>Hoberg & Driesch Finland Oy</span></strong>",
+        "text": [
+          "Built and developed the company’s B2B client base in the Estonian market through outbound sales and business development.",
+          "Managed the full sales cycle, including pricing, negotiations, and long-term client relationship management.",
+          "Organized and conducted client meetings while developing and maintaining business partnerships.",
+          "Monitored orders and transaction progress, proactively identifying risks and ensuring a smooth delivery process."
+        ]
+      },
+      {
+        "period": "10.2017 – 04.2023",
+        "title": "<strong>Account Assistant, <span class='accent'>ArcelorMittal Commercial Baltics OÜ</span></strong><span class='company-note'> (ArcelorMittal – one of the world’s largest steel producers)</span>",
+        "text": [
+          "Managed customer orders throughout the entire lifecycle, from production planning to final delivery, ensuring smooth information flow between all parties involved.",
+          "Coordinated daily communication between clients, production, and logistics teams to ensure deadlines were met and the supply chain operated efficiently.",
+          "Prepared price quotations and internal reports, supporting the sales process and data-driven decision making.",
+          "Resolved customer claims and operational issues, identifying practical solutions while maintaining strong client relationships."
+        ]
+      },
+      {
+        "period": "11.2013 – 10.2017",
+        "title": "<strong>Chemistry, Medicine and Foodstuffs Examiner, <span class='accent'>Estonian Patent Office</span></strong>",
+        "text": [
+          "Assessed patent applications for compliance with legal requirements and evaluated the quality and completeness of the submitted documentation.",
+          "Conducted comprehensive patent searches in international databases to evaluate the novelty and inventive step of inventions.",
+          "Analyzed technical and scientific information and prepared official decisions and correspondence based on the findings.",
+          "Advised patent applicants and explained the patent examination process and related requirements."
+        ]
+      }      
+    ]
   }
 }

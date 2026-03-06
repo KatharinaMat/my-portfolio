@@ -211,12 +211,33 @@
       </div>
     </section>
 
-    <section id="work" class="section">
-      <div class="section-inner">
-        <h2>{{ t("nav.work") }}</h2>
-        <p>...</p>
+<section id="work" class="section">
+  <div class="section-inner">
+    <h2>{{ t("nav.work") }}</h2>
+
+    <div class="work-list">
+      <div
+        v-for="(item, index) in workItems"
+        :key="index"
+        class="work-item"
+      >
+        <div class="work-period">
+          {{ rt(item.period) }}
+        </div>
+
+        <div class="work-title" v-html="rt(item.title)"></div>
+
+        <div class="work-text">
+          <ul>
+            <li v-for="(line, lineIndex) in item.text" :key="lineIndex">
+              {{ rt(line) }}
+            </li>
+          </ul>
+        </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <section id="skills" class="section">
       <div class="section-inner">
@@ -250,6 +271,7 @@ import CopyEmailButton from "@/components/CopyEmailButton.vue";
 
 const { t, tm, rt, setLocale, locale } = useI18n();
 const educationItems = computed(() => tm("education.items") as { period: string; text: string }[]);
+const workItems = computed(() => tm("work.items") as {period: string; title: string; text: string[];}[]);
 const showPublications = ref(false);
 
 const route = useRoute();

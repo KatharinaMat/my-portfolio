@@ -13,39 +13,74 @@
   },
 
   "education": {
-  "items": [
-    {
-      "period": "01.2026 – kestab",
-      "text": "<strong>TalTech</strong> – “Noorem-tarkvaraarendajast vanemarendajaks”, 250 akad. t"
-    },
-    {
-      "period": "11.2025 – 12.2025",
-      "text": "<strong>AS BCS Koolitus</strong> – Vali-IT Tarkvaraarendus, 240 akad. t"
-    },
-    {
-      "period": "05.2025 – 06.2025",
-      "text": "<strong>AS BCS Koolitus</strong> – “Naised veebiarendajaks!”, 192 akad. t"
-    },
-    {
-      "period": "03.2023 – 08.2023",
-      "text": "<strong>AS BCS Koolitus</strong> – Juunior back-end arendaja e-kursus, 450 akad. t"
-    },
-    {
-      "period": "08.2011 – 06.2013",
-      "text": "<strong>TalTech</strong> – Applied Chemistry and Biotechnology, <strong>magister</strong>, <em>cum laude</em>"
-    },
-    {
-      "period": "08.2008 – 06.2011",
-      "text": "<strong>TalTech</strong> – Applied Chemistry and Biotechnology, bakalaureus, <em>cum laude</em>"
-    }
-  ],
-  "showPublications": "Näita publikatsioone",
-  "hidePublications": "Peida publikatsioonid",
-  "publications": [
-    "<strong>Paju, A.; Oja, K.; Matkevitš, K.; et al.</strong><br>Asymmetric synthesis of tertiary 2-substituted 5-oxotetrahydrofuran-2-carboxylic acids.<br><em>Heterocycles</em>, 2014.",
-    "<strong>Lopp, M.; Paju, A.; Oja, K.; Matkevitš, K.; et al.</strong><br>ChemInform Abstract: Asymmetric Synthesis of Tertiary 2-Substituted 5-Oxotetrahydrofuran-2-Carboxylic Acids.<br><em>ChemInform</em>, 2014.",
-    "<strong>Paju, A.; Kostomarova, D.; Matkevitš, K.; Lopp, M.; et al.</strong><br>3-Alkyl-1,2-cyclopentanediones by Negishi cross-coupling of a 3-bromo-1,2-cyclopentanedione silyl enol ether with alkylzinc reagents: An approach to 2-substituted carboxylic acid γ-lactones, homocitric and lycoperdic acids.<br><em>Tetrahedron</em>, 2015.",
-    "<strong>Patent</strong><br><strong>Lopp, M.; Paju, A.; Matkevitš, K.</strong><br>Method for preparation of (2-hydroxy-3-oxo-cyclopent-1-enyl)-acetic acid esters.<br>US Patent US20140378698A1, 2014."
-  ] 
+    "items": [
+      {
+        "period": "01.2026 – kestab",
+        "text": "<strong>TalTech</strong> – “Noorem-tarkvaraarendajast vanemarendajaks”, 250 akad. t"
+      },
+      {
+        "period": "11.2025 – 12.2025",
+        "text": "<strong>AS BCS Koolitus</strong> – Vali-IT Tarkvaraarendus, 240 akad. t"
+      },
+      {
+        "period": "05.2025 – 06.2025",
+        "text": "<strong>AS BCS Koolitus</strong> – “Naised veebiarendajaks!”, 192 akad. t"
+      },
+      {
+        "period": "03.2023 – 08.2023",
+        "text": "<strong>AS BCS Koolitus</strong> – Juunior back-end arendaja e-kursus, 450 akad. t"
+      },
+      {
+        "period": "08.2011 – 06.2013",
+        "text": "<strong>TalTech</strong> – Rakenduskeemia ja biotehnoloogia, <strong><span class='accent'>magister</span></strong>, <em>cum laude</em>"
+      },
+      {
+        "period": "08.2008 – 06.2011",
+        "text": "<strong>TalTech</strong> – Rakenduskeemia ja biotehnoloogia, bakalaureus, <em>cum laude</em>"
+      }
+    ],
+    "showPublications": "Näita publikatsioone",
+    "hidePublications": "Peida publikatsioonid",
+    "publications": [
+      "<strong>Paju, A.; Oja, K.; Matkevitš, K.; et al.</strong><br>Asymmetric synthesis of tertiary 2-substituted 5-oxotetrahydrofuran-2-carboxylic acids.<br><em>Heterocycles</em>, 2014.",
+      "<strong>Lopp, M.; Paju, A.; Oja, K.; Matkevitš, K.; et al.</strong><br>ChemInform Abstract: Asymmetric Synthesis of Tertiary 2-Substituted 5-Oxotetrahydrofuran-2-Carboxylic Acids.<br><em>ChemInform</em>, 2014.",
+      "<strong>Paju, A.; Kostomarova, D.; Matkevitš, K.; Lopp, M.; et al.</strong><br>3-Alkyl-1,2-cyclopentanediones by Negishi cross-coupling of a 3-bromo-1,2-cyclopentanedione silyl enol ether with alkylzinc reagents: An approach to 2-substituted carboxylic acid γ-lactones, homocitric and lycoperdic acids.<br><em>Tetrahedron</em>, 2015.",
+      "<strong>Patent</strong><br><strong>Lopp, M.; Paju, A.; Matkevitš, K.</strong><br>Method for preparation of (2-hydroxy-3-oxo-cyclopent-1-enyl)-acetic acid esters.<br>US Patent US20140378698A1, 2014."
+    ]
+  },
+
+  "work": {
+    "items": [
+      {
+        "period": "08.2023 – 04.2025",
+        "title": "<strong>Müügijuht, <span class='accent'>Hoberg & Driesch Finland Oy</span></strong>",
+        "text": [
+          "Lõin ja arendasin ettevõtte B2B kliendibaasi Eesti turul.",
+          "Juhtisin müügiprotsessi alates hinnastamisest ja läbirääkimistest kuni kliendisuhete hoidmiseni.",
+          "Korraldasin ja viisin läbi kliendikohtumisi ning arendasin koostöösuhteid.",
+          "Jälgisin tellimuste ja tehingute kulgu, ennetasin võimalikke riske ning tagasin sujuva tarneprotsessi."
+        ]
+      },
+      {
+        "period": "10.2017 – 04.2023",
+        "title": "<strong>Müügitoe spetsialist, <span class='accent'>ArcelorMittal Commercial Baltics OÜ</span></strong><span class='company-note'> (ArcelorMittal – üks maailma suurimaid terasetootjaid)</span>",
+        "text": [
+          "Haldasin klienditellimusi kogu protsessi vältel alates tootmisest kuni kohaletoimetamiseni, tagades infovahetuse sujuvuse erinevate osapoolte vahel.",
+          "Koordineerisin igapäevast suhtlust klientide, tootmise ja logistikaüksustega, et tagada tähtaegadest kinnipidamine ja tarneahela toimivus.",
+          "Koostasin hinnapakkumisi ja sisemisi aruandeid, toetades müügiprotsessi ning andmepõhist otsustamist.",
+          "Lahendasin pretensioone ja probleemjuhtumeid, otsides praktilisi lahendusi ning säilitades kliendisuhted."
+        ]
+      },
+      {
+        "period": "11.2013 – 10.2017",
+        "title": "<strong>Keemia, meditsiini ja toiduainete vanemekspert, <span class='accent'>Eesti Patendiamet</span></strong>",
+        "text": [
+          "Kontrollisin patenditaotluste vastavust seaduses sätestatud nõuetele ning hindasin esitatud dokumentatsiooni kvaliteeti ja täielikkust.",
+          "Viisin läbi põhjalikke patendiotsinguid rahvusvahelistes andmebaasides, et hinnata leiutiste uudsust ja leiutustaset.",
+          "Analüüsisin tehnilist ja teaduslikku informatsiooni ning koostasin selle põhjal ametlikke otsuseid ja kirjavahetust.",
+          "Konsulteerisin patenditaotlejaid ning selgitasin patenditaotluste menetlusprotsessi ja nõudeid."
+        ]
+      }
+    ]
   }
 }
