@@ -173,64 +173,7 @@ body {
   font-size: clamp(1rem, 1.6vw, 1.25rem);
 }
 
-/* =================================
-   BOOKMARKS
-   ================================= */
 
-/* Soft card links */
-.bookmark {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  white-space: normal;
-  text-decoration: none;
-  min-width: 0;
-
-  background: rgba(248, 246, 242, 0.72);
-  border: 1px solid rgba(15, 63, 73, 0.14);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
-
-  padding: 10px 14px 10px 16px;
-  border-radius: 14px;
-
-  color: #0f3f49;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-
-  position: relative;
-  overflow: hidden;
-
-  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease,
-    background-color 160ms ease;
-}
-
-.bookmark::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10px;
-  bottom: 10px;
-  width: 4px;
-  border-radius: 999px;
-  background: #134f5c;
-  opacity: 0.9;
-}
-
-.bookmark::after {
-  content: none;
-}
-
-.bookmark:hover {
-  transform: translateY(-1px);
-  border-color: rgba(15, 63, 73, 0.22);
-  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.11);
-  background: rgba(248, 246, 242, 0.84);
-}
-
-.bookmark:focus-visible {
-  outline: 3px solid rgba(19, 79, 92, 0.28);
-  outline-offset: 3px;
-}
 
 /* =================================
    FIXED UI: Language switch
@@ -288,9 +231,66 @@ body {
   outline: 3px solid rgba(19, 79, 92, 0.28);
   outline-offset: 3px;
 }
+/* =================================
+  BOOKMARKS
+   ================================= */
+/* Soft card links */ 
+.bookmark { 
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-start; 
+  white-space: normal; 
+  text-decoration: none; 
+  min-width: 0;
+
+  background: rgba(248, 246, 242, 0.72); 
+  border: 1px solid rgba(15, 63, 73, 0.14); 
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+
+  padding: 10px 14px 10px 16px; 
+  border-radius: 14px;
+
+  color: #0f3f49; 
+  font-weight: 600; 
+  letter-spacing: 0.2px; 
+
+  position: relative; 
+  overflow: hidden;
+
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, 
+  background-color 160ms ease;
+}
+
+
+
+.bookmark::before { 
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  top: 10px; 
+  bottom: 10px; 
+  width: 4px; 
+  border-radius: 999px; 
+  background: #134f5c; 
+  opacity: 0.9; 
+}
+
+.bookmark::after { content: none; }
+
+.bookmark:hover { 
+    transform: translateY(-1px); 
+    border-color: rgba(15, 63, 73, 0.22); 
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.11); 
+    background: rgba(248, 246, 242, 0.84); 
+ }
+
+.bookmark:focus-visible { 
+  outline: 3px solid rgba(19, 79, 92, 0.28); 
+  outline-offset: 3px; 
+}
 
 /* =================================
-   FIXED UI: Social links
+  FIXED UI: Social links
    ================================= */
 
 .social {
@@ -477,4 +477,58 @@ body {
   .publications-list {
     padding-left: 187px;
   }
+}
+/* =================================
+   STICKY NAVIGATION
+   ================================= */
+
+.sticky-navigation {
+  display: none;
+}
+
+.sections-with-sidebar {
+  display: block;
+}
+
+.sections-main {
+  min-width: 0;
+}
+
+/* Desktop only */
+@media (min-width: 860px) {
+
+  .sections-with-sidebar {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    column-gap: 2rem;
+    align-items: start;
+
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .sticky-navigation {
+    position: sticky;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    align-self: start;
+  }
+
+  /* calmer bookmark variant */
+  .sticky-navigation .bookmark {
+    padding: 8px 12px 8px 14px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    background: rgba(248, 246, 242, 0.62);
+  }
+
+  .sticky-navigation .bookmark::before {
+    width: 3px;
+    top: 8px;
+    bottom: 8px;
+  }
+
 }

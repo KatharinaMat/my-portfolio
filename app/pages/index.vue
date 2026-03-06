@@ -119,45 +119,59 @@
       </div>
     </section>
 
-    <!-- SECTIONS -->
-    <section id="about" class="section">
-      <div class="section-inner">
-        <h2>{{ t("nav.about") }}</h2>
-          <p>...</p>
-      </div>
-    </section>
+ <!-- SECTIONS -->
+<section id="about" class="section">
+  <div class="section-inner">
+    <h2>{{ t("nav.about") }}</h2>
+    <p>...</p>
+  </div>
+</section>
 
+<div class="sections-with-sidebar">
+  <nav class="sticky-navigation">
+    <a href="#about" class="bookmark">{{ t("nav.about") }}</a>
+    <a href="#education" class="bookmark">{{ t("nav.education") }}</a>
+    <a href="#work" class="bookmark">{{ t("nav.work") }}</a>
+    <a href="#skills" class="bookmark">{{ t("nav.skills") }}</a>
+    <a href="#projects" class="bookmark">{{ t("nav.projects") }}</a>
+    <a href="#hobbies" class="bookmark">{{ t("nav.hobbies") }}</a>
+  </nav>
+
+  <div class="sections-main">
     <section id="education" class="section">
       <div class="section-inner">
         <h2>{{ t("nav.education") }}</h2>
+
         <div class="education-list">
           <div v-for="(item, index) in educationItems" :key="index" class="education-row">
-          <div class="education-period">{{ rt(item.period) }}</div>
-          <div class="education-text" v-html="rt(item.text)"></div>
+            <div class="education-period">{{ rt(item.period) }}</div>
+            <div class="education-text" v-html="rt(item.text)"></div>
           </div>
-        </div>  
+        </div>
 
-      <div class="education-extra">
-        <button 
-        type="button" 
-        class="publications-toggle" 
-        @click="showPublications = !showPublications">
-          {{ showPublications
-        ? t("education.hidePublications")
-        : t("education.showPublications") }} 
-    {{ showPublications ? "▴" : "▾" }}  
-      </button>
+        <div class="education-extra">
+          <button
+            type="button"
+            class="publications-toggle"
+            @click="showPublications = !showPublications"
+          >
+            {{
+              showPublications
+                ? t("education.hidePublications")
+                : t("education.showPublications")
+            }}
+            {{ showPublications ? "▴" : "▾" }}
+          </button>
 
-<div v-if="showPublications" class="publications-list">
-  <div
-    v-for="(publication, index) in tm('education.publications')"
-    :key="index"
-    class="publication-item"
-    v-html="rt(publication)"
-  ></div>
-</div>
-    </div>
-
+          <div v-if="showPublications" class="publications-list">
+            <div
+              v-for="(publication, index) in tm('education.publications')"
+              :key="index"
+              class="publication-item"
+              v-html="rt(publication)"
+            ></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -188,6 +202,9 @@
         <p>...</p>
       </div>
     </section>
+  </div>
+</div>
+
   </main>
 </template>
 
