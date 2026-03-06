@@ -532,3 +532,69 @@ body {
   }
 
 }
+/* =================================
+   MOBILE HAMBURGER MENU STICKY
+   ================================= */
+
+.section-menu-btn {
+  position: relative;
+}
+
+.section-menu-panel {
+position: absolute;
+  right: calc(100% + 12px); 
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  padding: 0.3rem;
+  min-width: 180px;
+
+  border-radius: 22px;
+  background: rgba(248, 246, 242, 0.96);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+}
+
+.section-menu-link {
+  border: none;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  padding: 0.5rem 0.7rem;
+  border-radius: 14px;
+  cursor: pointer;
+  color: #1a1a1a;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.section-menu-link:hover,
+.section-menu-link:focus-visible {
+  background: #e7f1f3;
+  color: #134f5c;
+  outline: none;
+  transform: translateX(-2px);
+}
+
+.section-menu-link:active {
+  background: #e7f1f3;
+  transform: scale(0.97);
+}
+
+.section-panel-enter-active,
+.section-panel-leave-active {
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  transform-origin: right center;
+}
+
+.section-panel-enter-from,
+.section-panel-leave-to {
+  opacity: 0;
+  transform: translateX(8px) scale(0.98);
+}

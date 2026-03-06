@@ -61,6 +61,42 @@
           />
         </svg>
       </a>
+      <button
+        v-if="showMobileSectionButton"
+        class="icon-btn section-menu-btn"
+        type="button"
+        :aria-expanded="mobileMenuOpen"
+        aria-label="Open section navigation"
+        title="Sections"
+        @click="toggleMobileMenu"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M4 7h16M4 12h16M4 17h16"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+          />
+        </svg>
+      </button>
+      <Transition name="section-panel">
+        <div
+          v-if="mobileMenuOpen && showMobileSectionButton"
+          class="section-menu-panel"
+          aria-label="Section navigation"
+        >
+          <button
+            v-for="item in heroNav"
+            :key="item.href"
+            type="button"
+            class="section-menu-link"
+            @click="onSectionMenuClick(item.href)"
+          >
+            {{ t(item.i18nKey) }}
+          </button>
+        </div>
+      </Transition>
     </div>
 
 <!-- HERO -->
@@ -209,17 +245,51 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, nextTick } from "vue";
+import { onMounted, onBeforeUnmount, ref, nextTick, computed } from "vue";
 import CopyEmailButton from "@/components/CopyEmailButton.vue";
 
 const { t, tm, rt, setLocale, locale } = useI18n();
 const educationItems = computed(() => tm("education.items") as { period: string; text: string }[]);
 const showPublications = ref(false);
+
 const route = useRoute();
 
 const showTitle = ref(false);
 const showSubtitle = ref(false);
 const showNav = ref(false);
+
+const mobileMenuOpen = ref(false);
+const showMobileSectionButton = ref(false);
+
+const toggleMobileMenu = () => {
+  mobileMenuOpen.value = !mobileMenuOpen.value;
+};
+
+const updateMobileSectionButtonVisibility = () => {
+  const educationSection = document.getElementById("education");
+
+  if (!educationSection) {
+    showMobileSectionButton.value = false;
+    return;
+  }
+
+  const educationTop = educationSection.getBoundingClientRect().top;
+  showMobileSectionButton.value = educationTop <= 120;
+};
+
+const onSectionMenuClick = (href: string) => {
+  const id = href.replace("#", "");
+  const el = document.getElementById(id);
+
+  if (!el) return;
+
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  const url = `${window.location.pathname}${window.location.search}#${id}`;
+  history.replaceState(null, "", url);
+
+  mobileMenuOpen.value = false;
+};
 
 const heroNav = [
   { href: "#about", i18nKey: "nav.about" },
@@ -259,6 +329,10 @@ function onClickScroll(e: MouseEvent, href: string) {
 
   const url = `${window.location.pathname}${window.location.search}#${id}`;
   history.replaceState(null, "", url);
+
+  if (id === "education") {
+    showMobileSectionButton.value = true;
+  }
 }
 
 onMounted(() => {
@@ -271,5 +345,12 @@ onMounted(() => {
   window.setTimeout(() => {
     showNav.value = true;
   }, 320);
+
+  window.addEventListener("scroll", updateMobileSectionButtonVisibility);
+  updateMobileSectionButtonVisibility();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", updateMobileSectionButtonVisibility);
 });
 </script>
