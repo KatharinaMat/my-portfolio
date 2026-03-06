@@ -136,6 +136,28 @@
           <div class="education-text" v-html="rt(item.text)"></div>
           </div>
         </div>  
+
+      <div class="education-extra">
+        <button 
+        type="button" 
+        class="publications-toggle" 
+        @click="showPublications = !showPublications">
+          {{ showPublications
+        ? t("education.hidePublications")
+        : t("education.showPublications") }} 
+    {{ showPublications ? "▴" : "▾" }}  
+      </button>
+
+<div v-if="showPublications" class="publications-list">
+  <div
+    v-for="(publication, index) in tm('education.publications')"
+    :key="index"
+    class="publication-item"
+    v-html="rt(publication)"
+  ></div>
+</div>
+    </div>
+
       </div>
     </section>
 
@@ -175,6 +197,7 @@ import CopyEmailButton from "@/components/CopyEmailButton.vue";
 
 const { t, tm, rt, setLocale, locale } = useI18n();
 const educationItems = computed(() => tm("education.items") as { period: string; text: string }[]);
+const showPublications = ref(false);
 const route = useRoute();
 
 const showTitle = ref(false);

@@ -38,6 +38,14 @@
       "period": "08.2008 – 06.2011",
       "text": "<strong>TalTech</strong> – Applied Chemistry and Biotechnology, bakalaureus, <em>cum laude</em>"
     }
+  ],
+  "showPublications": "Näita publikatsioone",
+  "hidePublications": "Peida publikatsioonid",
+  "publications": [
+    "<strong>Paju, A.; Oja, K.; Matkevitš, K.; et al.</strong><br>Asymmetric synthesis of tertiary 2-substituted 5-oxotetrahydrofuran-2-carboxylic acids.<br><em>Heterocycles</em>, 2014.",
+    "<strong>Lopp, M.; Paju, A.; Oja, K.; Matkevitš, K.; et al.</strong><br>ChemInform Abstract: Asymmetric Synthesis of Tertiary 2-Substituted 5-Oxotetrahydrofuran-2-Carboxylic Acids.<br><em>ChemInform</em>, 2014.",
+    "<strong>Paju, A.; Kostomarova, D.; Matkevitš, K.; Lopp, M.; et al.</strong><br>3-Alkyl-1,2-cyclopentanediones by Negishi cross-coupling of a 3-bromo-1,2-cyclopentanedione silyl enol ether with alkylzinc reagents: An approach to 2-substituted carboxylic acid γ-lactones, homocitric and lycoperdic acids.<br><em>Tetrahedron</em>, 2015.",
+    "<strong>Patent</strong><br><strong>Lopp, M.; Paju, A.; Matkevitš, K.</strong><br>Method for preparation of (2-hydroxy-3-oxo-cyclopent-1-enyl)-acetic acid esters.<br>US Patent US20140378698A1, 2014."
   ] 
   }
 }
