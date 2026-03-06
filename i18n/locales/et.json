@@ -10,5 +10,34 @@
   "hero": {
     "title": "Tere, mina olen Katharina!",
     "subtitle": "Tere tulemast minu portfoolio lehele."
+  },
+
+  "education": {
+  "items": [
+    {
+      "period": "01.2026 – kestab",
+      "text": "<strong>TalTech</strong> – “Noorem-tarkvaraarendajast vanemarendajaks”, 250 akad. t"
+    },
+    {
+      "period": "11.2025 – 12.2025",
+      "text": "<strong>AS BCS Koolitus</strong> – Vali-IT Tarkvaraarendus, 240 akad. t"
+    },
+    {
+      "period": "05.2025 – 06.2025",
+      "text": "<strong>AS BCS Koolitus</strong> – “Naised veebiarendajaks!”, 192 akad. t"
+    },
+    {
+      "period": "03.2023 – 08.2023",
+      "text": "<strong>AS BCS Koolitus</strong> – Juunior back-end arendaja e-kursus, 450 akad. t"
+    },
+    {
+      "period": "08.2011 – 06.2013",
+      "text": "<strong>TalTech</strong> – Applied Chemistry and Biotechnology, <strong>magister</strong>, <em>cum laude</em>"
+    },
+    {
+      "period": "08.2008 – 06.2011",
+      "text": "<strong>TalTech</strong> – Applied Chemistry and Biotechnology, bakalaureus, <em>cum laude</em>"
+    }
+  ] 
   }
 }

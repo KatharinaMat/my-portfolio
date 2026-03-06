@@ -123,14 +123,19 @@
     <section id="about" class="section">
       <div class="section-inner">
         <h2>{{ t("nav.about") }}</h2>
-        <p>...</p>
+          <p>...</p>
       </div>
     </section>
 
     <section id="education" class="section">
       <div class="section-inner">
         <h2>{{ t("nav.education") }}</h2>
-        <p>...</p>
+        <div class="education-list">
+          <div v-for="(item, index) in educationItems" :key="index" class="education-row">
+          <div class="education-period">{{ rt(item.period) }}</div>
+          <div class="education-text" v-html="rt(item.text)"></div>
+          </div>
+        </div>  
       </div>
     </section>
 
@@ -168,7 +173,8 @@
 import { onMounted, ref, nextTick } from "vue";
 import CopyEmailButton from "@/components/CopyEmailButton.vue";
 
-const { t, setLocale, locale } = useI18n();
+const { t, tm, rt, setLocale, locale } = useI18n();
+const educationItems = computed(() => tm("education.items") as { period: string; text: string }[]);
 const route = useRoute();
 
 const showTitle = ref(false);

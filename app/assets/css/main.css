@@ -19,6 +19,16 @@ html {
   background: linear-gradient(90deg, #f6efe4 0%, #edd2a6 100%);
 }
 
+/* =================================
+   GLOBAL FONT
+   ================================= */
+
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #1a1a1a;
+}
+
 /* ===================================================
    HERO LAYOUT (2 columns, mobile-first, fixed height)
    =================================================== */
@@ -358,4 +368,58 @@ html {
   opacity: 1;
   transform: translateY(0);
   filter: blur(0);
+}
+
+/* =================================
+   EDUCATION
+   ================================= */
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+.education-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+  padding: 0.35rem 0.45rem;
+  border-radius: 6px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.education-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.education-period {
+  font-weight: 500;
+  white-space: normal;
+}
+
+.education-text {
+  white-space: normal;
+  line-height: 1.45;
+}
+
+.education-text strong {
+  font-weight: 600;
+}
+
+/* Desktop override */
+@media (min-width: 860px) {
+
+  .education-row {
+    grid-template-columns: 170px 1fr;
+    column-gap: 1.25rem;
+    align-items: start;
+  }
+
+  .education-period {
+    white-space: nowrap;
+  }
+
 }

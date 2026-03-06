@@ -10,5 +10,33 @@
   "hero": {
     "title": "Hi, I'm Katharina!",
     "subtitle": "Welcome to my portfolio."
+  },
+  "education": {
+  "items": [
+    {
+      "period": "01.2026 – ongoing",
+      "text": "<strong>TalTech</strong> – From Junior Software Developer to Senior Developer, 250 acad. h"
+    },
+    {
+      "period": "11.2025 – 12.2025",
+      "text": "<strong>AS BCS Koolitus</strong> – Vali-IT Software Development, 240 acad. h"
+    },
+    {
+      "period": "05.2025 – 06.2025",
+      "text": "<strong>AS BCS Koolitus</strong> – Women into Web Development, 192 acad. h"
+    },
+    {
+      "period": "03.2023 – 08.2023",
+      "text": "<strong>AS BCS Koolitus</strong> – Junior Back-End Developer e-course, 450 acad. h"
+    },
+    {
+      "period": "08.2011 – 06.2013",
+      "text": "<strong>TalTech</strong> – Applied Chemistry and Biotechnology, <strong>MSc</strong>, <em>cum laude</em>"
+    },
+    {
+      "period": "08.2008 – 06.2011",
+      "text": "<strong>TalTech</strong> – Applied Chemistry and Biotechnology, BSc, <em>cum laude</em>"
+    }
+  ]
   }
 }
