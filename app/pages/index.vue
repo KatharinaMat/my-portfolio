@@ -166,7 +166,11 @@
         <h2>{{ t("nav.about") }}</h2>
 
         <div class="about-text">
-          {{ t("about.text") }}
+          <p
+            v-for="(paragraph, index) in tm('about.text')"
+            :key="index"
+            v-html="rt(paragraph)"
+          ></p>
         </div>
       </div>
     </div>

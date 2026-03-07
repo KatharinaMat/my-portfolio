@@ -479,7 +479,7 @@ body {
   font: inherit;
   color: #1a1a1a;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
 .publications-toggle:hover {
@@ -606,7 +606,7 @@ position: absolute;
   color: #1a1a1a;
 
   transition:
-    background 0.18s ease,
+    background-color 0.18s ease,
     color 0.18s ease,
     transform 0.18s ease;
 }
