@@ -155,11 +155,21 @@
       </div>
     </section>
 
- <!-- SECTIONS -->
-<section id="about" class="section">
-  <div class="section-inner">
-    <h2>{{ t("nav.about") }}</h2>
-    <p>...</p>
+<!-- SECTIONS -->
+
+<section id="about" class="section about-section">
+  <div class="about-layout">
+    <div class="about-sidebar-spacer" aria-hidden="true"></div>
+
+    <div class="about-main">
+      <div class="section-inner">
+        <h2>{{ t("nav.about") }}</h2>
+
+        <div class="about-text">
+          {{ t("about.text") }}
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

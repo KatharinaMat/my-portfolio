@@ -331,23 +331,6 @@ body {
   height: 20px;
   fill: #134f5c;
 }
-
-/* =================================
-   SECTIONS
-   ================================= */
-
-.section {
-  padding: 56px 18px;
-}
-
-.section-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  color: #1a1a1a;
-}
-.accent { 
-  color: #134f5c; /*used to accentuate certain words in text*/
-}
 /* =================================
    ANIMATIONS 
    ================================= */
@@ -372,6 +355,54 @@ body {
   filter: blur(0);
 }
 
+/* =================================
+   SECTIONS
+   ================================= */
+
+.section {
+  padding: 56px 18px;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  color: #1a1a1a;
+}
+.accent { 
+  color: #134f5c; /*used to accentuate certain words in text*/
+}
+
+/* =================================
+   ABOUT
+   ================================= */
+
+.about-layout {
+  display: block;
+}
+
+.about-main {
+  min-width: 0;
+}
+
+.about-text {
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #1a1a1a;
+  margin-top: 1.25rem;
+  max-width: 980px;
+}
+
+/* Desktop override */
+@media (min-width: 860px) {
+  .about-layout {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    column-gap: 2rem;
+    align-items: start;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
 /* =================================
    EDUCATION
    ================================= */
