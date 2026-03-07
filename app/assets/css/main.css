@@ -719,12 +719,26 @@ position: absolute;
   border-radius: 16px;
   background: rgba(248, 246, 242, 0.62);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
+  background: rgba(248, 246, 242, 0.78);
 }
 
 .skill-card h3 {
   margin: 0 0 0.75rem;
   font-size: 1.05rem;
   color: #134f5c;
+}
+
+.skill-card:hover h3 {
+  color: #0f3f49;
 }
 
 /* Skill list */
