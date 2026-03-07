@@ -332,12 +332,20 @@
   </div>
 </section>
 
-    <section id="hobbies" class="section">
-      <div class="section-inner">
-        <h2>{{ t("nav.hobbies") }}</h2>
-        <p>...</p>
-      </div>
-    </section>
+<section id="hobbies" class="section">
+  <div class="section-inner">
+    <h2>{{ t("nav.hobbies") }}</h2>
+
+    <div class="hobbies-text">
+      <p
+        v-for="(paragraph, index) in tm('hobbies.text')"
+        :key="index"
+        v-html="rt(paragraph)"
+      ></p>
+    </div>
+  </div>
+</section>
+
   </div>
 </div>
 

@@ -871,3 +871,19 @@ position: absolute;
     grid-row: 1;
   }
 }
+/* =================================
+   HOBBIES
+   ================================= */
+
+.hobbies-text {
+  margin-top: 1.25rem;
+}
+
+.hobbies-text p {
+  margin: 0 0 1rem;
+  line-height: 1.7;
+}
+
+.hobbies-text p:last-child {
+  margin-bottom: 0;
+}
