@@ -271,12 +271,66 @@
   </div>
 </section>
 
-    <section id="projects" class="section">
-      <div class="section-inner">
-        <h2>{{ t("nav.projects") }}</h2>
-        <p>...</p>
+<section id="projects" class="section">
+  <div class="section-inner">
+    <h2>{{ t("nav.projects") }}</h2>
+
+    <div class="projects-list">
+      <div
+        v-for="(project, index) in projectItems"
+        :key="index"
+        class="project-item"
+      >
+        <div class="project-title-block">
+          <div
+            class="project-title"
+            v-html="rt(project.title)"
+          ></div>
+        </div>
+
+        <div class="project-content">
+
+          <p
+            v-for="(paragraph, paragraphIndex) in project.description"
+            :key="paragraphIndex"
+            class="project-description"
+            v-html="rt(paragraph)"
+          ></p>
+
+          <div
+            v-if="project.highlights && project.highlights.length"
+            class="project-subtitle"
+          >
+            {{ t("projects.highlightsLabel") }}
+          </div>
+
+          <ul
+            v-if="project.highlights && project.highlights.length"
+            class="project-highlights"
+          >
+            <li
+              v-for="(highlight, highlightIndex) in project.highlights"
+              :key="highlightIndex"
+              v-html="rt(highlight)"
+            ></li>
+          </ul>
+
+          <p
+            class="project-tech"
+            v-html="rt(project.techStack)"
+          ></p>
+
+          <p
+            v-if="project.website"
+            class="project-link"
+            v-html="rt(project.website)"
+          ></p>
+
+        </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <section id="hobbies" class="section">
       <div class="section-inner">
@@ -298,7 +352,8 @@ const { t, tm, rt, setLocale, locale } = useI18n();
 const educationItems = computed(() => tm("education.items") as { period: string; text: string }[]);
 const workItems = computed(() => tm("work.items") as {period: string; title: string; text: string[];}[]);
 const showPublications = ref(false);
-const skillGroups = computed(() => tm("skills.groups"))
+const skillGroups = computed(() => tm("skills.groups"));
+const projectItems = computed(() => tm("projects.items") as any[]);
 
 const route = useRoute();
 

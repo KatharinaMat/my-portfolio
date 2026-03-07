@@ -97,20 +97,12 @@
       "items": ["SAP", "Salesforce CRM"]
     },
     {
-      "title": "Kontoritööriistad",
-      "items": ["Microsoft Office (Excel, Word, PowerPoint)", "LibreOffice", "Google Workspace"]
-    },
-    {
-      "title": "Projektitöö ja koostöö",
-      "items": ["Confluence", "Jira", "Slack", "GitHub"]
+      "title": "Kontoritööriistad ja projektitöö ",
+      "items": ["Microsoft Office (Excel, Word, PowerPoint)", "LibreOffice", "Google Workspace", "Confluence", "Jira", "Slack", "GitHub"]
     },
     {
       "title": "Andmehaldus ja analüüs",
       "items": ["SQL", "PostgreSQL", "Tableau", "Excel"]
-    },
-    {
-      "title": "Disain",
-      "items": ["Figma", "Canva", "Inkscape"]
     },
     {
       "title": "Programmeerimine",
@@ -123,6 +115,67 @@
     {
       "title": "API-d ja dokumentatsioon",
       "items": ["Swagger / OpenAPI", "Postman"]
+    },
+        {
+      "title": "Disain",
+      "items": ["Figma", "Canva", "Inkscape"]
+    }
+  ]
+},
+"projects": {
+  "highlightsLabel": "Põhipunktid",
+  "items": [
+    {
+      "title": "<strong><span class='accent'>MyStuffLabelled</span></strong> — isiklike esemete haldamine QR-siltidega",
+      
+      "description": [
+        "Algselt väike isiklik projekt backend-arenduse ja QR-põhise märgistamise katsetamiseks on nüüdseks arenenud koostööprojektiks TalTechi programmi „Nooremast arendajast vanemarendajaks“ raames.",
+        "Projekti eesmärk on luua praktiline tööriist isiklike esemete organiseerimiseks, võimaldades kasutajatel sisestada esemete kohta infot, genereerida silte ning pääseda esemete detailideni ligi QR-koodi skaneerides.",
+        "Rakendust arendatakse nii veebirakenduse kui ka mobiilirakendusena ning avalik versioon on planeeritud avaldada 2026. aasta mais."
+      ],
+
+      "highlights": [
+        "Turvaline sisselogimine ja esemete omandiõiguse loogika",
+        "QR-koodide genereerimine füüsiliste siltide jaoks",
+        "REST API põhine suhtlus backend-i ja Vue frontend-i vahel",
+        "Arenduses: admini vaade, otsing ja filtreerimine, jagamine kasutahate vahel"
+      ],
+
+      "techStack": "<strong>Tech stack:</strong> Java (Spring Boot), PostgreSQL, Vue.js, REST API, MapStruct"
+    },
+
+    {
+      "title": "<strong><span class='accent'>MyPortfolio</span></strong> — see leht",
+
+      "description": [
+        "Lõin selle portfooliolehe, et tutvustada oma õpiteekonda, töökogemust ja huvisid viisil, mis võimaldab rohkem konteksti kui traditsiooniline CV või sotsiaalmeedia profiil."
+      ],
+
+      "highlights": [
+        "Kahekeelne kasutajaliides (inglise / eesti)",
+        "Responsiivne disain mobiilisõbraliku lähenemisega, kohandatud sticky-navigatsioon ja animatsioonid",
+        "Struktureeritud sektsioonid JSON-sisufailide abil"
+      ],
+
+      "techStack": "<strong>Tech stack:</strong> Nuxt, Vue.js, HTML, CSS"
+    },
+
+    {
+      "title": "<strong><span class='accent'>Primastella</span></strong> — trükikoja veebileht (planeeritud uuendus)",
+
+      "description": [
+        "Veebileht, mille arendasin kohaliku trükiettevõtte jaoks nende teenuste, portfoolio ja kontaktandmete tutvustamiseks.",
+        "Praegu tegelen lehe uuendamisega, mis hõlmab kaasaegsemat tehnoloogiat ja lahendusi ja visuaalse disaini värskendamist."
+      ],
+
+      "highlights": [
+        "Kohandatud responsiivne paigutus",
+        "Kahekeelne sisu (inglise / eesti)",
+        "Lihtne ja selge struktuur ning kiire laadimine"
+      ],
+
+      "techStack": "<strong>Tech stack:</strong> HTML, CSS, JavaScript",
+      "website": "<strong>Veebileht:</strong> <a href='https://primastella.ee' target='_blank' rel='noreferrer'>https://primastella.ee</a>"
     }
   ]
 }

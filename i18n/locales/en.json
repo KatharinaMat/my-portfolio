@@ -15,7 +15,7 @@
   "items": [
     {
       "period": "01.2026 – ongoing",
-      "text": "<strong>TalTech</strong> – “From Junior Software Developer to Senior Developer”, 250 acad. h"
+      "text": "<strong>TalTech</strong> – “From Junior to Senior Software Developer”, 250 acad. h"
     },
     {
       "period": "11.2025 – 12.2025",
@@ -93,20 +93,12 @@
       "items": ["SAP", "Salesforce CRM"]
     },
     {
-      "title": "Office tools",
-      "items": ["Microsoft Office (Excel, Word, PowerPoint)", "LibreOffice", "Google Workspace"]
-    },
-    {
-      "title": "Project & collaboration",
-      "items": ["Confluence", "Jira", "Slack", "GitHub"]
+      "title": "Office & Collaboration Tools",
+      "items": ["Microsoft Office (Excel, Word, PowerPoint)", "LibreOffice", "Google Workspace, Confluence", "Jira", "Slack", "GitHub"]
     },
     {
       "title": "Data & analytics",
       "items": ["SQL", "PostgreSQL", "Tableau", "Excel"]
-    },
-    {
-      "title": "Design",
-      "items": ["Figma", "Canva", "Inkscape"]
     },
     {
       "title": "Programming",
@@ -119,6 +111,67 @@
     {
       "title": "API & documentation",
       "items": ["Swagger / OpenAPI", "Postman"]
+    },
+        {
+      "title": "Design",
+      "items": ["Figma", "Canva", "Inkscape"]
+    }
+  ]
+},
+"projects": {
+  "highlightsLabel": "Highlights",
+  "items": [
+    {
+      "title": "<strong><span class='accent'>MyStuffLabelled</span></strong> — Personal Inventory with QR Labels",
+      
+      "description": [
+        "Originally a small personal project to explore backend development and QR-based labeling, the application now evolved into a collaborative team project under the TalTech “From Junior to Senior Software Developer program”.",
+        "The goal is to build a practical tool for organizing personal belongings, allowing users to register items, generate labels, and access item details by scanning them.",
+        "The project is being developed as both a web and mobile application, with a planned public release in May 2026."
+      ],
+
+      "highlights": [
+        "Secure login and item ownership logic",
+        "QR code generation for physical labeling",
+        "REST API communication between backend and Vue frontend",
+        "Ongoing development: admin dashboard, search and filtering, item sharing"
+      ],
+
+      "techStack": "<strong>Tech stack:</strong> Java (Spring Boot), PostgreSQL, Vue.js, REST API, MapStruct"
+    },
+
+    {
+      "title": "<strong><span class='accent'>MyPortfolio</span></strong> — this page",
+
+      "description": [
+        "I have created this portfolio page to present my learning journey, professional experience, and interests in a way that allows more context than a traditional CV or social media profile."
+      ],
+
+      "highlights": [
+        "Bilingual interface (English / Estonian)",
+        "Responsive layout with mobile-first design, custom sticky navigation and animations",
+        "Structured sections using JSON content files"
+      ],
+
+      "techStack": "<strong>Tech stack:</strong> Nuxt, Vue.js, HTML, CSS"
+    },
+
+    {
+      "title": "<strong><span class='accent'>Primastella</span></strong> — Printing House Website (Planned modernization)",
+
+      "description": [
+        "A website I developed for a local printing company to present their services, portfolio, and contact information.",
+        "Currently I am working on migration to a modern stack and UI redesign."
+      ],
+
+      "highlights": [
+        "Custom responsive layout",
+        "Bilingual content",
+        "Focus on simple structure and fast loading"
+      ],
+
+      "techStack": "<strong>Tech stack:</strong> HTML, CSS, JavaScript",
+      "website": "<strong>Website:</strong> <a href='https://primastella.ee' target='_blank' rel='noreferrer'>https://primastella.ee</a>"
     }
   ]
 }
