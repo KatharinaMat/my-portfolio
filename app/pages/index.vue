@@ -249,12 +249,27 @@
   </div>
 </section>
 
-    <section id="skills" class="section">
-      <div class="section-inner">
-        <h2>{{ t("nav.skills") }}</h2>
-        <p>...</p>
-      </div>
-    </section>
+<section id="skills" class="section">
+  <div class="section-inner">
+    <h2>{{ t("nav.skills") }}</h2>
+
+    <div class="skills-grid">
+      <article
+        v-for="(group, index) in skillGroups"
+        :key="index"
+        class="skill-card"
+      >
+        <h3>{{ rt(group.title) }}</h3>
+
+        <ul>
+          <li v-for="(item, itemIndex) in group.items" :key="itemIndex">
+            {{ rt(item) }}
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
 
     <section id="projects" class="section">
       <div class="section-inner">
@@ -283,6 +298,7 @@ const { t, tm, rt, setLocale, locale } = useI18n();
 const educationItems = computed(() => tm("education.items") as { period: string; text: string }[]);
 const workItems = computed(() => tm("work.items") as {period: string; title: string; text: string[];}[]);
 const showPublications = ref(false);
+const skillGroups = computed(() => tm("skills.groups"))
 
 const route = useRoute();
 

@@ -85,5 +85,45 @@
         ]
       }
     ]
-  }
+  },
+  "skills": {
+  "groups": [
+    {
+      "title": "Keeled",
+      "items": ["Inglise keel – C1", "Eesti keel – C1", "Vene keel – C2"]
+    },
+    {
+      "title": "Äri- ja CRM-süsteemid",
+      "items": ["SAP", "Salesforce CRM"]
+    },
+    {
+      "title": "Kontoritööriistad",
+      "items": ["Microsoft Office (Excel, Word, PowerPoint)", "LibreOffice", "Google Workspace"]
+    },
+    {
+      "title": "Projektitöö ja koostöö",
+      "items": ["Confluence", "Jira", "Slack", "GitHub"]
+    },
+    {
+      "title": "Andmehaldus ja analüüs",
+      "items": ["SQL", "PostgreSQL", "Tableau", "Excel"]
+    },
+    {
+      "title": "Disain",
+      "items": ["Figma", "Canva", "Inkscape"]
+    },
+    {
+      "title": "Programmeerimine",
+      "items": ["Java", "JavaScript", "TypeScript", "HTML", "CSS", "JSON"]
+    },
+    {
+      "title": "Arendustööriistad",
+      "items": ["IntelliJ IDEA", "Visual Studio Code", "Git", "Gradle", "Maven", "Vue.js", "Nuxt", "Spring Boot"]
+    },
+    {
+      "title": "API-d ja dokumentatsioon",
+      "items": ["Swagger / OpenAPI", "Postman"]
+    }
+  ]
+}
 }

@@ -81,5 +81,45 @@
         ]
       }      
     ]
-  }
+  },
+  "skills": {
+  "groups": [
+    {
+      "title": "Languages",
+      "items": ["English – C1", "Estonian – C1", "Russian – C2"]
+    },
+    {
+      "title": "Business & CRM systems",
+      "items": ["SAP", "Salesforce CRM"]
+    },
+    {
+      "title": "Office tools",
+      "items": ["Microsoft Office (Excel, Word, PowerPoint)", "LibreOffice", "Google Workspace"]
+    },
+    {
+      "title": "Project & collaboration",
+      "items": ["Confluence", "Jira", "Slack", "GitHub"]
+    },
+    {
+      "title": "Data & analytics",
+      "items": ["SQL", "PostgreSQL", "Tableau", "Excel"]
+    },
+    {
+      "title": "Design",
+      "items": ["Figma", "Canva", "Inkscape"]
+    },
+    {
+      "title": "Programming",
+      "items": ["Java", "JavaScript", "TypeScript", "HTML", "CSS", "JSON"]
+    },
+    {
+      "title": "Development tools",
+      "items": ["IntelliJ IDEA", "Visual Studio Code", "Git", "Gradle", "Maven", "Vue.js", "Nuxt", "Spring Boot"]
+    },
+    {
+      "title": "API & documentation",
+      "items": ["Swagger / OpenAPI", "Postman"]
+    }
+  ]
+}
 }

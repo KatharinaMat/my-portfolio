@@ -358,9 +358,12 @@ body {
 /* =================================
    SECTIONS
    ================================= */
-
+:root {
+  --section-pad-y: 56px;
+  --section-pad-x: 18px;
+}
 .section {
-  padding: 56px 18px;
+  padding:  var(--section-pad-y) var(--section-pad-x);
 }
 
 .section-inner {
@@ -547,6 +550,7 @@ body {
     flex-direction: column;
     gap: 0.55rem;
     align-self: start;
+    padding-top: var(--section-pad-y);
   }
 
   /* calmer bookmark variant */
@@ -698,4 +702,62 @@ position: absolute;
     grid-column: 1 / -1;
     grid-row: 2;
   }
+}
+/* =================================
+   SKILLS
+   ================================= */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.skill-card {
+  padding: 1rem 1.1rem;
+  border-radius: 16px;
+  background: rgba(248, 246, 242, 0.62);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.skill-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  color: #134f5c;
+}
+
+/* Skill list */
+
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  column-width: 160px;
+  column-gap: 1.5rem;
+}
+
+.skill-card li {
+  break-inside: avoid;
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+}
+
+.skill-card li:last-child {
+  margin-bottom: 0;
+}
+
+/* Desktop override */
+@media (min-width: 860px) {
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1rem;
+  }
+
+  .skill-card ul {
+    column-width: 140px;
+  }
+
 }
