@@ -1,13 +1,14 @@
 /* ===================================================
-   HERO LAYOUT (2 columns, mobile-first, fixed height)
+   HERO LAYOUT
+   Mobile first
    =================================================== */
 
 .hero {
-  width: 100%; /*takes 100% of page width*/
-  height: 45vh; /* fixed: hero will NOT grow on mobile */
+  width: 100%;
+  height: 45vh;
   background: linear-gradient(90deg, var(--bg-start) 0%, var(--bg-finish) 100%);
   border-radius: 0 0 26px 26px;
-  overflow: hidden; /* safety: prevents children visually spilling out */
+  overflow: hidden;
 }
 
 /* Make descendants able to size against hero height */
@@ -16,130 +17,145 @@
   height: 100%;
 }
 
-/* Desktop override */
-@media (min-width: 860px) {
-  .hero {
-    height: 55vh; /* fixed: hero will NOT grow on desktop */
-  }
-}
-
 /* =================================
    CONTAINER
    ================================= */
 
 .container {
   width: 100%;
-  max-width: 1100px; /* readable line length on desktop */
-  margin: 0 auto; /*centres the container*/
-
-  /* mobile safety padding (prevents text/buttons touching screen edge) */
+  max-width: 1100px;
+  margin: 0 auto;
   padding-left: clamp(1rem, 4vw, 2rem);
   padding-right: clamp(1rem, 4vw, 2rem);
 }
 
 /* =================================
-   HERO ROW + COLUMNS (layout only)
+   HERO ROW + COLUMNS
    ================================= */
 
 .hero .row {
-  display: flex; /*children become flex items, layout is controlled by flexbox rules instead of normal document flow*/
-  flex-direction: row; /* columns always side by side */
-  height: 100%;
+  display: flex;
+  flex-direction: row;
   align-items: stretch;
-  gap: clamp(0.75rem, 2vw, 2rem); /* smaller on mobile, bigger on desktop */
+  height: 100%;
+  gap: 0.75rem;
 }
 
 .left-col {
-  flex: 1.2;
+  flex: 1.15;
   min-width: 0;
-} /*0 allows the column to shrink properly instead of pushing sideways.*/
-.right-col {
-  flex: 0.8;
-  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/*to keep the portrait image anchored*/
 .right-col {
+  flex: 0.85;
+  min-width: 0;
+
   display: flex;
-  justify-content: flex-start; /* left */
-  align-items: flex-end; /* bottom */
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .hero-image {
-  height: 85%; /* relative to hero (since row is 100%) */
   width: 100%;
-  display: flex;
-  align-items: flex-end;
+  height: 82%;
   min-width: 0;
+
+  display: flex;
   justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .portrait {
-  height: 100%;
-  width: 100%;
-  object-fit: contain; /* fits without cropping; use cover if you prefer crop */
   display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   object-position: left bottom;
 }
 
-.side-nav {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* always 2 cols */
-  gap: clamp(0.5rem, 1.6vw, 1rem);
-}
-
 /* =================================
-   LEFT COLUMN STACK (relationships)
+   LEFT COLUMN STACK
    ================================= */
-
-.left-col {
-  display: flex;
-  height: 100%;
-  align-items: center; /* centers left-stack vertically */
-  justify-content: center; /* centers left-stack horizontally */
-}
 
 .left-stack {
-  /* one vertical stack controls all spacing */
   display: flex;
   flex-direction: column;
-
-  /* Gap between (text block) and (bookmarks block) */
-  gap: clamp(0.75rem, 2vh, 1.5rem);
-
-  /* keep the stack from becoming too wide */
-  max-width: 560px;
+  gap: 0.55rem;
+  width: 100%;
+  max-width: 100%;
 }
-
-/* =================================
-   HERO CONTENT (typography only)
-   ================================= */
 
 .hero-text {
   text-align: left;
 }
 
+/* =================================
+   HERO TYPOGRAPHY
+   ================================= */
+
 .hero-title {
+  margin: 0;
   font-family: "Playfair Display", serif;
   font-weight: 600;
-  font-size: 1.7rem;
-  margin: 0;
+  font-size: 1.5rem;
   line-height: 0.95;
   letter-spacing: -0.01em;
   color: var(--text-main);
 }
 
 .hero-subtitle {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
   font-family: "Dancing Script", cursive;
-  font-size: 1.3rem;
-  margin-top: 0.35rem;
+  font-size: 1rem;
   line-height: 1.2;
   color: var(--text-main);
   opacity: 0.9;
 }
 
-/* Mobile landscape */
+/* =================================
+   BOOKMARK GRID IN HERO
+   ================================= */
+
+.side-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+}
+
+/* ===================================================
+   MOBILE LANDSCAPE
+   =================================================== */
+
 @media (max-width: 859px) and (orientation: landscape) {
+  .hero {
+    height: 45vh;
+  }
+
+  .hero .row {
+    gap: 0.65rem;
+  }
+
+  .left-col {
+    flex: 1.05;
+  }
+
+  .right-col {
+    flex: 0.95;
+  }
+
+  .hero-image {
+    height: 78%;
+  }
+
+  .left-stack {
+    gap: 0.45rem;
+  }
+
   .hero-title {
     font-size: 1.7rem;
     line-height: 0.92;
@@ -149,19 +165,86 @@
     font-size: 1rem;
     line-height: 1.1;
     margin-top: 0.2rem;
+    margin-bottom: 0;
+  }
+
+  .side-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem 0.5rem;
   }
 }
 
-/* Desktop override */
+/* ===================================================
+   DESKTOP OVERRIDE
+   =================================================== */
+
 @media (min-width: 860px) {
+  .hero {
+    height: 55vh;
+    border-radius: 0 0 26px 26px;
+  }
+
+  .hero .container {
+    max-width: 1100px;
+    padding-left: clamp(1.5rem, 3vw, 2.5rem);
+    padding-right: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .hero .row {
+    gap: clamp(1rem, 2vw, 2rem);
+    align-items: stretch;
+  }
+
+  .left-col {
+    flex: 1.2;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .right-col {
+    flex: 0.8;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .hero-image {
+    height: 85%;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left bottom;
+  }
+
+  .left-stack {
+    gap: 2rem; /* restores the nicer gap between subtitle and bookmarks */
+    max-width: 560px;
+  }
+
+  .hero-text {
+    text-align: left;
+  }
+
   .hero-title {
     font-size: 3rem;
     line-height: 1;
+    margin: 0;
   }
 
   .hero-subtitle {
     font-size: 1.7rem;
     line-height: 1.2;
-    margin-top: 0.45rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0;
+  }
+
+  .side-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.5rem, 1.6vw, 1rem);
   }
 }
