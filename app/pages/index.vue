@@ -54,7 +54,12 @@
 
       <CopyEmailButton />
 
-      <a class="icon-btn" href="tel:+37255545629" aria-label="Phone" title="Phone">
+      <a
+        class="icon-btn"
+        href="tel:+37255545629"
+        aria-label="Phone"
+        title="Phone"
+      >
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
@@ -99,45 +104,45 @@
       </Transition>
     </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="row">
-      <div class="col left-col">
-        <div class="left-stack">
-          <div class="hero-text">
-            <Transition name="line" appear>
-              <h1 v-if="showTitle" class="hero-title">
-                {{ t("hero.title") }}
-              </h1>
-            </Transition>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col left-col">
+            <div class="left-stack">
+              <div class="hero-text">
+                <Transition name="line" appear>
+                  <h1
+                    v-if="showTitle"
+                    class="hero-title"
+                    v-html="t('hero.title')"
+                  ></h1>
+                </Transition>
 
-            <Transition name="line" appear>
-              <p v-if="showSubtitle" class="hero-subtitle">
-                {{ t("hero.subtitle") }}
-              </p>
-            </Transition>
+                <Transition name="line" appear>
+                  <p
+                    v-if="showSubtitle"
+                    class="hero-subtitle"
+                    v-html="t('hero.subtitle')"
+                  ></p>
+                </Transition>
+              </div>
+
+              <Transition name="line" appear>
+                <nav v-if="showNav" class="side-nav" aria-label="Page sections">
+                  <a
+                    v-for="item in heroNav"
+                    :key="item.href"
+                    class="bookmark"
+                    :href="item.href"
+                    @click="onClickScroll($event, item.href)"
+                  >
+                    {{ t(item.i18nKey) }}
+                  </a>
+                </nav>
+              </Transition>
+            </div>
           </div>
-
-          <Transition name="line" appear>
-            <nav
-              v-if="showNav"
-              class="side-nav"
-              aria-label="Page sections"
-            >
-              <a
-                v-for="item in heroNav"
-                :key="item.href"
-                class="bookmark"
-                :href="item.href"
-                @click="onClickScroll($event, item.href)"
-              >
-                {{ t(item.i18nKey) }}
-              </a>
-            </nav>
-          </Transition>
-        </div>
-      </div>
 
           <div class="col right-col">
             <div class="hero-image">
@@ -155,204 +160,198 @@
       </div>
     </section>
 
-<!-- SECTIONS -->
+    <!-- SECTIONS -->
 
-<section id="about" class="section about-section">
-  <div class="about-layout">
-    <div class="about-sidebar-spacer" aria-hidden="true"></div>
+    <section id="about" class="section about-section">
+      <div class="about-layout">
+        <div class="about-sidebar-spacer" aria-hidden="true"></div>
 
-    <div class="about-main">
-      <div class="section-inner">
-        <h2>{{ t("nav.about") }}</h2>
+        <div class="about-main">
+          <div class="section-inner">
+            <h2>{{ t("nav.about") }}</h2>
 
-        <div class="about-text">
-          <p
-            v-for="(paragraph, index) in tm('about.text')"
-            :key="index"
-            v-html="rt(paragraph)"
-          ></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="sections-with-sidebar">
-  <nav class="sticky-navigation">
-    <a href="#about" class="bookmark">{{ t("nav.about") }}</a>
-    <a href="#education" class="bookmark">{{ t("nav.education") }}</a>
-    <a href="#work" class="bookmark">{{ t("nav.work") }}</a>
-    <a href="#skills" class="bookmark">{{ t("nav.skills") }}</a>
-    <a href="#projects" class="bookmark">{{ t("nav.projects") }}</a>
-    <a href="#hobbies" class="bookmark">{{ t("nav.hobbies") }}</a>
-  </nav>
-
-  <div class="sections-main">
-    <section id="education" class="section">
-      <div class="section-inner">
-        <h2>{{ t("nav.education") }}</h2>
-
-        <div class="education-list">
-          <div v-for="(item, index) in educationItems" :key="index" class="education-row">
-            <div class="education-period">{{ rt(item.period) }}</div>
-            <div class="education-text" v-html="rt(item.text)"></div>
-          </div>
-        </div>
-
-        <div class="education-extra">
-          <button
-            type="button"
-            class="publications-toggle"
-            @click="showPublications = !showPublications"
-          >
-            {{
-              showPublications
-                ? t("education.hidePublications")
-                : t("education.showPublications")
-            }}
-            {{ showPublications ? "▴" : "▾" }}
-          </button>
-
-          <div v-if="showPublications" class="publications-list">
-            <div
-              v-for="(publication, index) in tm('education.publications')"
-              :key="index"
-              class="publication-item"
-              v-html="rt(publication)"
-            ></div>
+            <div class="about-text">
+              <p
+                v-for="(paragraph, index) in tm('about.text')"
+                :key="index"
+                v-html="rt(paragraph)"
+              ></p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-<section id="work" class="section">
-  <div class="section-inner">
-    <h2>{{ t("nav.work") }}</h2>
+    <div class="sections-with-sidebar">
+      <nav class="sticky-navigation">
+        <a href="#about" class="bookmark">{{ t("nav.about") }}</a>
+        <a href="#education" class="bookmark">{{ t("nav.education") }}</a>
+        <a href="#work" class="bookmark">{{ t("nav.work") }}</a>
+        <a href="#skills" class="bookmark">{{ t("nav.skills") }}</a>
+        <a href="#projects" class="bookmark">{{ t("nav.projects") }}</a>
+        <a href="#hobbies" class="bookmark">{{ t("nav.hobbies") }}</a>
+      </nav>
 
-    <div class="work-list">
-      <div
-        v-for="(item, index) in workItems"
-        :key="index"
-        class="work-item"
-      >
-        <div class="work-period">
-          {{ rt(item.period) }}
-        </div>
+      <div class="sections-main">
+        <section id="education" class="section">
+          <div class="section-inner">
+            <h2>{{ t("nav.education") }}</h2>
 
-        <div class="work-title" v-html="rt(item.title)"></div>
+            <div class="education-list">
+              <div
+                v-for="(item, index) in educationItems"
+                :key="index"
+                class="education-row"
+              >
+                <div class="education-period">{{ rt(item.period) }}</div>
+                <div class="education-text" v-html="rt(item.text)"></div>
+              </div>
+            </div>
 
-        <div class="work-text">
-          <ul>
-            <li v-for="(line, lineIndex) in item.text" :key="lineIndex">
-              {{ rt(line) }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            <div class="education-extra">
+              <button
+                type="button"
+                class="publications-toggle"
+                @click="showPublications = !showPublications"
+              >
+                {{
+                  showPublications
+                    ? t("education.hidePublications")
+                    : t("education.showPublications")
+                }}
+                {{ showPublications ? "▴" : "▾" }}
+              </button>
 
-<section id="skills" class="section">
-  <div class="section-inner">
-    <h2>{{ t("nav.skills") }}</h2>
-
-    <div class="skills-grid">
-      <article
-        v-for="(group, index) in skillGroups"
-        :key="index"
-        class="skill-card"
-      >
-        <h3>{{ rt(group.title) }}</h3>
-
-        <ul>
-          <li v-for="(item, itemIndex) in group.items" :key="itemIndex">
-            {{ rt(item) }}
-          </li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="projects" class="section">
-  <div class="section-inner">
-    <h2>{{ t("nav.projects") }}</h2>
-
-    <div class="projects-list">
-      <div
-        v-for="(project, index) in projectItems"
-        :key="index"
-        class="project-item"
-      >
-        <div class="project-title-block">
-          <div
-            class="project-title"
-            v-html="rt(project.title)"
-          ></div>
-        </div>
-
-        <div class="project-content">
-
-          <p
-            v-for="(paragraph, paragraphIndex) in project.description"
-            :key="paragraphIndex"
-            class="project-description"
-            v-html="rt(paragraph)"
-          ></p>
-
-          <div
-            v-if="project.highlights && project.highlights.length"
-            class="project-subtitle"
-          >
-            {{ t("projects.highlightsLabel") }}
+              <div v-if="showPublications" class="publications-list">
+                <div
+                  v-for="(publication, index) in tm('education.publications')"
+                  :key="index"
+                  class="publication-item"
+                  v-html="rt(publication)"
+                ></div>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <ul
-            v-if="project.highlights && project.highlights.length"
-            class="project-highlights"
-          >
-            <li
-              v-for="(highlight, highlightIndex) in project.highlights"
-              :key="highlightIndex"
-              v-html="rt(highlight)"
-            ></li>
-          </ul>
+        <section id="work" class="section">
+          <div class="section-inner">
+            <h2>{{ t("nav.work") }}</h2>
 
-          <p
-            class="project-tech"
-            v-html="rt(project.techStack)"
-          ></p>
+            <div class="work-list">
+              <div
+                v-for="(item, index) in workItems"
+                :key="index"
+                class="work-item"
+              >
+                <div class="work-period">
+                  {{ rt(item.period) }}
+                </div>
 
-          <p
-            v-if="project.website"
-            class="project-link"
-            v-html="rt(project.website)"
-          ></p>
+                <div class="work-title" v-html="rt(item.title)"></div>
 
-        </div>
+                <div class="work-text">
+                  <ul>
+                    <li v-for="(line, lineIndex) in item.text" :key="lineIndex">
+                      {{ rt(line) }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="section">
+          <div class="section-inner">
+            <h2>{{ t("nav.skills") }}</h2>
+
+            <div class="skills-grid">
+              <article
+                v-for="(group, index) in skillGroups"
+                :key="index"
+                class="skill-card"
+              >
+                <h3>{{ rt(group.title) }}</h3>
+
+                <ul>
+                  <li v-for="(item, itemIndex) in group.items" :key="itemIndex">
+                    {{ rt(item) }}
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section">
+          <div class="section-inner">
+            <h2>{{ t("nav.projects") }}</h2>
+
+            <div class="projects-list">
+              <div
+                v-for="(project, index) in projectItems"
+                :key="index"
+                class="project-item"
+              >
+                <div class="project-title-block">
+                  <div class="project-title" v-html="rt(project.title)"></div>
+                </div>
+
+                <div class="project-content">
+                  <p
+                    v-for="(paragraph, paragraphIndex) in project.description"
+                    :key="paragraphIndex"
+                    class="project-description"
+                    v-html="rt(paragraph)"
+                  ></p>
+
+                  <div
+                    v-if="project.highlights && project.highlights.length"
+                    class="project-subtitle"
+                  >
+                    {{ t("projects.highlightsLabel") }}
+                  </div>
+
+                  <ul
+                    v-if="project.highlights && project.highlights.length"
+                    class="project-highlights"
+                  >
+                    <li
+                      v-for="(highlight, highlightIndex) in project.highlights"
+                      :key="highlightIndex"
+                      v-html="rt(highlight)"
+                    ></li>
+                  </ul>
+
+                  <p class="project-tech" v-html="rt(project.techStack)"></p>
+
+                  <p
+                    v-if="project.website"
+                    class="project-link"
+                    v-html="rt(project.website)"
+                  ></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="hobbies" class="section">
+          <div class="section-inner">
+            <h2>{{ t("nav.hobbies") }}</h2>
+
+            <div class="hobbies-text">
+              <p
+                v-for="(paragraph, index) in tm('hobbies.text')"
+                :key="index"
+                v-html="rt(paragraph)"
+              ></p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="hobbies" class="section">
-  <div class="section-inner">
-    <h2>{{ t("nav.hobbies") }}</h2>
-
-    <div class="hobbies-text">
-      <p
-        v-for="(paragraph, index) in tm('hobbies.text')"
-        :key="index"
-        v-html="rt(paragraph)"
-      ></p>
-    </div>
-  </div>
-</section>
-
-  </div>
-</div>
-
   </main>
 </template>
 
@@ -361,8 +360,12 @@ import { onMounted, onBeforeUnmount, ref, nextTick, computed } from "vue";
 import CopyEmailButton from "@/components/CopyEmailButton.vue";
 
 const { t, tm, rt, setLocale, locale } = useI18n();
-const educationItems = computed(() => tm("education.items") as { period: string; text: string }[]);
-const workItems = computed(() => tm("work.items") as {period: string; title: string; text: string[];}[]);
+const educationItems = computed(
+  () => tm("education.items") as { period: string; text: string }[],
+);
+const workItems = computed(
+  () => tm("work.items") as { period: string; title: string; text: string[] }[],
+);
 const showPublications = ref(false);
 const skillGroups = computed(() => tm("skills.groups"));
 const projectItems = computed(() => tm("projects.items") as any[]);

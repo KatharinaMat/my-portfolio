@@ -8,17 +8,17 @@
     "hobbies": "Hobid"
   },
   "hero": {
-    "title": "Tere, mina olen Katharina!",
+    "title": "Tere!<br>Mina olen Katharina.",
     "subtitle": "Tere tulemast minu portfoolio lehele."
   },
-"about": {
-  "text": [
-    "Olen loomult uudishimulik, aktiivne ja õppimishimuline ning mulle meeldib pidevalt uusi asju avastada ja proovida. Viimastel aastatel olen üha enam süvenenud IT-valdkonda, õppinud tarkvaraarendust ning loonud väiksemaid rakendusi ja veebilehti. See on valdkond, mis pakub mulle palju huvi ja milles näen enda jaoks suurt arengupotentsiaali.",
-    "Samas ei defineeri ma ennast ainult ühe rolli kaudu. Minu taust on mitmekesine — olen töötanud nii analüütilises rollis Eesti Patendiametis kui ka müügi ja kliendisuhete valdkonnas. Need kogemused on arendanud minus analüütilist mõtlemist, suhtlemisoskust ja oskust leida praktilisi lahendusi erinevates olukordades.",
-    "Mulle meeldib planeerida, korraldada ja ideid ellu viia. Naudin nii meeskonnatööd kui ka iseseisvat tegutsemist ning pean oluliseks head koostööd ja avatud suhtlust. Iseloomult olen rõõmsameelne, detailidele tähelepanu pöörav ja leidlik, kui on vaja probleemidele lahendusi leida.",
-    "Kuigi praegu keskendun rohkem IT-valdkonnale, olen avatud erinevatele rollidele ja võimalustele. Mind motiveerib eelkõige võimalus õppida, panustada ja teha tööd, millel on päriselt mõte ja väärtus."
-  ]
-},
+  "about": {
+    "text": [
+      "Olen loomult uudishimulik, aktiivne ja õppimishimuline ning mulle meeldib pidevalt uusi asju avastada ja proovida. Viimastel aastatel olen üha enam süvenenud IT-valdkonda, õppinud tarkvaraarendust ning loonud väiksemaid rakendusi ja veebilehti. See on valdkond, mis pakub mulle palju huvi ja milles näen enda jaoks suurt arengupotentsiaali.",
+      "Samas ei defineeri ma ennast ainult ühe rolli kaudu. Minu taust on mitmekesine — olen töötanud nii analüütilises rollis Eesti Patendiametis kui ka müügi ja kliendisuhete valdkonnas. Need kogemused on arendanud minus analüütilist mõtlemist, suhtlemisoskust ja oskust leida praktilisi lahendusi erinevates olukordades.",
+      "Mulle meeldib planeerida, korraldada ja ideid ellu viia. Naudin nii meeskonnatööd kui ka iseseisvat tegutsemist ning pean oluliseks head koostööd ja avatud suhtlust. Iseloomult olen rõõmsameelne, detailidele tähelepanu pöörav ja leidlik, kui on vaja probleemidele lahendusi leida.",
+      "Kuigi praegu keskendun rohkem IT-valdkonnale, olen avatud erinevatele rollidele ja võimalustele. Mind motiveerib eelkõige võimalus õppida, panustada ja teha tööd, millel on päriselt mõte ja väärtus."
+    ]
+  },
 
   "education": {
     "items": [
@@ -92,107 +92,124 @@
     ]
   },
   "skills": {
-  "groups": [
-    {
-      "title": "Keeled",
-      "items": ["Inglise keel – C1", "Eesti keel – C1", "Vene keel – C2"]
-    },
-    {
-      "title": "Äri- ja CRM-süsteemid",
-      "items": ["SAP", "Salesforce CRM"]
-    },
-    {
-      "title": "Kontoritööriistad ja projektitöö ",
-      "items": ["Microsoft Office (Excel, Word, PowerPoint)", "LibreOffice", "Google Workspace", "Confluence", "Jira", "Slack", "GitHub"]
-    },
-    {
-      "title": "Andmehaldus ja analüüs",
-      "items": ["SQL", "PostgreSQL", "Tableau", "Excel"]
-    },
-    {
-      "title": "Programmeerimine",
-      "items": ["Java", "JavaScript", "TypeScript", "HTML", "CSS", "JSON"]
-    },
-    {
-      "title": "Arendustööriistad",
-      "items": ["IntelliJ IDEA", "Visual Studio Code", "Git", "Gradle", "Maven", "Vue.js", "Nuxt", "Spring Boot"]
-    },
-    {
-      "title": "API-d ja dokumentatsioon",
-      "items": ["Swagger / OpenAPI", "Postman"]
-    },
-        {
-      "title": "Disain",
-      "items": ["Figma", "Canva", "Inkscape"]
-    }
-  ]
-},
-"projects": {
-  "highlightsLabel": "Põhipunktid",
-  "items": [
-    {
-      "title": "<strong><span class='accent'>MyStuffLabelled</span></strong> — isiklike esemete haldamine QR-siltidega",
-      
-      "description": [
-        "Algselt väike isiklik projekt backend-arenduse ja QR-põhise märgistamise katsetamiseks on nüüdseks arenenud koostööprojektiks TalTechi programmi „Nooremast arendajast vanemarendajaks“ raames.",
-        "Projekti eesmärk on luua praktiline tööriist isiklike esemete organiseerimiseks, võimaldades kasutajatel sisestada esemete kohta infot, genereerida silte ning pääseda esemete detailideni ligi QR-koodi skaneerides.",
-        "Rakendust arendatakse nii veebirakenduse kui ka mobiilirakendusena ning avalik versioon on planeeritud avaldada 2026. aasta mais."
-      ],
+    "groups": [
+      {
+        "title": "Keeled",
+        "items": ["Inglise keel – C1", "Eesti keel – C1", "Vene keel – C2"]
+      },
+      {
+        "title": "Äri- ja CRM-süsteemid",
+        "items": ["SAP", "Salesforce CRM"]
+      },
+      {
+        "title": "Kontoritööriistad ja projektitöö ",
+        "items": [
+          "Microsoft Office (Excel, Word, PowerPoint)",
+          "LibreOffice",
+          "Google Workspace",
+          "Confluence",
+          "Jira",
+          "Slack",
+          "GitHub"
+        ]
+      },
+      {
+        "title": "Andmehaldus ja analüüs",
+        "items": ["SQL", "PostgreSQL", "Tableau", "Excel"]
+      },
+      {
+        "title": "Programmeerimine",
+        "items": ["Java", "JavaScript", "TypeScript", "HTML", "CSS", "JSON"]
+      },
+      {
+        "title": "Arendustööriistad",
+        "items": [
+          "IntelliJ IDEA",
+          "Visual Studio Code",
+          "Git",
+          "Gradle",
+          "Maven",
+          "Vue.js",
+          "Nuxt",
+          "Spring Boot"
+        ]
+      },
+      {
+        "title": "API-d ja dokumentatsioon",
+        "items": ["Swagger / OpenAPI", "Postman"]
+      },
+      {
+        "title": "Disain",
+        "items": ["Figma", "Canva", "Inkscape"]
+      }
+    ]
+  },
+  "projects": {
+    "highlightsLabel": "Põhipunktid",
+    "items": [
+      {
+        "title": "<strong><span class='accent'>MyStuffLabelled</span></strong> — isiklike esemete haldamine QR-siltidega",
 
-      "highlights": [
-        "Turvaline sisselogimine ja esemete omandiõiguse loogika",
-        "QR-koodide genereerimine füüsiliste siltide jaoks",
-        "REST API põhine suhtlus backend-i ja Vue frontend-i vahel",
-        "Arenduses: admini vaade, otsing ja filtreerimine, jagamine kasutahate vahel"
-      ],
+        "description": [
+          "Algselt väike isiklik projekt backend-arenduse ja QR-põhise märgistamise katsetamiseks on nüüdseks arenenud koostööprojektiks TalTechi programmi „Nooremast arendajast vanemarendajaks“ raames.",
+          "Projekti eesmärk on luua praktiline tööriist isiklike esemete organiseerimiseks, võimaldades kasutajatel sisestada esemete kohta infot, genereerida silte ning pääseda esemete detailideni ligi QR-koodi skaneerides.",
+          "Rakendust arendatakse nii veebirakenduse kui ka mobiilirakendusena ning avalik versioon on planeeritud avaldada 2026. aasta mais."
+        ],
 
-      "techStack": "<strong>Tech stack:</strong> Java (Spring Boot), PostgreSQL, Vue.js, REST API, MapStruct"
-    },
+        "highlights": [
+          "Turvaline sisselogimine ja esemete omandiõiguse loogika",
+          "QR-koodide genereerimine füüsiliste siltide jaoks",
+          "REST API põhine suhtlus backend-i ja Vue frontend-i vahel",
+          "Arenduses: admini vaade, otsing ja filtreerimine, jagamine kasutahate vahel"
+        ],
 
-    {
-      "title": "<strong><span class='accent'>MyPortfolio</span></strong> — see leht",
+        "techStack": "<strong>Tech stack:</strong> Java (Spring Boot), PostgreSQL, Vue.js, REST API, MapStruct"
+      },
 
-      "description": [
-        "Lõin selle portfooliolehe, et tutvustada oma õpiteekonda, töökogemust ja huvisid viisil, mis võimaldab rohkem konteksti kui traditsiooniline CV või sotsiaalmeedia profiil."
-      ],
+      {
+        "title": "<strong><span class='accent'>MyPortfolio</span></strong> — see leht",
 
-      "highlights": [
-        "Kahekeelne kasutajaliides (inglise / eesti)",
-        "Responsiivne disain mobiilisõbraliku lähenemisega, kohandatud sticky-navigatsioon ja animatsioonid",
-        "Struktureeritud sektsioonid JSON-sisufailide abil"
-      ],
+        "description": [
+          "Lõin selle portfooliolehe, et tutvustada oma õpiteekonda, töökogemust ja huvisid viisil, mis võimaldab rohkem konteksti kui traditsiooniline CV või sotsiaalmeedia profiil."
+        ],
 
-      "techStack": "<strong>Tech stack:</strong> Nuxt, Vue.js, HTML, CSS"
-    },
+        "highlights": [
+          "Kahekeelne kasutajaliides (inglise / eesti)",
+          "Responsiivne disain mobiilisõbraliku lähenemisega, kohandatud sticky-navigatsioon ja animatsioonid",
+          "Struktureeritud sektsioonid JSON-sisufailide abil"
+        ],
 
-    {
-      "title": "<strong><span class='accent'>Primastella</span></strong> — trükikoja veebileht (planeeritud uuendus)",
+        "techStack": "<strong>Tech stack:</strong> Nuxt, Vue.js, HTML, CSS"
+      },
 
-      "description": [
-        "Veebileht, mille arendasin kohaliku trükiettevõtte jaoks nende teenuste, portfoolio ja kontaktandmete tutvustamiseks.",
-        "Praegu tegelen lehe uuendamisega, mis hõlmab kaasaegsemat tehnoloogiat ja lahendusi ja visuaalse disaini värskendamist."
-      ],
+      {
+        "title": "<strong><span class='accent'>Primastella</span></strong> — trükikoja veebileht (planeeritud uuendus)",
 
-      "highlights": [
-        "Kohandatud responsiivne paigutus",
-        "Kahekeelne sisu (inglise / eesti)",
-        "Lihtne ja selge struktuur ning kiire laadimine"
-      ],
+        "description": [
+          "Veebileht, mille arendasin kohaliku trükiettevõtte jaoks nende teenuste, portfoolio ja kontaktandmete tutvustamiseks.",
+          "Praegu tegelen lehe uuendamisega, mis hõlmab kaasaegsemat tehnoloogiat ja lahendusi ja visuaalse disaini värskendamist."
+        ],
 
-      "techStack": "<strong>Tech stack:</strong> HTML, CSS, JavaScript",
-      "website": "<strong>Veebileht:</strong> <a href='https://primastella.ee' target='_blank' rel='noreferrer'>https://primastella.ee</a>"
-    }
-  ]
-},
-"hobbies": {
-  "text": [
-    "<strong>2014.</strong> aastal avastasin enda jaoks swingtantsu — hobi, mis kasvas kiiresti millekski palju enamaks kui lihtsalt vaba aja veetmise viisiks. Lisaks tantsimise rõõmule paelus mind väga ka selle kogukonna avatus ja mitmekesisus, kus väga erineva taustaga inimesed saavad muusika ja liikumise kaudu omavahel ühenduse leida.",
+        "highlights": [
+          "Kohandatud responsiivne paigutus",
+          "Kahekeelne sisu (inglise / eesti)",
+          "Lihtne ja selge struktuur ning kiire laadimine"
+        ],
 
-    "See hobi on viinud mind paljudesse linnadesse ja riikidesse ning andnud uue vaatenurga kultuurile, kogukonnale ja koostööle. Aastate jooksul olen pühendanud palju aega erinevate swingtantsu stiilide õppimisele ning meie kohaliku tantsukogukonna arendamisele.",
+        "techStack": "<strong>Tech stack:</strong> HTML, CSS, JavaScript",
+        "website": "<strong>Veebileht:</strong> <a href='https://primastella.ee' target='_blank' rel='noreferrer'>https://primastella.ee</a>"
+      }
+    ]
+  },
+  "hobbies": {
+    "text": [
+      "<strong>2014.</strong> aastal avastasin enda jaoks swingtantsu — hobi, mis kasvas kiiresti millekski palju enamaks kui lihtsalt vaba aja veetmise viisiks. Lisaks tantsimise rõõmule paelus mind väga ka selle kogukonna avatus ja mitmekesisus, kus väga erineva taustaga inimesed saavad muusika ja liikumise kaudu omavahel ühenduse leida.",
 
-    "Alates <strong>2017.</strong> aastast olen andnud regulaarseid tantsutunde ning liitusin ka <strong>Tallinn Swing Dance Society</strong> MTÜ meeskonnaga. Koos selle entusiastliku seltskonnaga oleme kasvatanud kohalikku swingtantsu kogukonda ning korraldanud töötubasid, tantsuõhtuid, pidusid ja rahvusvahelisi festivale.",
+      "See hobi on viinud mind paljudesse linnadesse ja riikidesse ning andnud uue vaatenurga kultuurile, kogukonnale ja koostööle. Aastate jooksul olen pühendanud palju aega erinevate swingtantsu stiilide õppimisele ning meie kohaliku tantsukogukonna arendamisele.",
 
-    "Isegi pärast rohkem kui kümmet aastat <em>swingi</em> maailmas tunnen, et mu arengutee jätkub — mitte ainult tantsija ja õpetajana, vaid ka korraldaja ja inimesena."
-  ]
-}
+      "Alates <strong>2017.</strong> aastast olen andnud regulaarseid tantsutunde ning liitusin ka <strong>Tallinn Swing Dance Society</strong> MTÜ meeskonnaga. Koos selle entusiastliku seltskonnaga oleme kasvatanud kohalikku swingtantsu kogukonda ning korraldanud töötubasid, tantsuõhtuid, pidusid ja rahvusvahelisi festivale.",
+
+      "Isegi pärast rohkem kui kümmet aastat <em>swingi</em> maailmas tunnen, et mu arengutee jätkub — mitte ainult tantsija ja õpetajana, vaid ka korraldaja ja inimesena."
+    ]
+  }
 }

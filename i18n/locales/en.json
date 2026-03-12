@@ -8,56 +8,56 @@
     "hobbies": "Hobbies"
   },
   "hero": {
-    "title": "Hi, I'm Katharina!",
-    "subtitle": "Welcome to my portfolio."
+    "title": "Hi, <br> I'm Katharina!",
+    "subtitle": "Welcome to my portfolio page."
   },
   "about": {
-  "text": [
-    "I am a naturally curious and active person with many interests in life. Over the past few years I have been exploring software development and building small applications and websites. It has become an exciting new field for me where I can continuously learn and grow.",
-    "My professional background is quite diverse. I began my career as a chemistry examiner at the Estonian Patent Office, working with scientific and technical information and evaluating patent applications.",
-    "Later I moved into roles in sales and customer relations, where communication, organization, and problem-solving became central parts of my work. I enjoy planning, coordinating projects, and finding practical solutions when challenges appear.",
-    "What motivates me most is the process of learning and building something useful. Whether it is developing an application, improving a workflow, organizing an event, or helping a team reach a goal, I enjoy working with people, sharing ideas, and turning plans into reality.",
-    "While my recent focus has been on IT, I remain open to different roles and opportunities. I value collaboration, clear communication, and a positive working atmosphere, and I am always happy to contribute where my skills, curiosity, and experience can be useful."
-  ]
-},
+    "text": [
+      "I am a naturally curious and active person with many interests in life. Over the past few years I have been exploring software development and building small applications and websites. It has become an exciting new field for me where I can continuously learn and grow.",
+      "My professional background is quite diverse. I began my career as a chemistry examiner at the Estonian Patent Office, working with scientific and technical information and evaluating patent applications.",
+      "Later I moved into roles in sales and customer relations, where communication, organization, and problem-solving became central parts of my work. I enjoy planning, coordinating projects, and finding practical solutions when challenges appear.",
+      "What motivates me most is the process of learning and building something useful. Whether it is developing an application, improving a workflow, organizing an event, or helping a team reach a goal, I enjoy working with people, sharing ideas, and turning plans into reality.",
+      "While my recent focus has been on IT, I remain open to different roles and opportunities. I value collaboration, clear communication, and a positive working atmosphere, and I am always happy to contribute where my skills, curiosity, and experience can be useful."
+    ]
+  },
   "education": {
-  "items": [
-    {
-      "period": "01.2026 – ongoing",
-      "text": "<strong>TalTech</strong> – “From Junior to Senior Software Developer”, 250 acad. h"
-    },
-    {
-      "period": "11.2025 – 12.2025",
-      "text": "<strong>AS BCS Koolitus</strong> – Vali-IT Software Development, 240 acad. h"
-    },
-    {
-      "period": "05.2025 – 06.2025",
-      "text": "<strong>AS BCS Koolitus</strong> – “Women into Web Development!”, 192 acad. h"
-    },
-    {
-      "period": "03.2023 – 08.2023",
-      "text": "<strong>AS BCS Koolitus</strong> – Junior Back-End Developer e-course, 450 acad. h"
-    },
-    {
-      "period": "08.2011 – 06.2013",
-      "text": "<strong>TalTech</strong> – Applied Chemistry and Biotechnology, <strong><span class='accent'>MSc</span></strong>, <em>cum laude</em>"
-    },
-    {
-      "period": "08.2008 – 06.2011",
-      "text": "<strong>TalTech</strong> – Applied Chemistry and Biotechnology, BSc, <em>cum laude</em>"
-    }
-  ],
-  "showPublications": "Show publications",
-  "hidePublications": "Hide publications",
-  "publications": [
-    "<strong>Paju, A.; Oja, K.; Matkevitš, K.; et al.</strong><br>Asymmetric synthesis of tertiary 2-substituted 5-oxotetrahydrofuran-2-carboxylic acids.<br><em>Heterocycles</em>, 2014.",
-    "<strong>Lopp, M.; Paju, A.; Oja, K.; Matkevitš, K.; et al.</strong><br>ChemInform Abstract: Asymmetric Synthesis of Tertiary 2-Substituted 5-Oxotetrahydrofuran-2-Carboxylic Acids.<br><em>ChemInform</em>, 2014.",
-    "<strong>Paju, A.; Kostomarova, D.; Matkevitš, K.; Lopp, M.; et al.</strong><br>3-Alkyl-1,2-cyclopentanediones by Negishi cross-coupling of a 3-bromo-1,2-cyclopentanedione silyl enol ether with alkylzinc reagents: An approach to 2-substituted carboxylic acid γ-lactones, homocitric and lycoperdic acids.<br><em>Tetrahedron</em>, 2015.",
-    "<strong>Patent</strong><br><strong>Lopp, M.; Paju, A.; Matkevitš, K.</strong><br>Method for preparation of (2-hydroxy-3-oxo-cyclopent-1-enyl)-acetic acid esters.<br>US Patent US20140378698A1, 2014."
-  ]
+    "items": [
+      {
+        "period": "01.2026 – ongoing",
+        "text": "<strong>TalTech</strong> – “From Junior to Senior Software Developer”, 250 acad. h"
+      },
+      {
+        "period": "11.2025 – 12.2025",
+        "text": "<strong>AS BCS Koolitus</strong> – Vali-IT Software Development, 240 acad. h"
+      },
+      {
+        "period": "05.2025 – 06.2025",
+        "text": "<strong>AS BCS Koolitus</strong> – “Women into Web Development!”, 192 acad. h"
+      },
+      {
+        "period": "03.2023 – 08.2023",
+        "text": "<strong>AS BCS Koolitus</strong> – Junior Back-End Developer e-course, 450 acad. h"
+      },
+      {
+        "period": "08.2011 – 06.2013",
+        "text": "<strong>TalTech</strong> – Applied Chemistry and Biotechnology, <strong><span class='accent'>MSc</span></strong>, <em>cum laude</em>"
+      },
+      {
+        "period": "08.2008 – 06.2011",
+        "text": "<strong>TalTech</strong> – Applied Chemistry and Biotechnology, BSc, <em>cum laude</em>"
+      }
+    ],
+    "showPublications": "Show publications",
+    "hidePublications": "Hide publications",
+    "publications": [
+      "<strong>Paju, A.; Oja, K.; Matkevitš, K.; et al.</strong><br>Asymmetric synthesis of tertiary 2-substituted 5-oxotetrahydrofuran-2-carboxylic acids.<br><em>Heterocycles</em>, 2014.",
+      "<strong>Lopp, M.; Paju, A.; Oja, K.; Matkevitš, K.; et al.</strong><br>ChemInform Abstract: Asymmetric Synthesis of Tertiary 2-Substituted 5-Oxotetrahydrofuran-2-Carboxylic Acids.<br><em>ChemInform</em>, 2014.",
+      "<strong>Paju, A.; Kostomarova, D.; Matkevitš, K.; Lopp, M.; et al.</strong><br>3-Alkyl-1,2-cyclopentanediones by Negishi cross-coupling of a 3-bromo-1,2-cyclopentanedione silyl enol ether with alkylzinc reagents: An approach to 2-substituted carboxylic acid γ-lactones, homocitric and lycoperdic acids.<br><em>Tetrahedron</em>, 2015.",
+      "<strong>Patent</strong><br><strong>Lopp, M.; Paju, A.; Matkevitš, K.</strong><br>Method for preparation of (2-hydroxy-3-oxo-cyclopent-1-enyl)-acetic acid esters.<br>US Patent US20140378698A1, 2014."
+    ]
   },
 
-    "work": {
+  "work": {
     "items": [
       {
         "period": "08.2023 – 04.2025",
@@ -88,111 +88,127 @@
           "Analyzed technical and scientific information and prepared official decisions and correspondence based on the findings.",
           "Advised patent applicants and explained the patent examination process and related requirements."
         ]
-      }      
+      }
     ]
   },
   "skills": {
-  "groups": [
-    {
-      "title": "Languages",
-      "items": ["English – C1", "Estonian – C1", "Russian – C2"]
-    },
-    {
-      "title": "Business & CRM systems",
-      "items": ["SAP", "Salesforce CRM"]
-    },
-    {
-      "title": "Office & Collaboration Tools",
-      "items": ["Microsoft Office (Excel, Word, PowerPoint)", "LibreOffice", "Google Workspace, Confluence", "Jira", "Slack", "GitHub"]
-    },
-    {
-      "title": "Data & analytics",
-      "items": ["SQL", "PostgreSQL", "Tableau", "Excel"]
-    },
-    {
-      "title": "Programming",
-      "items": ["Java", "JavaScript", "TypeScript", "HTML", "CSS", "JSON"]
-    },
-    {
-      "title": "Development tools",
-      "items": ["IntelliJ IDEA", "Visual Studio Code", "Git", "Gradle", "Maven", "Vue.js", "Nuxt", "Spring Boot"]
-    },
-    {
-      "title": "API & documentation",
-      "items": ["Swagger / OpenAPI", "Postman"]
-    },
-        {
-      "title": "Design",
-      "items": ["Figma", "Canva", "Inkscape"]
-    }
-  ]
-},
-"projects": {
-  "highlightsLabel": "Highlights",
-  "items": [
-    {
-      "title": "<strong><span class='accent'>MyStuffLabelled</span></strong> — Personal Inventory with QR Labels",
-      
-      "description": [
-        "Originally a small personal project to explore backend development and QR-based labeling, the application now evolved into a collaborative team project under the TalTech “From Junior to Senior Software Developer program”.",
-        "The goal is to build a practical tool for organizing personal belongings, allowing users to register items, generate labels, and access item details by scanning them.",
-        "The project is being developed as both a web and mobile application, with a planned public release in May 2026."
-      ],
+    "groups": [
+      {
+        "title": "Languages",
+        "items": ["English – C1", "Estonian – C1", "Russian – C2"]
+      },
+      {
+        "title": "Business & CRM systems",
+        "items": ["SAP", "Salesforce CRM"]
+      },
+      {
+        "title": "Office & Collaboration Tools",
+        "items": [
+          "Microsoft Office (Excel, Word, PowerPoint)",
+          "LibreOffice",
+          "Google Workspace, Confluence",
+          "Jira",
+          "Slack",
+          "GitHub"
+        ]
+      },
+      {
+        "title": "Data & analytics",
+        "items": ["SQL", "PostgreSQL", "Tableau", "Excel"]
+      },
+      {
+        "title": "Programming",
+        "items": ["Java", "JavaScript", "TypeScript", "HTML", "CSS", "JSON"]
+      },
+      {
+        "title": "Development tools",
+        "items": [
+          "IntelliJ IDEA",
+          "Visual Studio Code",
+          "Git",
+          "Gradle",
+          "Maven",
+          "Vue.js",
+          "Nuxt",
+          "Spring Boot"
+        ]
+      },
+      {
+        "title": "API & documentation",
+        "items": ["Swagger / OpenAPI", "Postman"]
+      },
+      {
+        "title": "Design",
+        "items": ["Figma", "Canva", "Inkscape"]
+      }
+    ]
+  },
+  "projects": {
+    "highlightsLabel": "Highlights",
+    "items": [
+      {
+        "title": "<strong><span class='accent'>MyStuffLabelled</span></strong> — Personal Inventory with QR Labels",
 
-      "highlights": [
-        "Secure login and item ownership logic",
-        "QR code generation for physical labeling",
-        "REST API communication between backend and Vue frontend",
-        "Ongoing development: admin dashboard, search and filtering, item sharing"
-      ],
+        "description": [
+          "Originally a small personal project to explore backend development and QR-based labeling, the application now evolved into a collaborative team project under the TalTech “From Junior to Senior Software Developer program”.",
+          "The goal is to build a practical tool for organizing personal belongings, allowing users to register items, generate labels, and access item details by scanning them.",
+          "The project is being developed as both a web and mobile application, with a planned public release in May 2026."
+        ],
 
-      "techStack": "<strong>Tech stack:</strong> Java (Spring Boot), PostgreSQL, Vue.js, REST API, MapStruct"
-    },
+        "highlights": [
+          "Secure login and item ownership logic",
+          "QR code generation for physical labeling",
+          "REST API communication between backend and Vue frontend",
+          "Ongoing development: admin dashboard, search and filtering, item sharing"
+        ],
 
-    {
-      "title": "<strong><span class='accent'>MyPortfolio</span></strong> — this page",
+        "techStack": "<strong>Tech stack:</strong> Java (Spring Boot), PostgreSQL, Vue.js, REST API, MapStruct"
+      },
 
-      "description": [
-        "I have created this portfolio page to present my learning journey, professional experience, and interests in a way that allows more context than a traditional CV or social media profile."
-      ],
+      {
+        "title": "<strong><span class='accent'>MyPortfolio</span></strong> — this page",
 
-      "highlights": [
-        "Bilingual interface (English / Estonian)",
-        "Responsive layout with mobile-first design, custom sticky navigation and animations",
-        "Structured sections using JSON content files"
-      ],
+        "description": [
+          "I have created this portfolio page to present my learning journey, professional experience, and interests in a way that allows more context than a traditional CV or social media profile."
+        ],
 
-      "techStack": "<strong>Tech stack:</strong> Nuxt, Vue.js, HTML, CSS"
-    },
+        "highlights": [
+          "Bilingual interface (English / Estonian)",
+          "Responsive layout with mobile-first design, custom sticky navigation and animations",
+          "Structured sections using JSON content files"
+        ],
 
-    {
-      "title": "<strong><span class='accent'>Primastella</span></strong> — Printing House Website (Planned modernization)",
+        "techStack": "<strong>Tech stack:</strong> Nuxt, Vue.js, HTML, CSS"
+      },
 
-      "description": [
-        "A website I developed for a local printing company to present their services, portfolio, and contact information.",
-        "Currently I am working on migration to a modern stack and UI redesign."
-      ],
+      {
+        "title": "<strong><span class='accent'>Primastella</span></strong> — Printing House Website (Planned modernization)",
 
-      "highlights": [
-        "Custom responsive layout",
-        "Bilingual content",
-        "Focus on simple structure and fast loading"
-      ],
+        "description": [
+          "A website I developed for a local printing company to present their services, portfolio, and contact information.",
+          "Currently I am working on migration to a modern stack and UI redesign."
+        ],
 
-      "techStack": "<strong>Tech stack:</strong> HTML, CSS, JavaScript",
-      "website": "<strong>Website:</strong> <a href='https://primastella.ee' target='_blank' rel='noreferrer'>https://primastella.ee</a>"
-    }
-  ]
-},
-"hobbies": {
-  "text": [
-    "In <strong>2014</strong> I discovered swing dancing — a hobby that quickly became much more than just a pastime. Besides the joy of dancing itself, I was fascinated by the welcoming and diverse community where people from very different backgrounds could connect through music and movement.",
+        "highlights": [
+          "Custom responsive layout",
+          "Bilingual content",
+          "Focus on simple structure and fast loading"
+        ],
 
-    "This hobby has taken me to many cities and countries and has given me a new perspective on culture, community, and collaboration. Over the years I have dedicated a lot of time to learning different swing dance styles and supporting the growth of our local scene.",
+        "techStack": "<strong>Tech stack:</strong> HTML, CSS, JavaScript",
+        "website": "<strong>Website:</strong> <a href='https://primastella.ee' target='_blank' rel='noreferrer'>https://primastella.ee</a>"
+      }
+    ]
+  },
+  "hobbies": {
+    "text": [
+      "In <strong>2014</strong> I discovered swing dancing — a hobby that quickly became much more than just a pastime. Besides the joy of dancing itself, I was fascinated by the welcoming and diverse community where people from very different backgrounds could connect through music and movement.",
 
-    "Since <strong>2017</strong> I have been teaching regular dance classes and became part of the <strong>Tallinn Swing Dance Society</strong> (NGO) team. Together with this enthusiastic group we have grown the local swing dance community and organized workshops, social dance events, local parties, and international festivals.",
+      "This hobby has taken me to many cities and countries and has given me a new perspective on culture, community, and collaboration. Over the years I have dedicated a lot of time to learning different swing dance styles and supporting the growth of our local scene.",
 
-    "Even after more than a decade in the scene, I still feel that I continue to grow — not only as a dancer and instructor, but also as an organizer and as a person."
-  ]
-}
+      "Since <strong>2017</strong> I have been teaching regular dance classes and became part of the <strong>Tallinn Swing Dance Society</strong> (NGO) team. Together with this enthusiastic group we have grown the local swing dance community and organized workshops, social dance events, local parties, and international festivals.",
+
+      "Even after more than a decade in the scene, I still feel that I continue to grow — not only as a dancer and instructor, but also as an organizer and as a person."
+    ]
+  }
 }
