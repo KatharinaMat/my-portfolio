@@ -14,9 +14,16 @@ body {
 html {
   scroll-behavior: smooth; /*Makes anchor-link scrolling (bookmarks) animate smoothly*/
 }
+
 .page {
-  min-height: 100vh; /*ensures the page background fills the screen even with little content.*/
-  background: linear-gradient(90deg, #f6efe4 0%, #edd2a6 100%);
+  min-height: 100vh;
+  background: linear-gradient(90deg, #f6efe4 0%, #f2e7cf 50%, #ecd9b8 100%);
+}
+/* Desktop override */
+@media (min-width: 860px) {
+  .page {
+    background: linear-gradient(90deg, #f6efe4 0%, #edd2a6 100%);
+  }
 }
 
 /* =================================
@@ -35,10 +42,10 @@ body {
 
 .hero {
   width: 100%; /*takes 100% of page width*/
-  height: 45vh;          /* fixed: hero will NOT grow on mobile */
+  height: 45vh; /* fixed: hero will NOT grow on mobile */
   background: linear-gradient(90deg, #dcb77d 0%, #947b54 100%);
   border-radius: 0 0 26px 26px;
-  overflow: hidden;      /* safety: prevents children visually spilling out */
+  overflow: hidden; /* safety: prevents children visually spilling out */
 }
 
 /* Make descendants able to size against hero height */
@@ -50,7 +57,7 @@ body {
 /* Desktop override */
 @media (min-width: 860px) {
   .hero {
-    height: 55vh;        /* fixed: hero will NOT grow on desktop */
+    height: 55vh; /* fixed: hero will NOT grow on desktop */
   }
 }
 
@@ -60,7 +67,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1100px;                 /* readable line length on desktop */
+  max-width: 1100px; /* readable line length on desktop */
   margin: 0 auto; /*centres the container*/
 
   /* mobile safety padding (prevents text/buttons touching screen edge) */
@@ -74,24 +81,30 @@ body {
 
 .hero .row {
   display: flex; /*children become flex items, layout is controlled by flexbox rules instead of normal document flow*/
-  flex-direction: row;  /* columns always side by side */
+  flex-direction: row; /* columns always side by side */
   height: 100%;
   align-items: stretch;
   gap: clamp(0.75rem, 2vw, 2rem); /* smaller on mobile, bigger on desktop */
 }
 
-.left-col  { flex: 1.2; min-width: 0; } /*0 allows the column to shrink properly instead of pushing sideways.*/
-.right-col { flex: 0.8; min-width: 0; }
+.left-col {
+  flex: 1.2;
+  min-width: 0;
+} /*0 allows the column to shrink properly instead of pushing sideways.*/
+.right-col {
+  flex: 0.8;
+  min-width: 0;
+}
 
 /*to keep the portrait image anchored*/
 .right-col {
   display: flex;
-  justify-content: flex-start;  /* left */
-  align-items: flex-end;        /* bottom */
+  justify-content: flex-start; /* left */
+  align-items: flex-end; /* bottom */
 }
 
 .hero-image {
-  height: 85%;                 /* relative to hero (since row is 100%) */
+  height: 85%; /* relative to hero (since row is 100%) */
   width: 100%;
   display: flex;
   align-items: flex-end;
@@ -102,7 +115,7 @@ body {
 .portrait {
   height: 100%;
   width: 100%;
-  object-fit: contain;         /* fits without cropping; use cover if you prefer crop */
+  object-fit: contain; /* fits without cropping; use cover if you prefer crop */
   display: block;
   object-position: left bottom;
 }
@@ -120,8 +133,8 @@ body {
 .left-col {
   display: flex;
   height: 100%;
-  align-items: center;          /* centers left-stack vertically */
-  justify-content: center;  /* centers left-stack horizontally */
+  align-items: center; /* centers left-stack vertically */
+  justify-content: center; /* centers left-stack horizontally */
 }
 
 .left-stack {
@@ -137,10 +150,12 @@ body {
 }
 
 /* Text block internal spacing */
-.hero-title { margin: 0; }
-.hero-subtitle { 
+.hero-title {
+  margin: 0;
+}
+.hero-subtitle {
   margin: 0.6rem 0 0;
-  margin-bottom: clamp(0.8rem, 2.2vh, 1.4rem); ;
+  margin-bottom: clamp(0.8rem, 2.2vh, 1.4rem);
 }
 
 /* =================================
@@ -173,8 +188,6 @@ body {
   font-size: clamp(1rem, 1.6vw, 1.25rem);
 }
 
-
-
 /* =================================
    FIXED UI: Language switch
    ================================= */
@@ -182,7 +195,7 @@ body {
 .lang {
   position: fixed;
   top: 14px;
-  right: 14px;                 /* no CSS var needed */
+  right: 14px; /* no CSS var needed */
   z-index: 30;
 
   display: inline-flex;
@@ -212,7 +225,10 @@ body {
   line-height: 1;
 
   opacity: 0.75;
-  transition: background-color 180ms ease, color 180ms ease, opacity 180ms ease,
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    opacity 180ms ease,
     transform 180ms ease;
 }
 
@@ -234,59 +250,62 @@ body {
 /* =================================
   BOOKMARKS
    ================================= */
-/* Soft card links */ 
-.bookmark { 
-  display: flex; 
-  align-items: center; 
-  justify-content: flex-start; 
-  white-space: normal; 
-  text-decoration: none; 
+/* Soft card links */
+.bookmark {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: normal;
+  text-decoration: none;
   min-width: 0;
 
-  background: rgba(248, 246, 242, 0.72); 
-  border: 1px solid rgba(15, 63, 73, 0.14); 
+  background: rgba(248, 246, 242, 0.72);
+  border: 1px solid rgba(15, 63, 73, 0.14);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 
-  padding: 10px 14px 10px 16px; 
+  padding: 10px 14px 10px 16px;
   border-radius: 14px;
 
-  color: #0f3f49; 
-  font-weight: 600; 
-  letter-spacing: 0.2px; 
+  color: #0f3f49;
+  font-weight: 600;
+  letter-spacing: 0.2px;
 
-  position: relative; 
+  position: relative;
   overflow: hidden;
 
-  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, 
-  background-color 160ms ease;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
 }
 
-
-
-.bookmark::before { 
-  content: ""; 
-  position: absolute; 
-  left: 0; 
-  top: 10px; 
-  bottom: 10px; 
-  width: 4px; 
-  border-radius: 999px; 
-  background: #134f5c; 
-  opacity: 0.9; 
+.bookmark::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 999px;
+  background: #134f5c;
+  opacity: 0.9;
 }
 
-.bookmark::after { content: none; }
+.bookmark::after {
+  content: none;
+}
 
-.bookmark:hover { 
-    transform: translateY(-1px); 
-    border-color: rgba(15, 63, 73, 0.22); 
-    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.11); 
-    background: rgba(248, 246, 242, 0.84); 
- }
+.bookmark:hover {
+  transform: translateY(-1px);
+  border-color: rgba(15, 63, 73, 0.22);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.11);
+  background: rgba(248, 246, 242, 0.84);
+}
 
-.bookmark:focus-visible { 
-  outline: 3px solid rgba(19, 79, 92, 0.28); 
-  outline-offset: 3px; 
+.bookmark:focus-visible {
+  outline: 3px solid rgba(19, 79, 92, 0.28);
+  outline-offset: 3px;
 }
 
 /* =================================
@@ -295,8 +314,8 @@ body {
 
 .social {
   position: fixed;
-  right: 14px;        /* aligned with .lang */
-  top: 72px;          /* sits under language switch */
+  right: 14px; /* aligned with .lang */
+  top: 72px; /* sits under language switch */
   z-index: 25;
 
   display: flex;
@@ -318,7 +337,9 @@ body {
   display: grid;
   place-items: center;
 
-  transition: transform 160ms ease, background-color 160ms ease;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease;
 }
 
 .icon-btn:hover {
@@ -363,7 +384,7 @@ body {
   --section-pad-x: 18px;
 }
 .section {
-  padding:  var(--section-pad-y) var(--section-pad-x);
+  padding: var(--section-pad-y) var(--section-pad-x);
 }
 
 .section-inner {
@@ -371,7 +392,7 @@ body {
   margin: 0 auto;
   color: #1a1a1a;
 }
-.accent { 
+.accent {
   color: #134f5c; /*used to accentuate certain words in text*/
 }
 
@@ -423,12 +444,14 @@ body {
   gap: 0.25rem;
   padding: 0.35rem 0.45rem;
   border-radius: 6px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .education-row:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .education-period {
@@ -445,11 +468,8 @@ body {
   font-weight: 600;
 }
 
-
-
 /* Desktop override */
 @media (min-width: 860px) {
-
   .education-row {
     grid-template-columns: 170px 1fr;
     column-gap: 1.25rem;
@@ -459,7 +479,6 @@ body {
   .education-period {
     white-space: nowrap;
   }
-
 }
 
 /* =================================
@@ -479,7 +498,10 @@ body {
   font: inherit;
   color: #1a1a1a;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .publications-toggle:hover {
@@ -532,7 +554,6 @@ body {
 
 /* Desktop only */
 @media (min-width: 860px) {
-
   .sections-with-sidebar {
     display: grid;
     grid-template-columns: 170px minmax(0, 1fr);
@@ -567,7 +588,6 @@ body {
     top: 8px;
     bottom: 8px;
   }
-
 }
 /* =================================
    MOBILE HAMBURGER MENU STICKY
@@ -578,8 +598,8 @@ body {
 }
 
 .section-menu-panel {
-position: absolute;
-  right: calc(100% + 12px); 
+  position: absolute;
+  right: calc(100% + 12px);
   bottom: 0;
 
   display: flex;
@@ -626,7 +646,9 @@ position: absolute;
 
 .section-panel-enter-active,
 .section-panel-leave-active {
-  transition: opacity 0.22s ease, transform 0.22s ease;
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
   transform-origin: right center;
 }
 
@@ -727,7 +749,7 @@ position: absolute;
 }
 .skill-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
   background: rgba(248, 246, 242, 0.78);
 }
 
@@ -764,7 +786,6 @@ position: absolute;
 
 /* Desktop override */
 @media (min-width: 860px) {
-
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.1rem;
@@ -773,7 +794,6 @@ position: absolute;
   .skill-card ul {
     column-width: 140px;
   }
-
 }
 /* =================================
    PROJECTS
@@ -847,7 +867,7 @@ position: absolute;
   color: #134f5c;
   text-decoration: none;
   font-weight: 500;
-  border-bottom: 1px solid rgba(19,79,92,0.25);
+  border-bottom: 1px solid rgba(19, 79, 92, 0.25);
 }
 
 .project-link a:hover {
