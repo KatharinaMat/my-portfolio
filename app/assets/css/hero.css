@@ -1,0 +1,167 @@
+/* ===================================================
+   HERO LAYOUT (2 columns, mobile-first, fixed height)
+   =================================================== */
+
+.hero {
+  width: 100%; /*takes 100% of page width*/
+  height: 45vh; /* fixed: hero will NOT grow on mobile */
+  background: linear-gradient(90deg, var(--bg-start) 0%, var(--bg-finish) 100%);
+  border-radius: 0 0 26px 26px;
+  overflow: hidden; /* safety: prevents children visually spilling out */
+}
+
+/* Make descendants able to size against hero height */
+.hero .container,
+.hero .row {
+  height: 100%;
+}
+
+/* Desktop override */
+@media (min-width: 860px) {
+  .hero {
+    height: 55vh; /* fixed: hero will NOT grow on desktop */
+  }
+}
+
+/* =================================
+   CONTAINER
+   ================================= */
+
+.container {
+  width: 100%;
+  max-width: 1100px; /* readable line length on desktop */
+  margin: 0 auto; /*centres the container*/
+
+  /* mobile safety padding (prevents text/buttons touching screen edge) */
+  padding-left: clamp(1rem, 4vw, 2rem);
+  padding-right: clamp(1rem, 4vw, 2rem);
+}
+
+/* =================================
+   HERO ROW + COLUMNS (layout only)
+   ================================= */
+
+.hero .row {
+  display: flex; /*children become flex items, layout is controlled by flexbox rules instead of normal document flow*/
+  flex-direction: row; /* columns always side by side */
+  height: 100%;
+  align-items: stretch;
+  gap: clamp(0.75rem, 2vw, 2rem); /* smaller on mobile, bigger on desktop */
+}
+
+.left-col {
+  flex: 1.2;
+  min-width: 0;
+} /*0 allows the column to shrink properly instead of pushing sideways.*/
+.right-col {
+  flex: 0.8;
+  min-width: 0;
+}
+
+/*to keep the portrait image anchored*/
+.right-col {
+  display: flex;
+  justify-content: flex-start; /* left */
+  align-items: flex-end; /* bottom */
+}
+
+.hero-image {
+  height: 85%; /* relative to hero (since row is 100%) */
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  min-width: 0;
+  justify-content: flex-start;
+}
+
+.portrait {
+  height: 100%;
+  width: 100%;
+  object-fit: contain; /* fits without cropping; use cover if you prefer crop */
+  display: block;
+  object-position: left bottom;
+}
+
+.side-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* always 2 cols */
+  gap: clamp(0.5rem, 1.6vw, 1rem);
+}
+
+/* =================================
+   LEFT COLUMN STACK (relationships)
+   ================================= */
+
+.left-col {
+  display: flex;
+  height: 100%;
+  align-items: center; /* centers left-stack vertically */
+  justify-content: center; /* centers left-stack horizontally */
+}
+
+.left-stack {
+  /* one vertical stack controls all spacing */
+  display: flex;
+  flex-direction: column;
+
+  /* Gap between (text block) and (bookmarks block) */
+  gap: clamp(0.75rem, 2vh, 1.5rem);
+
+  /* keep the stack from becoming too wide */
+  max-width: 560px;
+}
+
+/* =================================
+   HERO CONTENT (typography only)
+   ================================= */
+
+.hero-text {
+  text-align: left;
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+}
+
+.hero-subtitle {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.15rem;
+  margin-top: 0.35rem;
+  line-height: 1.2;
+  color: var(--text-main);
+  opacity: 0.9;
+}
+
+/* Mobile landscape */
+@media (max-width: 859px) and (orientation: landscape) {
+  .hero-title {
+    font-size: 1.7rem;
+    line-height: 0.92;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.1;
+    margin-top: 0.2rem;
+  }
+}
+
+/* Desktop override */
+@media (min-width: 860px) {
+  .hero-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .hero-subtitle {
+    font-size: 1.7rem;
+    line-height: 1.2;
+    margin-top: 0.45rem;
+  }
+}

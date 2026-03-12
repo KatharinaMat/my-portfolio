@@ -1,3 +1,29 @@
+@import "./hero.css";
+
+/* =================================
+   CSS VARIABLES
+   ================================= */
+
+:root {
+  /* Brand colors */
+  --primary: #134f5c;
+  --primary-dark: #0f3f49;
+  --primary-light: #e7f1f3;
+
+  /* Background palette */
+  --bg-main: #f6efe4;
+  --bg-mid: #f2e7cf;
+  --bg-warm: #ecd9b8;
+  --bg-warm-desktop: #edd2a6;
+
+  /*Hero bacground colors*/
+  --bg-start: #dcb77d;
+  --bg-finish: #947b54;
+
+  /* Text */
+  --text-main: #1a1a1a;
+}
+
 /* =================================
    BASE / GLOBAL
    ================================= */
@@ -17,12 +43,21 @@ html {
 
 .page {
   min-height: 100vh;
-  background: linear-gradient(90deg, #f6efe4 0%, #f2e7cf 50%, #ecd9b8 100%);
+  background: linear-gradient(
+    90deg,
+    var(--bg-main),
+    var(--bg-mid) 50%,
+    var(--bg-warm) 100%
+  );
 }
 /* Desktop override */
 @media (min-width: 860px) {
   .page {
-    background: linear-gradient(90deg, #f6efe4 0%, #edd2a6 100%);
+    background: linear-gradient(
+      90deg,
+      var(--br-main),
+      var(--bg-warm-desktop) 100%
+    );
   }
 }
 
@@ -33,159 +68,7 @@ html {
 html,
 body {
   font-family: "Montserrat", sans-serif;
-  color: #1a1a1a;
-}
-
-/* ===================================================
-   HERO LAYOUT (2 columns, mobile-first, fixed height)
-   =================================================== */
-
-.hero {
-  width: 100%; /*takes 100% of page width*/
-  height: 45vh; /* fixed: hero will NOT grow on mobile */
-  background: linear-gradient(90deg, #dcb77d 0%, #947b54 100%);
-  border-radius: 0 0 26px 26px;
-  overflow: hidden; /* safety: prevents children visually spilling out */
-}
-
-/* Make descendants able to size against hero height */
-.hero .container,
-.hero .row {
-  height: 100%;
-}
-
-/* Desktop override */
-@media (min-width: 860px) {
-  .hero {
-    height: 55vh; /* fixed: hero will NOT grow on desktop */
-  }
-}
-
-/* =================================
-   CONTAINER
-   ================================= */
-
-.container {
-  width: 100%;
-  max-width: 1100px; /* readable line length on desktop */
-  margin: 0 auto; /*centres the container*/
-
-  /* mobile safety padding (prevents text/buttons touching screen edge) */
-  padding-left: clamp(1rem, 4vw, 2rem);
-  padding-right: clamp(1rem, 4vw, 2rem);
-}
-
-/* =================================
-   HERO ROW + COLUMNS (layout only)
-   ================================= */
-
-.hero .row {
-  display: flex; /*children become flex items, layout is controlled by flexbox rules instead of normal document flow*/
-  flex-direction: row; /* columns always side by side */
-  height: 100%;
-  align-items: stretch;
-  gap: clamp(0.75rem, 2vw, 2rem); /* smaller on mobile, bigger on desktop */
-}
-
-.left-col {
-  flex: 1.2;
-  min-width: 0;
-} /*0 allows the column to shrink properly instead of pushing sideways.*/
-.right-col {
-  flex: 0.8;
-  min-width: 0;
-}
-
-/*to keep the portrait image anchored*/
-.right-col {
-  display: flex;
-  justify-content: flex-start; /* left */
-  align-items: flex-end; /* bottom */
-}
-
-.hero-image {
-  height: 85%; /* relative to hero (since row is 100%) */
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  min-width: 0;
-  justify-content: flex-start;
-}
-
-.portrait {
-  height: 100%;
-  width: 100%;
-  object-fit: contain; /* fits without cropping; use cover if you prefer crop */
-  display: block;
-  object-position: left bottom;
-}
-
-.side-nav {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* always 2 cols */
-  gap: clamp(0.5rem, 1.6vw, 1rem);
-}
-
-/* =================================
-   LEFT COLUMN STACK (relationships)
-   ================================= */
-
-.left-col {
-  display: flex;
-  height: 100%;
-  align-items: center; /* centers left-stack vertically */
-  justify-content: center; /* centers left-stack horizontally */
-}
-
-.left-stack {
-  /* one vertical stack controls all spacing */
-  display: flex;
-  flex-direction: column;
-
-  /* Gap between (text block) and (bookmarks block) */
-  gap: clamp(0.75rem, 2vh, 1.5rem);
-
-  /* keep the stack from becoming too wide */
-  max-width: 560px;
-}
-
-/* Text block internal spacing */
-.hero-title {
-  margin: 0;
-}
-.hero-subtitle {
-  margin: 0.6rem 0 0;
-  margin-bottom: clamp(0.8rem, 2.2vh, 1.4rem);
-}
-
-/* =================================
-   HERO CONTENT (typography only)
-   ================================= */
-
-.hero-text {
-  text-align: left;
-}
-
-.hero-title {
-  font-family: "Playfair Display", serif;
-  font-weight: 600;
-  margin: 0;
-  line-height: 1.1;
-  color: #1a1a1a;
-
-  /* responsive font size prevents mobile overflow */
-  font-size: clamp(1.9rem, 3.8vw, 3rem);
-}
-
-.hero-subtitle {
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  margin-top: 0.45rem;
-  line-height: 1.3;
-  color: #1a1a1a;
-  opacity: 0.85;
-
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: var(--text-main);
 }
 
 /* =================================
@@ -215,7 +98,7 @@ body {
 .lang-btn {
   border: 0;
   background: transparent;
-  color: #1a1a1a;
+  color: var(--text-main);
 
   padding: 8px 10px;
   border-radius: 999px;
@@ -238,7 +121,7 @@ body {
 }
 
 .lang-btn.active {
-  background: #134f5c;
+  background: var(--primary);
   color: #f6efe4;
   opacity: 1;
 }
@@ -266,7 +149,7 @@ body {
   padding: 10px 14px 10px 16px;
   border-radius: 14px;
 
-  color: #0f3f49;
+  color: var(--primary-dark);
   font-weight: 600;
   letter-spacing: 0.2px;
 
@@ -288,7 +171,7 @@ body {
   bottom: 10px;
   width: 4px;
   border-radius: 999px;
-  background: #134f5c;
+  background: var(--primary);
   opacity: 0.9;
 }
 
@@ -350,7 +233,7 @@ body {
 .icon-btn svg {
   width: 20px;
   height: 20px;
-  fill: #134f5c;
+  fill: var(--primary);
 }
 /* =================================
    ANIMATIONS 
@@ -390,10 +273,10 @@ body {
 .section-inner {
   max-width: 1100px;
   margin: 0 auto;
-  color: #1a1a1a;
+  color: var(--text-main);
 }
 .accent {
-  color: #134f5c; /*used to accentuate certain words in text*/
+  color: var(--primary); /*used to accentuate certain words in text*/
 }
 
 /* =================================
@@ -411,7 +294,7 @@ body {
 .about-text {
   line-height: 1.7;
   font-size: 1rem;
-  color: #1a1a1a;
+  color: var(--text-main);
   margin-top: 1.25rem;
   max-width: 980px;
 }
@@ -496,7 +379,7 @@ body {
   border-radius: 999px;
   padding: 0.55rem 1rem;
   font: inherit;
-  color: #1a1a1a;
+  color: var(--text-main);
   cursor: pointer;
   transition:
     transform 0.15s ease,
@@ -623,7 +506,7 @@ body {
   padding: 0.5rem 0.7rem;
   border-radius: 14px;
   cursor: pointer;
-  color: #1a1a1a;
+  color: var(--text-main);
 
   transition:
     background-color 0.18s ease,
@@ -633,14 +516,14 @@ body {
 
 .section-menu-link:hover,
 .section-menu-link:focus-visible {
-  background: #e7f1f3;
-  color: #134f5c;
+  background: var(--primary-light);
+  color: var(--primary);
   outline: none;
   transform: translateX(-2px);
 }
 
 .section-menu-link:active {
-  background: #e7f1f3;
+  background: var(--primary-light);
   transform: scale(0.97);
 }
 
@@ -678,13 +561,13 @@ body {
 .work-period {
   font-size: 0.95rem;
   line-height: 1.4;
-  color: #1a1a1a;
+  color: var(--text-main);
 }
 
 .work-title {
   font-size: 1rem;
   line-height: 1.4;
-  color: #1a1a1a;
+  color: var(--text-main);
 }
 
 .company-note {
@@ -756,11 +639,11 @@ body {
 .skill-card h3 {
   margin: 0 0 0.75rem;
   font-size: 1.05rem;
-  color: #134f5c;
+  color: var(--primary);
 }
 
 .skill-card:hover h3 {
-  color: #0f3f49;
+  color: var(--primary);
 }
 
 /* Skill list */
@@ -829,7 +712,7 @@ body {
 .project-title {
   font-size: 1.12rem;
   line-height: 1.35;
-  color: #1a1a1a;
+  color: var(--text-main);
 }
 
 .project-content {
@@ -844,7 +727,7 @@ body {
 .project-subtitle {
   margin: 0.35rem 0 0.45rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-main);
 }
 
 .project-highlights {
@@ -864,14 +747,14 @@ body {
 }
 
 .project-link a {
-  color: #134f5c;
+  color: var(--primary);
   text-decoration: none;
   font-weight: 500;
   border-bottom: 1px solid rgba(19, 79, 92, 0.25);
 }
 
 .project-link a:hover {
-  border-bottom-color: #134f5c;
+  border-bottom-color: var(--primary);
 }
 
 /* Desktop override */

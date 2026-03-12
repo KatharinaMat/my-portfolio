@@ -9,8 +9,8 @@ useHead({
   link: [
     {
       rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
-    }
-  ]
+      href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@500;600&family=Dancing+Script:wght@500;600&display=swap",
+    },
+  ],
 });
 </script>
