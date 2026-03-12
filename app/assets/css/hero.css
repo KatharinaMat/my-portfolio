@@ -28,7 +28,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 1rem 0.8rem;
+  padding: 0 1rem 0.35rem;
 }
 
 /* =================================
@@ -40,7 +40,7 @@
   grid-template-columns: 1.08fr 0.92fr;
   align-items: end;
   gap: 0.8rem;
-  min-height: 260px;
+  min-height: 180px;
 }
 
 .hero-text-panel {
@@ -49,7 +49,7 @@
   align-items: center;
   justify-content: center;
   align-self: center;
-  padding-bottom: 1rem;
+  padding-bottom: 0.4rem;
 }
 
 .hero-text {
@@ -61,8 +61,8 @@
   margin: 0;
   font-family: "Playfair Display", serif;
   font-weight: 600;
-  font-size: 1.85rem;
-  line-height: 0.95;
+  font-size: 1.55rem;
+  line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--text-main);
 }
@@ -71,7 +71,7 @@
   margin-top: 0.45rem;
   margin-bottom: 0;
   font-family: "Dancing Script", cursive;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.2;
   color: var(--text-main);
   opacity: 0.92;
@@ -268,12 +268,17 @@
 
   .hero-title {
     font-size: clamp(2rem, 4vw, 3.3rem);
-    line-height: 0.94;
+    line-height: 1.05;
+  }
+
+  .hero-title br {
+    display: block;
+    margin-top: 0.25em;
   }
 
   .hero-subtitle {
-    margin-top: 0.8rem;
-    font-size: clamp(1.5rem, 2.3vw, 2rem);
+    margin-top: 1rem;
+    font-size: clamp(2rem, 2.5vw, 2rem);
     line-height: 1.15;
   }
 
