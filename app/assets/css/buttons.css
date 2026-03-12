@@ -84,7 +84,34 @@
 }
 
 /* =================================
-   DESKTOP / LANDSCAPE SCALING
+   MOBILE LANDSCAPE
+   ================================= */
+
+@media (max-width: 859px) and (orientation: landscape) {
+  .lang {
+    padding: 6px;
+    gap: 8px;
+  }
+
+  .lang-btn {
+    padding: 8px 11px;
+    font-size: 0.95rem;
+  }
+
+  .hero-socials .icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+  }
+
+  .hero-socials .icon-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* =================================
+   DESKTOP 
    ================================= */
 
 @media (min-width: 860px), (max-width: 859px) and (orientation: landscape) {
