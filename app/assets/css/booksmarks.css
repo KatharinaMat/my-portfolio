@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: 1fr; /* mobile portrait: one column */
   gap: 0.4rem;
+  width: 78%;
 }
 
 .bookmark {
