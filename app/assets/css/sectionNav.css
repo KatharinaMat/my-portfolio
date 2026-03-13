@@ -85,8 +85,8 @@
   align-items: center;
   justify-content: center;
 
-  width: 3rem;
-  height: 3rem;
+  width: 3.2rem;
+  height: 3.2rem;
   padding: 0;
 
   border: 1px solid rgba(140, 110, 70, 0.14);
@@ -105,8 +105,8 @@
 }
 
 .section-menu-btn svg {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
 .section-menu-panel {
@@ -115,6 +115,11 @@
   right: 0;
 
   min-width: 12rem;
+  max-width: min(16rem, calc(100vw - 2rem));
+  max-height: min(70vh, 24rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
   padding: 0.45rem;
 
   border: 1px solid rgba(140, 110, 70, 0.18);
@@ -151,27 +156,34 @@
 
 @media (max-width: 859px) and (orientation: landscape) {
   .mobile-section-nav {
-    top: 4.5rem;
+    top: 4rem;
     right: 0.85rem;
   }
 
   .section-menu-btn {
-    width: 2.65rem;
-    height: 2.65rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 14px;
   }
 
   .section-menu-btn svg {
-    width: 1.05rem;
-    height: 1.05rem;
+    width: 1.6rem;
+    height: 1.6rem;
   }
 
   .section-menu-panel {
-    min-width: 11rem;
+    top: calc(100% + 0.45rem);
+    min-width: 11.5rem;
+    max-width: min(15rem, calc(100vw - 1.5rem));
+    max-height: 58vh;
+    padding: 0.38rem;
+    border-radius: 14px;
   }
 
   .section-menu-link {
-    padding: 0.68rem 0.82rem;
+    padding: 0.62rem 0.78rem;
     font-size: 0.95rem;
+    line-height: 1.25;
   }
 }
 
