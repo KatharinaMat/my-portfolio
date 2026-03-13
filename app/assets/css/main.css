@@ -1,6 +1,7 @@
 @import "./hero.css";
 @import "./booksmarks.css";
 @import "./buttons.css";
+@import "./sections.css";
 
 /* =================================
    CSS VARIABLES
@@ -11,6 +12,7 @@
   --primary: #134f5c;
   --primary-dark: #0f3f49;
   --primary-light: #e7f1f3;
+  --footer-text: #f0ede7;
 
   /* Background palette */
   --bg-main: #f6efe4;
@@ -24,6 +26,10 @@
 
   /* Text */
   --text-main: #1a1a1a;
+
+  --section-pad-y: 1rem;
+  --section-pad-x: 1.125rem;
+  --section-content-gap: 0.9rem;
 }
 
 /* =================================
@@ -32,7 +38,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box; /*makes widths/padding predictable*/
+  box-sizing: border-box;
 }
 
 body {
@@ -40,7 +46,7 @@ body {
 }
 
 html {
-  scroll-behavior: smooth; /*Makes anchor-link scrolling (bookmarks) animate smoothly*/
+  scroll-behavior: smooth;
 }
 
 .page {
@@ -73,166 +79,6 @@ body {
   color: var(--text-main);
 }
 
-/* =================================
-   SECTIONS
-   ================================= */
-:root {
-  --section-pad-y: 16px;
-  --section-pad-x: 18px;
-}
-.section {
-  padding: var(--section-pad-y) var(--section-pad-x);
-}
-
-.section-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  color: var(--text-main);
-}
-.accent {
-  color: var(--primary); /*used to accentuate certain words in text*/
-}
-
-/* =================================
-   ABOUT
-   ================================= */
-
-.about-layout {
-  display: block;
-}
-
-.about-main {
-  min-width: 0;
-}
-
-.about-text {
-  line-height: 1.7;
-  font-size: 1rem;
-  color: var(--text-main);
-  margin-top: 1.25rem;
-  max-width: 980px;
-}
-
-/* Desktop override */
-@media (min-width: 860px) {
-  .about-layout {
-    display: grid;
-    grid-template-columns: 170px minmax(0, 1fr);
-    column-gap: 2rem;
-    align-items: start;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-/* =================================
-   EDUCATION
-   ================================= */
-
-.education-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  margin-top: 1.25rem;
-}
-
-.education-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.25rem;
-  padding: 0.35rem 0.45rem;
-  border-radius: 6px;
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
-}
-
-.education-row:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-.education-period {
-  font-weight: 500;
-  white-space: normal;
-}
-
-.education-text {
-  white-space: normal;
-  line-height: 1.45;
-}
-
-.education-text strong {
-  font-weight: 600;
-}
-
-/* Desktop override */
-@media (min-width: 860px) {
-  .education-row {
-    grid-template-columns: 170px 1fr;
-    column-gap: 1.25rem;
-    align-items: start;
-  }
-
-  .education-period {
-    white-space: nowrap;
-  }
-}
-
-/* =================================
-   EDUCATION - PUBLICATIONS
-   ================================= */
-
-.education-extra {
-  margin-top: 1rem;
-}
-
-.publications-toggle {
-  border: none;
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(8px);
-  border-radius: 999px;
-  padding: 0.55rem 1rem;
-  font: inherit;
-  color: var(--text-main);
-  cursor: pointer;
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease,
-    background-color 0.15s ease;
-}
-
-.publications-toggle:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  background: rgba(255, 255, 255, 0.72);
-}
-
-.publications-list {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-
-.publication-item {
-  line-height: 1.45;
-  font-size: 0.95rem;
-}
-
-.publication-item em {
-  font-style: italic;
-}
-
-.publication-item strong {
-  font-weight: 600;
-}
-
-/* Desktop override */
-@media (min-width: 860px) {
-  .publications-list {
-    padding-left: 187px;
-  }
-}
 /* =================================
    STICKY NAVIGATION
    ================================= */
@@ -286,321 +132,31 @@ body {
     bottom: 8px;
   }
 }
-/* =================================
-   MOBILE HAMBURGER MENU STICKY
-   ================================= */
-
-.section-menu-btn {
-  position: relative;
-}
-
-.section-menu-panel {
-  position: absolute;
-  right: calc(100% + 12px);
-  bottom: 0;
-
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-
-  padding: 0.3rem;
-  min-width: 180px;
-
-  border-radius: 22px;
-  background: rgba(248, 246, 242, 0.96);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
-}
-
-.section-menu-link {
-  border: none;
-  background: transparent;
-  font: inherit;
-  text-align: left;
-  padding: 0.5rem 0.7rem;
-  border-radius: 14px;
-  cursor: pointer;
-  color: var(--text-main);
-
-  transition:
-    background-color 0.18s ease,
-    color 0.18s ease,
-    transform 0.18s ease;
-}
-
-.section-menu-link:hover,
-.section-menu-link:focus-visible {
-  background: var(--primary-light);
-  color: var(--primary);
-  outline: none;
-  transform: translateX(-2px);
-}
-
-.section-menu-link:active {
-  background: var(--primary-light);
-  transform: scale(0.97);
-}
-
-.section-panel-enter-active,
-.section-panel-leave-active {
-  transition:
-    opacity 0.22s ease,
-    transform 0.22s ease;
-  transform-origin: right center;
-}
-
-.section-panel-enter-from,
-.section-panel-leave-to {
-  opacity: 0;
-  transform: translateX(8px) scale(0.98);
-}
 
 /* =================================
-   WORK EXPERIENCE
+   FOOTER
    ================================= */
 
-.work-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+.footer {
+  margin-top: 0;
+  padding: 1.4rem 1rem 1.6rem;
 
-.work-item {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.3rem;
-  align-items: start;
-}
-
-.work-period {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  color: var(--text-main);
-}
-
-.work-title {
-  font-size: 1rem;
-  line-height: 1.4;
-  color: var(--text-main);
-}
-
-.company-note {
-  font-weight: 400;
-  font-style: italic;
-  opacity: 0.85;
-}
-
-.work-text ul {
-  margin: 0;
-  padding-left: 1.4rem;
-}
-
-.work-text li {
-  margin-bottom: 0.35rem;
-  line-height: 1.55;
-}
-
-/* Desktop override */
-@media (min-width: 860px) {
-  .work-item {
-    grid-template-columns: 150px 1fr;
-    gap: 0.35rem 1.25rem;
-  }
-
-  .work-period {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .work-title {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .work-text {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-}
-/* =================================
-   SKILLS
-   ================================= */
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-top: 1.25rem;
-}
-
-.skill-card {
-  padding: 1rem 1.1rem;
-  border-radius: 16px;
-  background: rgba(248, 246, 242, 0.62);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease,
-    background-color 0.18s ease;
-}
-.skill-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-  background: rgba(248, 246, 242, 0.78);
-}
-
-.skill-card h3 {
-  margin: 0 0 0.75rem;
-  font-size: 1.05rem;
-  color: var(--primary);
-}
-
-.skill-card:hover h3 {
-  color: var(--primary);
-}
-
-/* Skill list */
-
-.skill-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  column-width: 160px;
-  column-gap: 1.5rem;
-}
-
-.skill-card li {
-  break-inside: avoid;
-  margin-bottom: 0.35rem;
-  line-height: 1.5;
-}
-
-.skill-card li:last-child {
-  margin-bottom: 0;
-}
-
-/* Desktop override */
-@media (min-width: 860px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.1rem;
-  }
-
-  .skill-card ul {
-    column-width: 140px;
-  }
-}
-/* =================================
-   PROJECTS
-   ================================= */
-
-.projects-list {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  margin-top: 1.4rem;
-}
-
-.project-item {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.9rem;
-  align-items: start;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(19, 79, 92, 0.12);
-}
-
-.project-item:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.project-title-block {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.project-title {
-  font-size: 1.12rem;
-  line-height: 1.35;
-  color: var(--text-main);
-}
-
-.project-content {
-  min-width: 0;
-}
-
-.project-description {
-  margin: 0 0 0.85rem;
-  line-height: 1.65;
-}
-
-.project-subtitle {
-  margin: 0.35rem 0 0.45rem;
-  font-weight: 700;
-  color: var(--text-main);
-}
-
-.project-highlights {
-  margin: 0 0 1rem;
-  padding-left: 1.3rem;
-}
-
-.project-highlights li {
-  margin-bottom: 0.35rem;
-  line-height: 1.55;
-}
-
-.project-tech,
-.project-link {
-  margin: 0.55rem 0 0;
-  line-height: 1.55;
-}
-
-.project-link a {
-  color: var(--primary);
-  text-decoration: none;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.6;
   font-weight: 500;
-  border-bottom: 1px solid rgba(19, 79, 92, 0.25);
+
+  color: var(--footer-text);
+
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-finish));
 }
 
-.project-link a:hover {
-  border-bottom-color: var(--primary);
+.footer a {
+  color: var(--footer-text);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(240, 237, 231, 0.35);
 }
 
-/* Desktop override */
-@media (min-width: 860px) {
-  .project-item {
-    grid-template-columns: 250px 1fr;
-    gap: 0.4rem 1.75rem;
-  }
-
-  .project-title-block {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .project-content {
-    grid-column: 2;
-    grid-row: 1;
-  }
-}
-/* =================================
-   HOBBIES
-   ================================= */
-
-.hobbies-text {
-  margin-top: 1.25rem;
-}
-
-.hobbies-text p {
-  margin: 0 0 1rem;
-  line-height: 1.7;
-}
-
-.hobbies-text p:last-child {
-  margin-bottom: 0;
+.footer a:hover {
+  border-bottom-color: var(--footer-text);
 }

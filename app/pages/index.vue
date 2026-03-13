@@ -20,6 +20,15 @@
       @nav-click="onClickScroll"
     />
   </main>
+  <footer class="footer">
+    <p>© 2026 Katharina Matkevits</p>
+    <p>Tallinn, Estonia</p>
+    <p>
+      <a href="mailto:katharina.matkevits@gmail.com"
+        >katharina.matkevits@gmail.com</a
+      >
+    </p>
+  </footer>
 </template>
 
 <script setup lang="ts">
