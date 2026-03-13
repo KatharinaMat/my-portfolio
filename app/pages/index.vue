@@ -64,8 +64,8 @@
       </div>
     </section>
 
-    <section class="hero-nav-section">
-      <div class="container hero-nav-row">
+    <section class="bookmarks-section">
+      <div class="container bookmarks-row">
         <Transition name="line" appear>
           <nav v-if="showNav" class="side-nav" aria-label="Page sections">
             <a
@@ -80,8 +80,10 @@
           </nav>
         </Transition>
 
-        <div class="socials-mobile">
-          <HeroSocialLinks />
+        <div class="mobile-utility">
+          <div class="socials-mobile">
+            <HeroSocialLinks />
+          </div>
 
           <button
             v-if="showMobileSectionButton"

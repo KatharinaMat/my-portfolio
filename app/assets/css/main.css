@@ -77,7 +77,7 @@ body {
    SECTIONS
    ================================= */
 :root {
-  --section-pad-y: 56px;
+  --section-pad-y: 16px;
   --section-pad-x: 18px;
 }
 .section {

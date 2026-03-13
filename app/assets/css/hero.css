@@ -117,54 +117,6 @@
   flex-shrink: 0;
 }
 
-/* =================================
-   HERO NAV SECTION
-   ================================= */
-
-.hero-nav-section {
-  padding-top: 0.8rem;
-}
-
-.hero-nav-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0.8rem;
-  align-items: start;
-}
-
-.side-nav {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.65rem;
-}
-
-.socials-mobile {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  align-items: stretch;
-}
-
-.hero-social-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-/* =================================
-   MOBILE MENU PANEL
-   ================================= */
-
-.section-menu-panel {
-  position: absolute;
-  top: calc(100% + 0.5rem);
-  right: 0;
-  width: max-content;
-  min-width: 180px;
-  z-index: 20;
-}
-
 /* ===================================================
    MOBILE LANDSCAPE
    =================================================== */
@@ -240,26 +192,6 @@
     width: 2.4rem;
     height: 2.4rem;
     border-radius: 12px;
-  }
-
-  .hero-nav-section {
-    padding-top: 0.45rem;
-  }
-
-  .hero-nav-row {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 0.7rem;
-  }
-
-  .side-nav {
-    grid-template-columns: repeat(2, minmax(9.5rem, 1fr));
-    gap: 0.6rem 0.75rem;
-    width: min(100%, 32.5rem);
-  }
-
-  .socials-mobile {
-    display: none;
   }
 }
 
@@ -344,30 +276,11 @@
 
   .hero-socials {
     --social-btn-size: clamp(3rem, 4vw, 3.25rem);
-    --social-btn-radius: clamp(0.85rem, 1vw, 1rem);
   }
+
   .hero-socials .icon-btn {
     width: var(--social-btn-size);
     height: var(--social-btn-size);
     border-radius: 16px;
-  }
-
-  .hero-nav-section {
-    padding-top: clamp(1.5rem, 2.5vw, 2rem);
-  }
-
-  .hero-nav-row {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
-  .side-nav {
-    grid-template-columns: repeat(2, minmax(13.75rem, 1fr));
-    gap: clamp(0.8rem, 1.2vw, 1rem) clamp(1rem, 1.6vw, 1.2rem);
-    width: min(100%, 43.75rem); /* 700px */
-  }
-
-  .socials-mobile {
-    display: none;
   }
 }

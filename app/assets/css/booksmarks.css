@@ -1,12 +1,60 @@
 /* =================================
+   BOOKMARKS SECTION
+   ================================= */
+
+.bookmarks-section {
+  padding-top: 0.55rem;
+  padding-bottom: 0.2rem;
+}
+
+.bookmarks-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.65rem;
+  align-items: start;
+}
+
+/* =================================
+   MOBILE UTILITY
+   ================================= */
+
+.mobile-utility {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.socials-mobile .hero-social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.socials-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.section-menu-panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: max-content;
+  min-width: 180px;
+  z-index: 20;
+}
+
+/* =================================
    BOOKMARKS
    ================================= */
 
 .side-nav {
   display: grid;
-  grid-template-columns: 1fr; /* mobile portrait: one column */
-  gap: 0.4rem;
-  width: 78%;
+  grid-template-columns: 1fr;
+  gap: 0.52rem;
+  width: 72%;
 }
 
 .bookmark {
@@ -21,17 +69,17 @@
   overflow: hidden;
 
   background: rgba(248, 246, 242, 0.78);
-  border: 1px solid rgba(15, 63, 73, 0.14);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.07);
-  border-radius: 10px;
+  border: 1px solid rgba(140, 110, 70, 0.18);
+  box-shadow: 0 6px 14px rgba(120, 90, 50, 0.12);
+  border-radius: 11px;
 
-  padding: 0.3rem 0.1rem 0.3rem 0.85rem;
+  padding: 0.52rem 0.55rem 0.52rem 1rem;
 
   color: var(--primary-dark);
   font-weight: 600;
-  font-size: 0.7rem;
+  font-size: 0.84rem;
   letter-spacing: 0.15px;
-  line-height: 1;
+  line-height: 1.05;
 
   transition:
     transform 160ms ease,
@@ -44,8 +92,8 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 4px;
-  bottom: 4px;
+  top: 6px;
+  bottom: 6px;
   width: 4px;
   border-radius: 999px;
   background: var(--primary);
@@ -66,9 +114,20 @@
    ================================= */
 
 @media (max-width: 859px) and (orientation: landscape) {
+  .bookmarks-section {
+    padding-top: 0.45rem;
+  }
+
+  .bookmarks-row {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.7rem;
+  }
+
   .side-nav {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.45rem 0.55rem;
+    grid-template-columns: repeat(2, minmax(9.5rem, 1fr));
+    gap: 0.6rem 0.75rem;
+    width: min(100%, 32.5rem);
   }
 
   .bookmark {
@@ -83,6 +142,11 @@
     bottom: 8px;
     width: 4px;
   }
+
+  .mobile-utility,
+  .socials-mobile {
+    display: none;
+  }
 }
 
 /* =================================
@@ -90,10 +154,19 @@
    ================================= */
 
 @media (min-width: 860px) {
+  .bookmarks-section {
+    padding-top: clamp(1.5rem, 2.5vw, 2rem);
+  }
+
+  .bookmarks-row {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
   .side-nav {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(0.5rem, 1.6vw, 1rem);
-    width: 78%;
+    grid-template-columns: repeat(2, minmax(13.75rem, 1fr));
+    gap: clamp(0.8rem, 1.2vw, 1rem) clamp(1rem, 1.6vw, 1.2rem);
+    width: min(100%, 43.75rem);
   }
 
   .bookmark {
@@ -121,6 +194,11 @@
     top: 10px;
     bottom: 10px;
     width: 4px;
+  }
+
+  .mobile-utility,
+  .socials-mobile {
+    display: none;
   }
 }
 
