@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section id="top" class="hero">
     <div class="hero-topbar">
       <div class="lang" aria-label="Language switch">
         <button
@@ -96,7 +96,7 @@
             aria-label="Section navigation"
           >
             <button
-              v-for="item in heroNav"
+              v-for="item in sectionNav"
               :key="item.href"
               type="button"
               class="section-menu-link"
@@ -121,6 +121,7 @@ type HeroNavItem = {
 
 defineProps<{
   heroNav: HeroNavItem[];
+  sectionNav: HeroNavItem[];
   mobileMenuOpen: boolean;
   showMobileSectionButton: boolean;
 }>();

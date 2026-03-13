@@ -20,13 +20,13 @@
   </section>
 
   <div class="sections-with-sidebar">
-    <nav class="sticky-navigation">
+    <nav class="sticky-navigation" aria-label="Section navigation">
       <a
-        v-for="item in heroNav"
+        v-for="item in sectionNav"
         :key="item.href"
-        :href="item.href"
         class="bookmark"
-        @click="onNavClick($event, item.href)"
+        :href="item.href"
+        @click="$emit('nav-click', $event, item.href)"
       >
         {{ t(item.i18nKey) }}
       </a>
@@ -233,6 +233,7 @@ type ProjectItem = {
 
 const props = defineProps<{
   heroNav: HeroNavItem[];
+  sectionNav: HeroNavItem[];
   educationItems: EducationItem[];
   workItems: WorkItem[];
   skillGroups: SkillGroup[];

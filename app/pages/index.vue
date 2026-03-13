@@ -2,6 +2,7 @@
   <main class="page" :data-locale="locale">
     <HeroNav
       :hero-nav="heroNav"
+      :section-nav="sectionNav"
       :mobile-menu-open="mobileMenuOpen"
       :show-mobile-section-button="showMobileSectionButton"
       @change-locale="changeLocaleKeepScroll"
@@ -11,6 +12,7 @@
     />
     <Sections
       :hero-nav="heroNav"
+      :section-nav="sectionNav"
       :education-items="educationItems"
       :work-items="workItems"
       :skill-groups="skillGroups"
@@ -59,14 +61,24 @@ const route = useRoute();
 const mobileMenuOpen = ref(false);
 const showMobileSectionButton = ref(false);
 
-const heroNav = [
+const heroNav = computed(() => [
   { href: "#about", i18nKey: "nav.about" },
   { href: "#education", i18nKey: "nav.education" },
   { href: "#work", i18nKey: "nav.work" },
   { href: "#skills", i18nKey: "nav.skills" },
   { href: "#projects", i18nKey: "nav.projects" },
   { href: "#hobbies", i18nKey: "nav.hobbies" },
-];
+]);
+
+const sectionNav = computed(() => [
+  { href: "#top", i18nKey: "nav.start" },
+  { href: "#about", i18nKey: "nav.about" },
+  { href: "#education", i18nKey: "nav.education" },
+  { href: "#work", i18nKey: "nav.work" },
+  { href: "#skills", i18nKey: "nav.skills" },
+  { href: "#projects", i18nKey: "nav.projects" },
+  { href: "#hobbies", i18nKey: "nav.hobbies" },
+]);
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;

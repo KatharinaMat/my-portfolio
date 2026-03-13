@@ -68,9 +68,9 @@
   position: relative;
   overflow: hidden;
 
-  background: rgba(248, 246, 242, 0.78);
-  border: 1px solid rgba(140, 110, 70, 0.18);
-  box-shadow: 0 6px 14px rgba(120, 90, 50, 0.12);
+  background: var(--button-bg);
+  border: 1px solid var(--button-border);
+  box-shadow: 0 6px 14px var(--button-box-shadow);
   border-radius: 11px;
 
   padding: 0.52rem 0.55rem 0.52rem 1rem;
@@ -105,7 +105,7 @@
 }
 
 .bookmark:focus-visible {
-  outline: 3px solid rgba(19, 79, 92, 0.28);
+  outline: 3px solid var(--button-border);
   outline-offset: 3px;
 }
 
@@ -185,9 +185,9 @@
     line-height: 1.15;
     letter-spacing: 0.2px;
 
-    background: rgba(248, 246, 242, 0.72);
-    border: 1px solid rgba(15, 63, 73, 0.14);
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+    background: var(--button-bg);
+    border: 1px solid var(--button-border);
+    box-shadow: 0 10px 22px var(--button-box-shadow);
   }
 
   .bookmark::before {

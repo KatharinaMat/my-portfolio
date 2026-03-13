@@ -53,9 +53,9 @@
    ================================= */
 
 .icon-btn {
-  background: rgba(248, 246, 242, 0.72);
+  background: var(--button-bg);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(140, 110, 70, 0.18);
+  border: 1px solid var(--button-border);
   border-radius: 14px;
   display: grid;
   place-items: center;

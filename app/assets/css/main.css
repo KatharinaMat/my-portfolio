@@ -2,6 +2,7 @@
 @import "./booksmarks.css";
 @import "./buttons.css";
 @import "./sections.css";
+@import "./sectionNav.css";
 
 /* =================================
    CSS VARIABLES
@@ -27,6 +28,12 @@
   /* Text */
   --text-main: #1a1a1a;
 
+  /*Buttons and bookmarks colors*/
+  --button-bg: rgba(248, 246, 242, 0.78);
+  --button-border: rgba(140, 110, 70, 0.18);
+  --button-box-shadow: rgba(120, 90, 50, 0.12);
+
+  /*Section spacing*/
   --section-pad-y: 1rem;
   --section-pad-x: 1.125rem;
   --section-content-gap: 0.9rem;
@@ -77,60 +84,6 @@ html,
 body {
   font-family: "Montserrat", sans-serif;
   color: var(--text-main);
-}
-
-/* =================================
-   STICKY NAVIGATION
-   ================================= */
-
-.sticky-navigation {
-  display: none;
-}
-
-.sections-with-sidebar {
-  display: block;
-}
-
-.sections-main {
-  min-width: 0;
-}
-
-/* Desktop only */
-@media (min-width: 860px) {
-  .sections-with-sidebar {
-    display: grid;
-    grid-template-columns: 170px minmax(0, 1fr);
-    column-gap: 2rem;
-    align-items: start;
-
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .sticky-navigation {
-    position: sticky;
-    top: 110px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-    align-self: start;
-    padding-top: var(--section-pad-y);
-  }
-
-  /* calmer bookmark variant */
-  .sticky-navigation .bookmark {
-    padding: 8px 12px 8px 14px;
-    font-size: 0.9rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-    background: rgba(248, 246, 242, 0.62);
-  }
-
-  .sticky-navigation .bookmark::before {
-    width: 3px;
-    top: 8px;
-    bottom: 8px;
-  }
 }
 
 /* =================================

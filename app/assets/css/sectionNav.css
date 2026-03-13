@@ -1,0 +1,54 @@
+/* =================================
+   STICKY NAVIGATION
+   ================================= */
+
+.sticky-navigation {
+  display: none;
+}
+
+.sections-with-sidebar {
+  display: block;
+}
+
+.sections-main {
+  min-width: 0;
+}
+
+/* Desktop only */
+@media (min-width: 860px) {
+  .sections-with-sidebar {
+    display: grid;
+    grid-template-columns: 185px minmax(0, 1fr);
+    column-gap: 2rem;
+    align-items: start;
+    padding-inline: 2rem;
+  }
+
+  .sticky-navigation {
+    position: sticky;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-self: start;
+    padding-top: var(--section-pad-y);
+  }
+
+  .sticky-navigation .bookmark {
+    padding: 0.95rem 1rem 0.95rem 1.15rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.2;
+    border-radius: 12px;
+
+    background: var(--button-bg);
+    border: 1px solid var(--button-border);
+    box-shadow: 0 8px 18px var(--button-box-shadow);
+  }
+
+  .sticky-navigation .bookmark::before {
+    width: 3px;
+    top: 10px;
+    bottom: 10px;
+  }
+}
