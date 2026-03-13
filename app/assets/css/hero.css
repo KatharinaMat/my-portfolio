@@ -275,7 +275,11 @@
   .hero-main {
     grid-template-columns: 1.12fr 0.88fr;
     gap: clamp(1rem, 1.8vw, 1.8rem);
-    min-height: clamp(17rem, 24vw, 20rem);
+    min-height: clamp(
+      15rem,
+      20vw,
+      18rem
+    ); /*hero size, adjust with .hero-image*/
     align-items: end;
   }
 
@@ -311,7 +315,7 @@
   }
 
   .hero-image {
-    height: clamp(17rem, 24vw, 20rem);
+    height: clamp(15rem, 20vw, 18rem);
     width: auto;
     align-items: flex-end;
   }
@@ -324,7 +328,17 @@
   .hero-socials .hero-social-links {
     display: flex;
     flex-direction: column;
-    gap: clamp(0.65rem, 1vw, 0.9rem);
+    gap: clamp(0.65rem, 0.9vw, 0.9rem);
+  }
+
+  .hero-socials {
+    --social-btn-size: clamp(3rem, 4vw, 3.25rem);
+    --social-btn-radius: clamp(0.85rem, 1vw, 1rem);
+  }
+  .hero-socials .icon-btn {
+    width: var(--social-btn-size);
+    height: var(--social-btn-size);
+    border-radius: 16px;
   }
 
   .hero-nav-section {
