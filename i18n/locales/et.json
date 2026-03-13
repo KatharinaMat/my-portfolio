@@ -11,6 +11,11 @@
     "title": "Tere!<br>Mina olen Katharina.",
     "subtitle": "Tere tulemast minu portfoolio lehele."
   },
+  "contact": {
+    "copyEmail": "Kopeeri email",
+    "emailCopied": "Kopeeritud!"
+  },
+
   "about": {
     "text": [
       "Olen loomult uudishimulik, aktiivne ja õppimishimuline ning mulle meeldib pidevalt uusi asju avastada ja proovida. Viimastel aastatel olen üha enam süvenenud IT-valdkonda, õppinud tarkvaraarendust ning loonud väiksemaid rakendusi ja veebilehti. See on valdkond, mis pakub mulle palju huvi ja milles näen enda jaoks suurt arengupotentsiaali.",

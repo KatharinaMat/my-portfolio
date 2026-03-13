@@ -11,6 +11,12 @@
     "title": "Hi, <br> I'm Katharina!",
     "subtitle": "Welcome to my portfolio page."
   },
+
+  "contact": {
+    "copyEmail": "Click to copy email",
+    "emailCopied": "Copied!"
+  },
+
   "about": {
     "text": [
       "I am a naturally curious and active person with many interests in life. Over the past few years I have been exploring software development and building small applications and websites. It has become an exciting new field for me where I can continuously learn and grow.",
