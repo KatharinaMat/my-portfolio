@@ -5,7 +5,7 @@
         <div class="lang" aria-label="Language switch">
           <button
             class="lang-btn"
-            :class="{ active: locale.value === 'en' }"
+            :class="{ active: locale === 'en' }"
             type="button"
             @click="changeLocaleKeepScroll('en')"
           >
@@ -13,7 +13,7 @@
           </button>
           <button
             class="lang-btn"
-            :class="{ active: locale.value === 'et' }"
+            :class="{ active: locale === 'et' }"
             type="button"
             @click="changeLocaleKeepScroll('et')"
           >
