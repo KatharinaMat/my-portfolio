@@ -68,14 +68,15 @@
         <div class="socials-mobile">
           <HeroSocialLinks />
         </div>
+      </div>
 
+      <div v-if="showMobileSectionButton" class="mobile-section-nav">
         <button
-          v-if="showMobileSectionButton"
-          class="icon-btn section-menu-btn"
+          class="section-menu-btn"
           type="button"
           :aria-expanded="mobileMenuOpen"
-          aria-label="Open section navigation"
-          title="Sections"
+          :aria-label="t('nav.sections')"
+          :title="t('nav.sections')"
           @click="$emit('toggle-mobile-menu')"
         >
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -91,7 +92,7 @@
 
         <Transition name="section-panel">
           <div
-            v-if="mobileMenuOpen && showMobileSectionButton"
+            v-if="mobileMenuOpen"
             class="section-menu-panel"
             aria-label="Section navigation"
           >

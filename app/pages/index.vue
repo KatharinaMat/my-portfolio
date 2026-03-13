@@ -92,8 +92,8 @@ const updateMobileSectionButtonVisibility = () => {
     return;
   }
 
-  const educationTop = educationSection.getBoundingClientRect().top;
-  showMobileSectionButton.value = educationTop <= 120;
+  const rect = educationSection.getBoundingClientRect();
+  showMobileSectionButton.value = rect.top <= 120;
 };
 
 const onSectionMenuClick = (href: string) => {
@@ -121,6 +121,8 @@ const changeLocaleKeepScroll = async (code: "en" | "et") => {
   await nextTick();
 
   window.scrollTo({ top: y, left: 0, behavior: "auto" });
+
+  updateMobileSectionButtonVisibility();
 };
 
 function onClickScroll(e: MouseEvent, href: string) {
@@ -137,17 +139,24 @@ function onClickScroll(e: MouseEvent, href: string) {
   const url = `${window.location.pathname}${window.location.search}#${id}`;
   history.replaceState(null, "", url);
 
-  if (id === "education") {
-    showMobileSectionButton.value = true;
-  }
+  mobileMenuOpen.value = false;
+
+  requestAnimationFrame(() => {
+    updateMobileSectionButtonVisibility();
+  });
 }
 
 onMounted(() => {
-  window.addEventListener("scroll", updateMobileSectionButtonVisibility);
+  window.addEventListener("scroll", updateMobileSectionButtonVisibility, {
+    passive: true,
+  });
+  window.addEventListener("resize", updateMobileSectionButtonVisibility);
+
   updateMobileSectionButtonVisibility();
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", updateMobileSectionButtonVisibility);
+  window.removeEventListener("resize", updateMobileSectionButtonVisibility);
 });
 </script>

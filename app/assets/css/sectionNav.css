@@ -52,3 +52,187 @@
     bottom: 10px;
   }
 }
+
+/* =================================
+   STICKY NAVIGATION
+   ================================= */
+
+.sticky-navigation {
+  display: none;
+}
+
+.sections-with-sidebar {
+  display: block;
+}
+
+.sections-main {
+  min-width: 0;
+}
+
+/* =================================
+   MOBILE + LANDSCAPE SECTION MENU
+   ================================= */
+
+.mobile-section-nav {
+  position: fixed;
+  top: 5.4rem;
+  right: 1rem;
+  z-index: 40;
+}
+
+.section-menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+
+  border: 1px solid rgba(140, 110, 70, 0.14);
+  border-radius: 14px;
+  background: rgba(248, 246, 242, 0.52);
+  backdrop-filter: blur(10px);
+
+  color: var(--primary-dark);
+  box-shadow: 0 8px 18px rgba(120, 95, 60, 0.08);
+  cursor: pointer;
+
+  transition:
+    transform 0.16s ease,
+    background-color 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.section-menu-btn svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.section-menu-panel {
+  position: absolute;
+  top: calc(100% + 0.55rem);
+  right: 0;
+
+  min-width: 12rem;
+  padding: 0.45rem;
+
+  border: 1px solid rgba(140, 110, 70, 0.18);
+  border-radius: 16px;
+  background: rgba(248, 246, 242, 0.93);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 28px rgba(120, 95, 60, 0.14);
+}
+
+.section-menu-link {
+  display: block;
+  width: 100%;
+
+  padding: 0.78rem 0.9rem;
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+  color: var(--text-main);
+  text-align: left;
+  font: inherit;
+  font-weight: 500;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.section-menu-link:active {
+  background: rgba(19, 79, 92, 0.08);
+}
+
+/* =================================
+   MOBILE LANDSCAPE TWEAK
+   ================================= */
+
+@media (max-width: 859px) and (orientation: landscape) {
+  .mobile-section-nav {
+    top: 4.5rem;
+    right: 0.85rem;
+  }
+
+  .section-menu-btn {
+    width: 2.65rem;
+    height: 2.65rem;
+  }
+
+  .section-menu-btn svg {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+
+  .section-menu-panel {
+    min-width: 11rem;
+  }
+
+  .section-menu-link {
+    padding: 0.68rem 0.82rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* =================================
+   MENU TRANSITION
+   ================================= */
+
+.section-panel-enter-active,
+.section-panel-leave-active {
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.section-panel-enter-from,
+.section-panel-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+/* =================================
+   DESKTOP STICKY SIDEBAR
+   ================================= */
+
+@media (min-width: 860px) {
+  .sections-with-sidebar {
+    display: grid;
+    grid-template-columns: 185px minmax(0, 1fr);
+    column-gap: 2rem;
+    align-items: start;
+    padding-inline: 2rem;
+  }
+
+  .sticky-navigation {
+    position: sticky;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-self: start;
+    padding-top: var(--section-pad-y);
+  }
+
+  .sticky-navigation .bookmark {
+    padding: 0.95rem 1rem 0.95rem 1.15rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.2;
+    border-radius: 12px;
+    border: 1px solid rgba(140, 110, 70, 0.14);
+    background: rgba(248, 246, 242, 0.72);
+    box-shadow: 0 6px 14px rgba(120, 95, 60, 0.1);
+  }
+
+  .sticky-navigation .bookmark::before {
+    width: 3px;
+    top: 10px;
+    bottom: 10px;
+  }
+
+  .mobile-section-nav {
+    display: none;
+  }
+}
