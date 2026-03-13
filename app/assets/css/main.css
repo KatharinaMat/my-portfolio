@@ -57,7 +57,7 @@ html {
   .page {
     background: linear-gradient(
       90deg,
-      var(--br-main),
+      var(--bg-main),
       var(--bg-warm-desktop) 100%
     );
   }

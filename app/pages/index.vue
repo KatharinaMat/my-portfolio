@@ -1,23 +1,25 @@
 <template>
-  <HeroNav
-    :hero-nav="heroNav"
-    :mobile-menu-open="mobileMenuOpen"
-    :show-mobile-section-button="showMobileSectionButton"
-    @change-locale="changeLocaleKeepScroll"
-    @toggle-mobile-menu="toggleMobileMenu"
-    @section-click="onSectionMenuClick"
-    @hero-link-click="onClickScroll"
-  />
-  <Sections
-    :hero-nav="heroNav"
-    :education-items="educationItems"
-    :work-items="workItems"
-    :skill-groups="skillGroups"
-    :project-items="projectItems"
-    :show-publications="showPublications"
-    @update:show-publications="showPublications = $event"
-    @nav-click="onClickScroll"
-  />
+  <main class="page" :data-locale="locale">
+    <HeroNav
+      :hero-nav="heroNav"
+      :mobile-menu-open="mobileMenuOpen"
+      :show-mobile-section-button="showMobileSectionButton"
+      @change-locale="changeLocaleKeepScroll"
+      @toggle-mobile-menu="toggleMobileMenu"
+      @section-click="onSectionMenuClick"
+      @hero-link-click="onClickScroll"
+    />
+    <Sections
+      :hero-nav="heroNav"
+      :education-items="educationItems"
+      :work-items="workItems"
+      :skill-groups="skillGroups"
+      :project-items="projectItems"
+      :show-publications="showPublications"
+      @update:show-publications="showPublications = $event"
+      @nav-click="onClickScroll"
+    />
+  </main>
 </template>
 
 <script setup lang="ts">
