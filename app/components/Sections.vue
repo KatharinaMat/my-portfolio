@@ -145,25 +145,6 @@
                   class="project-description"
                   v-html="rt(paragraph)"
                 ></p>
-
-                <div
-                  v-if="project.highlights && project.highlights.length"
-                  class="project-subtitle"
-                >
-                  {{ t("projects.highlightsLabel") }}
-                </div>
-
-                <ul
-                  v-if="project.highlights && project.highlights.length"
-                  class="project-highlights"
-                >
-                  <li
-                    v-for="(highlight, highlightIndex) in project.highlights"
-                    :key="highlightIndex"
-                    v-html="rt(highlight)"
-                  ></li>
-                </ul>
-
                 <p class="project-tech" v-html="rt(project.techStack)"></p>
 
                 <p

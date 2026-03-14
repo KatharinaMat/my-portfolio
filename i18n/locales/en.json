@@ -154,56 +154,37 @@
     "highlightsLabel": "Highlights",
     "items": [
       {
+        "title": "<strong><span class='accent'>Primastella</span></strong> — Printing House Website",
+
+        "description": [
+          "A <strong>multilingual website</strong> I developed for a printing company to present their services and product portfolio.",
+          "The project focuses on a <strong>clear structure</strong>, <strong>responsive layout</strong>, and <strong>easy navigation</strong> across devices."
+        ],
+
+        "techStack": "<strong>Tech stack:</strong> Nuxt, Vue, JavaScript, CSS",
+        "website": "<strong>Website:</strong> <a href='https://primastella.ee' target='_blank' rel='noreferrer'>https://primastella.ee</a>"
+      },
+      {
+        "title": "<strong><span class='accent'>MyPortfolio</span></strong> — personal portfolio website",
+
+        "description": [
+          "My personal portfolio website.",
+          "The site features a <strong>bilingual interface</strong> (English / Estonian), a <strong>responsive mobile-first layout</strong>, and <strong>structured content managed through JSON files</strong>."
+        ],
+
+        "techStack": "<strong>Tech stack:</strong> Nuxt, Vue, JavaScript, CSS"
+      },
+      {
         "title": "<strong><span class='accent'>MyStuffLabelled</span></strong> — Personal Inventory with QR Labels",
 
         "description": [
-          "Originally a small personal project to explore backend development and QR-based labeling, the application now evolved into a collaborative team project under the TalTech “From Junior to Senior Software Developer program”.",
-          "The goal is to build a practical tool for organizing personal belongings, allowing users to register items, generate labels, and access item details by scanning them.",
-          "The project is being developed as both a web and mobile application, with a planned public release in May 2026."
+          "An application designed to help track important information about personal belongings, such as warranty details, model information, purchase history, and personal notes.",
+          "Items can be labeled with <strong>QR codes</strong>, allowing users to quickly access stored information by scanning the label.",
+          "The project explores <strong>backend development, REST API communication, and item ownership logic</strong> between a Spring Boot backend and a Vue-based interface.",
+          "The project is currently under development with a planned release in 2026."
         ],
 
-        "highlights": [
-          "Secure login and item ownership logic",
-          "QR code generation for physical labeling",
-          "REST API communication between backend and Vue frontend",
-          "Ongoing development: admin dashboard, search and filtering, item sharing"
-        ],
-
-        "techStack": "<strong>Tech stack:</strong> Java (Spring Boot), PostgreSQL, Vue.js, REST API, MapStruct"
-      },
-
-      {
-        "title": "<strong><span class='accent'>MyPortfolio</span></strong> — this page",
-
-        "description": [
-          "I have created this portfolio page to present my learning journey, professional experience, and interests in a way that allows more context than a traditional CV or social media profile."
-        ],
-
-        "highlights": [
-          "Bilingual interface (English / Estonian)",
-          "Responsive layout with mobile-first design, custom sticky navigation and animations",
-          "Structured sections using JSON content files"
-        ],
-
-        "techStack": "<strong>Tech stack:</strong> Nuxt, Vue.js, HTML, CSS"
-      },
-
-      {
-        "title": "<strong><span class='accent'>Primastella</span></strong> — Printing House Website (Planned modernization)",
-
-        "description": [
-          "A website I developed for a local printing company to present their services, portfolio, and contact information.",
-          "Currently I am working on migration to a modern stack and UI redesign."
-        ],
-
-        "highlights": [
-          "Custom responsive layout",
-          "Bilingual content",
-          "Focus on simple structure and fast loading"
-        ],
-
-        "techStack": "<strong>Tech stack:</strong> HTML, CSS, JavaScript",
-        "website": "<strong>Website:</strong> <a href='https://primastella.ee' target='_blank' rel='noreferrer'>https://primastella.ee</a>"
+        "techStack": "<strong>Tech stack:</strong> Java (Spring Boot), PostgreSQL, Vue, REST API, MapStruct"
       }
     ]
   },
