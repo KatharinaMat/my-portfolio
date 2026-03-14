@@ -169,7 +169,7 @@
         "title": "<strong><span class='accent'>MyPortfolio</span></strong> — isiklik portfoolioleht",
 
         "description": [
-          "Minu isiklik portfoolioleht.",
+          "Minu isiklik portfoolioleht <span class='accent'>— veebileht, mida praegu vaatad</span>.",
           "Lehel on <strong>kahekeelne kasutajaliides</strong> (eesti / inglise), <strong>responsiivne mobile-first paigutus</strong> ning <strong>JSON-failidel põhinev sisu struktuur</strong>."
         ],
 

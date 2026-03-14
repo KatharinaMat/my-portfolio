@@ -165,10 +165,10 @@
         "website": "<strong>Website:</strong> <a href='https://primastella.ee' target='_blank' rel='noreferrer'>https://primastella.ee</a>"
       },
       {
-        "title": "<strong><span class='accent'>MyPortfolio</span></strong> — personal portfolio website",
+        "title": "<strong><span class='accent'>MyPortfolio</span></strong> ",
 
         "description": [
-          "My personal portfolio website.",
+          "My personal portfolio website <span class='accent'> — the site you are currently viewing</span>.",
           "The site features a <strong>bilingual interface</strong> (English / Estonian), a <strong>responsive mobile-first layout</strong>, and <strong>structured content managed through JSON files</strong>."
         ],
 
