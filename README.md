@@ -1,75 +1,67 @@
-# Nuxt Minimal Starter
+#MyPortfolio
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal portfolio website presenting my projects, professional background, and interests.
 
-## Setup
+The site is built with Nuxt and designed as a bilingual (English / Estonian) responsive web application.
 
-Make sure to install dependencies:
+##Live Website
 
-```bash
-# npm
+🌐 https://katharina-matkevits-portfolio.vercel.app
+
+##Features
+
+-Bilingual interface (English / Estonian)
+-Responsive layout with mobile-first design
+-Structured content using JSON files
+-Sticky navigation and smooth scrolling
+-Sections for background, experience, skills, and projects
+
+##Tech Stack
+
+-Nuxt
+-Vue
+-JavaScript
+-CSS
+-JSON content structure
+
+##Project Structure
+
+The website is structured into reusable Vue components and content files.
+
+Example structure:
+
+assets/
+  css/
+components/
+locales/
+pages/
+public/
+nuxt.config.ts
+
+Content for sections such as **projects, skills, and experience** is stored in JSON files, making it easy to maintain both language versions.
+
+##Running the Project Locally
+
+Install dependencies:
+
 npm install
 
-# pnpm
-pnpm install
+Start development server:
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
 
-# pnpm
-pnpm dev
+Build for production:
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
 npm run build
 
-# pnpm
-pnpm build
+Generate static site:
 
-# yarn
-yarn build
+npm run generate
 
-# bun
-bun run build
-```
+##Author
 
-Locally preview production build:
+**Katharina Matkevits**
 
-```bash
-# npm
-npm run preview
+GitHub: https://github.com/KatharinaMat
 
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Portfolio: https://katharina-matkevits-portfolio.vercel.app
