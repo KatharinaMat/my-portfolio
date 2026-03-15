@@ -162,7 +162,7 @@
           "Projekt keskendub <strong>selgele struktuurile</strong>, <strong>responsiivsele paigutusele</strong> ning <strong>lihtsale navigeerimisele</strong> erinevates seadmetes."
         ],
 
-        "techStack": "<strong>Tehnoloogiad:</strong> Nuxt, Vue, JavaScript, CSS",
+        "techStack": "<strong>Tehnoloogiad:</strong> Nuxt, Vue, TypeScript, CSS",
         "website": "<strong>Veebileht:</strong> <a href='https://primastella.ee' target='_blank' rel='noreferrer'>https://primastella.ee</a>"
       },
       {
@@ -173,7 +173,7 @@
           "Lehel on <strong>kahekeelne kasutajaliides</strong> (eesti / inglise), <strong>responsiivne mobile-first paigutus</strong> ning <strong>JSON-failidel põhinev sisu struktuur</strong>."
         ],
 
-        "techStack": "<strong>Tehnoloogiad:</strong> Nuxt, Vue, JavaScript, CSS"
+        "techStack": "<strong>Tehnoloogiad:</strong> Nuxt, Vue, TypeScript, CSS"
       },
       {
         "title": "<strong><span class='accent'>MyStuffLabelled</span></strong> — isiklike esemete haldus QR-siltidega",

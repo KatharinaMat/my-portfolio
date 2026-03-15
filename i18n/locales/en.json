@@ -161,7 +161,7 @@
           "The project focuses on a <strong>clear structure</strong>, <strong>responsive layout</strong>, and <strong>easy navigation</strong> across devices."
         ],
 
-        "techStack": "<strong>Tech stack:</strong> Nuxt, Vue, JavaScript, CSS",
+        "techStack": "<strong>Tech stack:</strong> Nuxt, Vue, TypeScript, CSS",
         "website": "<strong>Website:</strong> <a href='https://primastella.ee' target='_blank' rel='noreferrer'>https://primastella.ee</a>"
       },
       {

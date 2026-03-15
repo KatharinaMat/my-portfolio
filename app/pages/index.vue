@@ -60,7 +60,6 @@ const route = useRoute();
 
 const mobileMenuOpen = ref(false);
 const showMobileSectionButton = ref(false);
-const mobileMenuRef = ref<HTMLElement | null>(null);
 
 const heroNav = computed(() => [
   { href: "#about", i18nKey: "nav.about" },
@@ -147,23 +146,11 @@ function onClickScroll(e: MouseEvent, href: string) {
   });
 }
 
-const handleClickOutside = (event: MouseEvent) => {
-  if (!mobileMenuOpen.value) return;
-
-  const target = event.target as Node | null;
-  if (!target) return;
-
-  if (mobileMenuRef.value && !mobileMenuRef.value.contains(target)) {
-    mobileMenuOpen.value = false;
-  }
-};
-
 onMounted(() => {
   window.addEventListener("scroll", updateMobileSectionButtonVisibility, {
     passive: true,
   });
   window.addEventListener("resize", updateMobileSectionButtonVisibility);
-  document.addEventListener("click", handleClickOutside);
 
   updateMobileSectionButtonVisibility();
 });
@@ -171,6 +158,5 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", updateMobileSectionButtonVisibility);
   window.removeEventListener("resize", updateMobileSectionButtonVisibility);
-  document.addEventListener("click", handleClickOutside);
 });
 </script>
