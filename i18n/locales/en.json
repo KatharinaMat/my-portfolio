@@ -151,10 +151,9 @@
     ]
   },
   "projects": {
-    "highlightsLabel": "Highlights",
     "items": [
       {
-        "title": "<strong><span class='accent'>Primastella</span></strong> — Printing House Website",
+        "title": "<strong><span class='accent'>Primastella OÜ</span></strong> — Printing House Website",
 
         "description": [
           "A <strong>multilingual website</strong> I developed for a printing company to present their services and product portfolio.",
@@ -165,10 +164,10 @@
         "website": "<strong>Website:</strong> <a href='https://primastella.ee' target='_blank' rel='noreferrer'>https://primastella.ee</a>"
       },
       {
-        "title": "<strong><span class='accent'>MyPortfolio</span></strong> ",
+        "title": "<strong><span class='accent'>MyPortfolio</span></strong> — My personal portfolio website",
 
         "description": [
-          "My personal portfolio website <span class='accent'> — the site you are currently viewing</span>.",
+          "<span class='accent'>The site you are currently viewing</span>.",
           "The site features a <strong>bilingual interface</strong> (English / Estonian), a <strong>responsive mobile-first layout</strong>, and <strong>structured content managed through JSON files</strong>."
         ],
 

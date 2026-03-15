@@ -152,10 +152,9 @@
     ]
   },
   "projects": {
-    "highlightsLabel": "Põhipunktid",
     "items": [
       {
-        "title": "<strong><span class='accent'>Primastella</span></strong> — trükikoja veebileht",
+        "title": "<strong><span class='accent'>Primastella OÜ</span></strong> — trükikoja veebileht",
 
         "description": [
           "Trükiettevõtte jaoks arendatud <strong>mitmekeelne veebileht</strong>, mis tutvustab nende teenuseid ja toodete portfooliot.",
@@ -169,7 +168,7 @@
         "title": "<strong><span class='accent'>MyPortfolio</span></strong> — isiklik portfoolioleht",
 
         "description": [
-          "Minu isiklik portfoolioleht <span class='accent'>— veebileht, mida praegu vaatad</span>.",
+          "<span class='accent'>Veebileht, mida praegu vaatad</span>.",
           "Lehel on <strong>kahekeelne kasutajaliides</strong> (eesti / inglise), <strong>responsiivne mobile-first paigutus</strong> ning <strong>JSON-failidel põhinev sisu struktuur</strong>."
         ],
 
