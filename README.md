@@ -18,11 +18,11 @@ The site is built with Nuxt and designed as a bilingual (English / Estonian) res
 
 ##Tech Stack
 
--Nuxt
--Vue
--TypeScript
--CSS
--JSON content structure
+- Nuxt
+- Vue
+- JavaScript
+- CSS
+- JSON content structure
 
 ##Project Structure
 
