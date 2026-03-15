@@ -70,14 +70,18 @@
         </div>
       </div>
 
-      <div v-if="showMobileSectionButton" class="mobile-section-nav">
+      <div
+        v-if="showMobileSectionButton"
+        class="mobile-section-nav"
+        ref="mobileMenuRef"
+      >
         <button
           class="section-menu-btn"
           type="button"
           :aria-expanded="mobileMenuOpen"
           :aria-label="t('nav.sections')"
           :title="t('nav.sections')"
-          @click="$emit('toggle-mobile-menu')"
+          @click.stop="$emit('toggle-mobile-menu')"
         >
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path
@@ -95,6 +99,7 @@
             v-if="mobileMenuOpen"
             class="section-menu-panel"
             aria-label="Section navigation"
+            @click.stop
           >
             <button
               v-for="item in sectionNav"
@@ -113,6 +118,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from "vue";
+const mobileMenuRef = ref<HTMLElement | null>(null);
 const { t, locale } = useI18n();
 
 type HeroNavItem = {
@@ -120,7 +127,7 @@ type HeroNavItem = {
   i18nKey: string;
 };
 
-defineProps<{
+const props = defineProps<{
   heroNav: HeroNavItem[];
   sectionNav: HeroNavItem[];
   mobileMenuOpen: boolean;
@@ -137,4 +144,23 @@ const emit = defineEmits<{
 function onHeroLinkClick(event: MouseEvent, href: string) {
   emit("hero-link-click", event, href);
 }
+
+const handleClickOutside = (event: MouseEvent) => {
+  if (!props.mobileMenuOpen) return;
+
+  const target = event.target as Node | null;
+  if (!target) return;
+
+  if (mobileMenuRef.value && !mobileMenuRef.value.contains(target)) {
+    emit("toggle-mobile-menu");
+  }
+};
+
+onMounted(() => {
+  document.addEventListener("click", handleClickOutside);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener("click", handleClickOutside);
+});
 </script>
