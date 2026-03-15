@@ -172,7 +172,7 @@
           "The site features a <strong>bilingual interface</strong> (English / Estonian), a <strong>responsive mobile-first layout</strong>, and <strong>structured content managed through JSON files</strong>."
         ],
 
-        "techStack": "<strong>Tech stack:</strong> Nuxt, Vue, JavaScript, CSS"
+        "techStack": "<strong>Tech stack:</strong> Nuxt, Vue, TypeScript, CSS"
       },
       {
         "title": "<strong><span class='accent'>MyStuffLabelled</span></strong> — Personal Inventory with QR Labels",
