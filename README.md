@@ -20,7 +20,7 @@ The site is built with Nuxt and designed as a bilingual (English / Estonian) res
 
 - Nuxt
 - Vue
-- JavaScript
+- TypeScript
 - CSS
 - JSON content structure
 
