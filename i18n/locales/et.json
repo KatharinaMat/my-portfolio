@@ -30,7 +30,7 @@
   "education": {
     "items": [
       {
-        "period": "01.2026 – kestab",
+        "period": "01.2026 – 05.2026",
         "text": "<strong>TalTech</strong> – “Noorem-tarkvaraarendajast vanemarendajaks”, 250 akad. t"
       },
       {
@@ -66,6 +66,16 @@
 
   "work": {
     "items": [
+      {
+        "period": "2026 – kestab",
+        "title": "<strong>Kommertsialiseerimise spetsialist, <span class='accent'>FinEst Targa Linna Tippkeskus, TalTech</span></strong>",
+        "text": [
+          "Kliendivajaduste kaardistamine ja kommertsialiseerimisega seotud tegevused UrbanDip projektis.",
+          "Intervjuude läbiviimine Euroopa omavalitsustega, et kaardistada suplusvee seire vajadusi, praeguseid praktikaid ja peamisi väljakutseid.",
+          "Turu hindamise, ärimudeli valideerimise ja turule sisenemise planeerimise toetamine projekti Go/No-Go otsuse ettevalmistamiseks."
+        ]
+      },
+
       {
         "period": "2023 – 2025",
         "title": "<strong>Müügijuht, <span class='accent'>Hoberg & Driesch Finland Oy</span></strong>",
@@ -176,16 +186,16 @@
         "techStack": "<strong>Tehnoloogiad:</strong> Nuxt, Vue, TypeScript, CSS"
       },
       {
-        "title": "<strong><span class='accent'>MyStuffLabelled</span></strong> — isiklike esemete haldus QR-siltidega",
+        "title": "<strong><span class='accent'>Tagly</span></strong> — isiklike esemete haldus QR-siltidega",
 
         "description": [
-          "Rakendus, mis aitab hallata olulist infot isiklike esemete kohta, näiteks garantiid, mudeliandmeid, ostuajalugu ja isiklikke märkmeid.",
+          "Veebirakendus isiklike esemete haldamiseks ning info, nagu garantiiandmete, mudeliinfo, ostuajaloo, kviitungite ja märkmete säilitamiseks.",
           "Esemeid saab märgistada <strong>QR-koodidega</strong>, mis võimaldavad skaneerimise kaudu kiiresti ligi pääseda salvestatud teabele.",
-          "Projekt keskendub <strong>backend-arendusele, REST API suhtlusele ning esemete omandi loogikale</strong> Spring Boot ja Vue rakenduse vahel.",
-          "Projekt on hetkel arenduses ning selle avalik versioon on kavandatud 2026. aastaks."
+          "Täislahendus kasutajakontode, esemete halduse, QR-koodide genereerimise ja salvestatud andmetele turvalise ligipääsuga."
         ],
 
-        "techStack": "<strong>Tehnoloogiad:</strong> Java (Spring Boot), PostgreSQL, Vue, REST API, MapStruct"
+        "techStack": "<strong>Tehnoloogiad:</strong> Java (Spring Boot), PostgreSQL, Vue, REST API, MapStruct",
+        "website": "<strong>Veebileht:</strong> <a href='https://tag-ly.eu' target='_blank' rel='noreferrer'>https://tag-ly.eu</a>"
       }
     ]
   },

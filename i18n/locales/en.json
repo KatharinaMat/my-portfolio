@@ -30,7 +30,7 @@
   "education": {
     "items": [
       {
-        "period": "01.2026 – ongoing",
+        "period": "01.2026 – 05.2026",
         "text": "<strong>TalTech</strong> – “From Junior to Senior Software Developer”, 250 acad. h"
       },
       {
@@ -66,6 +66,16 @@
 
   "work": {
     "items": [
+      {
+        "period": "2026 – Present",
+        "title": "<strong>Commercialisation Specialist, <span class='accent'>FinEst Centre for Smart Cities, TalTech</span></strong>",
+        "text": [
+          "Working on customer discovery and commercialisation activities for the UrbanDip project.",
+          "Conducting interviews with municipalities across Europe to identify bathing water monitoring needs, current practices, and key challenges.",
+          "Supporting market assessment, business model validation, and go-to-market planning for the project’s Go/No-Go decision."
+        ]
+      },
+
       {
         "period": "2023 – 2025",
         "title": "<strong>Sales Manager, <span class='accent'>Hoberg & Driesch Finland Oy</span></strong>",
@@ -176,16 +186,16 @@
         "techStack": "<strong>Tech stack:</strong> Nuxt, Vue, TypeScript, CSS"
       },
       {
-        "title": "<strong><span class='accent'>MyStuffLabelled</span></strong> — Personal Inventory with QR Labels",
+        "title": "<strong><span class='accent'>Tagly</span></strong> — Personal Inventory with QR Labels",
 
         "description": [
-          "An application designed to help track important information about personal belongings, such as warranty details, model information, purchase history, and personal notes.",
-          "Items can be labeled with <strong>QR codes</strong>, allowing users to quickly access stored information by scanning the label.",
-          "The project explores <strong>backend development, REST API communication, and item ownership logic</strong> between a Spring Boot backend and a Vue-based interface.",
-          "The project is currently under development with a planned release in 2026."
+          "A web application for organizing personal belongings and storing information such as warranty details, model data, purchase history, receipts, and notes.",
+          "Items can be labeled with <strong>QR codes</strong>, allowing users to quickly access their information by scanning the label.",
+          "A full-stack application with user accounts, item management, QR code generation, and secure access to stored item data."
         ],
 
-        "techStack": "<strong>Tech stack:</strong> Java (Spring Boot), PostgreSQL, Vue, REST API, MapStruct"
+        "techStack": "<strong>Tech stack:</strong> Java (Spring Boot), PostgreSQL, Vue, REST API, MapStruct",
+        "website": "<strong>Website:</strong> <a href='https://tag-ly.eu/' target='_blank' rel='noreferrer'>https://tag-ly.eu</a>"
       }
     ]
   },
